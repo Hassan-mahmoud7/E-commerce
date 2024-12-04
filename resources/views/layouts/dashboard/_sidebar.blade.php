@@ -29,6 +29,20 @@
                     </ul>
                 </li>
             @endcan
+            @can('admins')
+                <li class=" nav-item"><a href="#"><i class="la la-black-tie"></i><span class="menu-title"
+                            data-i18n="nav.templates.main">{{ __('dashboard.admins') }}</span></a>
+                    <ul class="menu-content">                   
+                                <li><a class="menu-item" href="{{ route('dashboard.admins.index') }}"
+                                        data-i18n="nav.templates.vert.classic_menu"><i class="ft-eye"></i> {{ __('dashboard.admin_dashboard') }}</a>
+                                </li>
+                                <li><a class="menu-item" href="{{ route('dashboard.admins.create') }}"
+                                        data-i18n="nav.templates.vert.classic_menu"><i class="ft-edit"></i> {{ __('dashboard.create_admin') }}</a>
+                                </li>
+  
+                    </ul>
+                </li>
+            @endcan
             <li class=" navigation-header">
                 <span data-i18n="nav.category.layouts">Layouts</span><i class="la la-ellipsis-h ft-minus"
                     data-toggle="tooltip" data-placement="right" data-original-title="Layouts"></i>

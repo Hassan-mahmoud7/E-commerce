@@ -18,13 +18,13 @@ class Admin extends Authenticatable
      * @var array<int, string>
      */
     protected $table = 'admins';
-    protected $fillable = ['name', 'email', 'password','role_id'];
-  
+    protected $fillable = ['name', 'email', 'status', 'password', 'role_id'];
+
     protected $hidden = [
         'password',
         'remember_token',
     ];
-  
+
     protected function casts(): array
     {
         return [
@@ -32,10 +32,10 @@ class Admin extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    
+
     public function role()
     {
-        return $this->belongsTo(Role::class,'role_id');
+        return $this->belongsTo(Role::class, 'role_id');
     }
 
     public function hasAccess($Config_permission)

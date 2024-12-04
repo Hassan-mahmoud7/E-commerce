@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Dashboard\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\CreateAdminRequest;
+use App\Http\Requests\LoginAdminRequest;
 use App\Models\Admin;
 use App\Services\Auth\AuthService;
 use Illuminate\Routing\Controllers\Middleware;
@@ -30,7 +30,7 @@ class AuthController extends Controller implements HasMiddleware
         return view('dashboard.auth.login');
     }
 
-    public function login(CreateAdminRequest $request)
+    public function login(LoginAdminRequest $request)
     {    
         $credenstials = $request->only(['email' , 'password']);
         if ($this->dependency_injection->login($credenstials,'admin',$request->remember)) {

@@ -24,7 +24,7 @@ class ResetPasswordRequest extends FormRequest
         return [
             // 'token' => ['required', 'exists:otps,token'],
             // 'email' => ['required', 'exists:otps,identifier'],
-            'email' => ['required', 'email', 'exists:admins,email'],
+            'email' => ['required', 'email','max:100', 'exists:admins,email'],
             'password' => ['required', 'min:8', 'max:25', 'confirmed'],
             'password_confirmation' => ['required'],
         ];
@@ -33,6 +33,7 @@ class ResetPasswordRequest extends FormRequest
     {
         return [
             'email.required' =>  __('validation.error'),
+            'email.max' =>  __('validation.error'),
             'email.email' =>  __('validation.error'),
             'email.exists' =>  __('validation.error'),
 

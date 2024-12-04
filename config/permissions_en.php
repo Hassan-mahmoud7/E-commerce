@@ -1,9 +1,10 @@
 <?php
 return [   
+        'admins' => 'Manage Admins',
+        'products' => 'Manage Products',
         'categories' => 'Manage Categories',
         'brands' => 'Manage Brands',
         'coupons' => 'Manage Coupons',
-        'products' => 'Manage Products',
         'orders' => 'Manage Orders',
         'users' => 'Manage Users',
         'roles' => 'Manage Roles',
