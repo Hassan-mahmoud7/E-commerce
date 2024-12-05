@@ -242,6 +242,7 @@ return [
         'SubCat_ID' => 'الفئة الفرعية ',
         'edit'  => 'تعديل',
         'permission'  => 'إذن',
+        'status'   => 'حالة',
 
     ],
 ];

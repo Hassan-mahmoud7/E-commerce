@@ -8,7 +8,7 @@ class AdminRepository
 {
     public function getAllAdmins()
     {
-        $admins = Admin::select('id','name','email','role_id','created_at')->paginate(6);
+        $admins = Admin::select('id','name','email','status','role_id','created_at')->paginate(6);
         return $admins;
     }
     public function getAdmin($id)

@@ -21,6 +21,7 @@
                     </div>
                 </div>
             </div>
+            @include('dashboard.includes.button-header')
         </div>
         <div class="content-body">
             <section id="basic-form-layouts">

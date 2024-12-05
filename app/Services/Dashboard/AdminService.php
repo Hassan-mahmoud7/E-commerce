@@ -40,6 +40,9 @@ class AdminService
         if (!$admin) {
             return abort(404);
         }
+        if ($data['password'] == null) {
+            unset($data['password']);
+        }
         $admin = $this->adminRepository->updateAdmin($admin, $data);
         if (!$admin) {
             return false;
@@ -66,10 +69,10 @@ class AdminService
         }
         if ($admin->status == 0) {
            $this->adminRepository->changeStatus($admin, 1);
-            return true;
+            return 1;
         }elseif($admin->status == 1){
             $this->adminRepository->changeStatus($admin, 0);
-            return false;
+            return 2;
         }
     }
 }

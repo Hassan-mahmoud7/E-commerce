@@ -61,11 +61,12 @@ class AdminController extends Controller
      */
     public function edit(string $id)
     {
+        $roles = $this->roleService->getRoles();
         $admin = $this->adminService->getAdmin($id);
         if (!$admin) {
             return redirect()->back()->with('error', __('dashboard.error_message'));
         }
-        return view('dashboard.admins.edit',compact('admin'));
+        return view('dashboard.admins.edit',compact('admin','roles'));
     }
 
     /**
@@ -80,18 +81,6 @@ class AdminController extends Controller
         }
         return redirect()->route('dashboard.admins.index')->with('success', __('dashboard.updated_successfully'));
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        $admin = $this->adminService->destroyAdmin($id);
-        if (!$admin) {
-            return redirect()->back()->with('error', __('dashboard.error_message'));
-        }
-        return redirect()->route('dashboard.admins.index')->with('success', __('dashboard.deleted_successfully'));
-    }
     public function ChangeStatus($id)  
     {
         $status = $this->adminService->changeStatus($id);
@@ -100,8 +89,17 @@ class AdminController extends Controller
         }
         if ($status == 1) {
             return redirect()->back()->with('success', __('dashboard.status_active_updated_successfully'));     
-        }else{
+        }elseif($status == 2){
             return redirect()->back()->with('success', __('dashboard.status_not_active_updated_successfully'));
         }
     }
+    public function destroy(string $id)
+    {
+        $admin = $this->adminService->destroyAdmin($id);
+        if (!$admin) {
+            return redirect()->back()->with('error', __('dashboard.error_message'));
+        }
+        return redirect()->route('dashboard.admins.index')->with('success', __('dashboard.deleted_successfully'));
+    }
+   
 }

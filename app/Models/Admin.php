@@ -50,4 +50,8 @@ class Admin extends Authenticatable
             }
         }
     }
+    // public function getStatusAttribute($status)
+    // {
+    //     return $status == 1 ? __('dashboard.active') : __('dashboard.not_active') ;       
+    // }
 }

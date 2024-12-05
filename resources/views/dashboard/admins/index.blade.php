@@ -20,20 +20,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="content-header-right col-md-6 col-12">
-                    <div class="dropdown float-md-right">
-                        <button class="btn btn-danger dropdown-toggle round btn-glow px-2" id="dropdownBreadcrumbButton"
-                            type="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Actions</button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownBreadcrumbButton"><a class="dropdown-item"
-                                href="#"><i class="la la-calendar-check-o"></i> Calender</a>
-                            <a class="dropdown-item" href="#"><i class="la la-cart-plus"></i> Cart</a>
-                            <a class="dropdown-item" href="#"><i class="la la-life-ring"></i> Support</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i
-                                    class="la la-cog"></i> Settings</a>
-                        </div>
-                    </div>
-                </div>
+               @include('dashboard.includes.button-header')
             </div>
             <div class="row">
                 <div class="col-12">
@@ -62,7 +49,7 @@
                                             <th scope="col">{{ __('dashboard.admin_name') }}</th>
                                             <th scope="col">{{ __('dashboard.email') }}</th>
                                             <th scope="col">{{ __('dashboard.admin_status') }}</th>
-                                            <th scope="col">{{ __('dashboard.role_id') }}</th>
+                                            <th scope="col">{{ __('dashboard.role') }}</th>
                                             <th scope="col">{{ __('dashboard.created') }}</th>
                                             <th scope="col">{{ __('dashboard.operations') }}</th>
 
@@ -74,9 +61,9 @@
                                             <th scope="row">{{ $loop->iteration }}</th>
                                             <td>{{ $admin->name }}</td>
                                             <td>{{ $admin->email }}</td>
-                                            <td class="text-{{ $admin->status = 1 ? 'success' : 'danger' }}">{{ $admin->status = 1 ? __('dashboard.active') : __('dashboard.not_active') }}</td>
+                                            <td class="text-{{ $admin->status == 1 ? 'success' : 'danger' }}">{{ $admin->status == 1 ? __('dashboard.active') : __('dashboard.not_active') }}</td>
                                             <td>{{ $admin->role->role }}</td>
-                                            <td>{{ $admin->created_at }}</td>
+                                            <td>{{ $admin->created_at->format('Y-m-d') }}</td>
                                             <td>
                                                 <div class="content-header-right  col-md-6 col-12">
                                                     <div class="dropdown float-md-right m-auto">
@@ -87,9 +74,13 @@
                                                         aria-expanded="false">{{ __('dashboard.operations') }}</button>
                                                         <div class="dropdown-menu"
                                                         aria-labelledby="dropdownBreadcrumbButton">
-                                                        <a class="dropdown-item text-info" href="{{ route('dashboard.admins.edit' , $admin->id) }}"><i
-                                                            class="ft-edit-3"> {{ __('dashboard.edit') }}</i> </a>
-                                                                <button class="dropdown-item text-danger" data-toggle="modal" data-target="#Delete-{{ $admin->id }}">
+                                                        {{-- edit --}}
+                                                        <a class="dropdown-item text-info" href="{{ route('dashboard.admins.edit' , $admin->id) }}"><i class="ft-edit-3"> {{ __('dashboard.edit') }}</i> </a>
+                                                        {{-- status --}}
+                                                        <a class="dropdown-item {{ $admin->status == 0 ? 'text-success' : 'text-darck' }}" href="{{ route('dashboard.admins.status' , $admin->id) }}">
+                                                            <i class="{{ $admin->status == 0 ? 'la la-toggle-on' : 'la la-toggle-off' }}"></i> {{ $admin->status == 0 ? __('dashboard.active') : __('dashboard.not_active') }}</a>
+                                                        {{-- Delete --}}
+                                                            <button class="dropdown-item text-danger" data-toggle="modal" data-target="#Delete-{{ $admin->id }}">
                                                                     <i class="ft-trash-2"></i> {{ __('dashboard.delete') }}</button>
                                                                 </div>
                                                             </div>

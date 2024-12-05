@@ -244,6 +244,8 @@ return [
         'SubCat_ID'             => 'Subcategory ID',
         'edit'  => 'Edit',
         'permission'  => 'permission',
+        'status'   => 'Status',
+
     ],  
 
 ];
