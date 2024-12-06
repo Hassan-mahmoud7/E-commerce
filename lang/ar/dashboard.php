@@ -19,6 +19,7 @@ return [
 
     #admins
     'admins' => 'المسؤلين',
+    'admin' => 'المسؤل',
     'admin_dashboard' => 'لوحة معلومات المسؤلين',
     'admin_name_en' => 'اسم المسؤلين بالانجليزى',
     'admin_name_ar' => 'اسم المسؤلين بالعربى',

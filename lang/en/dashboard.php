@@ -20,6 +20,7 @@ return [
     #admins
 
     'admins' => 'Admins',
+    'admin' => 'Admin',
     'admin_dashboard' => 'Admin Dashboard',
     'admin_name_en' => 'Admin Name English',
     'admin_name_ar' => 'Admin Name Arabic',
