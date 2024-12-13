@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\Auth\ForgotPasswordController;
 use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
 use App\Http\Controllers\Dashboard\RoleController;
 use App\Http\Controllers\Dashboard\WelcomeController;
+use App\Http\Controllers\Dashboard\WorldController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -49,11 +50,33 @@ Route::group(
             
             #################################| Roles Routes Dashboard |#################################
             Route::resource('roles',RoleController::class)->middleware('can:roles');
-
+            
             #################################| Admins Routes Dashboard |#################################
             Route::group(['middleware' => 'can:admins'],function(){
                 Route::resource('admins',AdminController::class);
                 Route::get('admins/{id}/status',[AdminController::class,'ChangeStatus'])->name('admins.status');
+            });
+            
+            #################################| Shipping & Countries Routes Dashboard |#################################
+            Route::controller(WorldController::class)->middleware('can:global_shipping')->group(function () {
+                # country
+                Route::prefix('countries')->name('countries')->group(function () {
+                    Route::get('/','getAllCountries');
+                    Route::get('/status/{country_id}','changeStatusCountry')->name('.status');    
+                });
+                # governorate
+                Route::prefix('governorates/')->name('governorates')->group(function () {
+                    Route::get('','getAllGovernorates');
+                    Route::get('{country_id}','getAllGovernorates')->name('.by.country');
+                    Route::get('status/{governorate_id}','changeStatusGovernorate')->name('.status');    
+                    Route::put('shipping/price','changeShippingPrice')->name('.shipping.price');
+                });
+                # city
+                Route::prefix('cities')->name('cities')->group(function () {
+                    Route::get('/','getAllCities');
+                    Route::get('/{governorate_id}','getAllCities')->name('.by.governorate');
+                    Route::get('/status/{city_id}','changeStatusCity')->name('.status');    
+                });      
             });
         });
         

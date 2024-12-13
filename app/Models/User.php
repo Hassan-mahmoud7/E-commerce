@@ -24,6 +24,9 @@ class User extends Authenticatable
         'status',
         'image',
         'city_id',
+        'country_id',
+        'governorate_id',
+
     ];
     /**
      * The attributes that should be hidden for serialization.
@@ -46,5 +49,18 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class , 'country_id');
+    }
+    public function city()
+    {
+        return $this->belongsTo(City::class , 'city_id');
+    }
+    public function governorate()
+    {
+        return $this->belongsTo(Governorate::class , 'governorate_id');
     }
 }

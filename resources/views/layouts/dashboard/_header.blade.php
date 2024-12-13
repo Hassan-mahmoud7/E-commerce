@@ -14,19 +14,22 @@
   <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
   rel="stylesheet">
 
+
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/forms/toggle/switchery.min.css">
   <!-- BEGIN VENDOR CSS-->
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/weather-icons/climacons.min.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/fonts/meteocons/style.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/charts/morris.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/charts/chartist.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/charts/chartist-plugin-tooltip.css">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/tables/datatable/datatables.min.css">
   
   <!-- BEGIN Page Level CSS-->
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/fonts/simple-line-icons/style.css">
-
-    @if (config('app.locale') == 'ar')
-
-            <!-- BEGIN VENDOR CSS-->
+  
+  @if (config('app.locale') == 'ar')
+  
+  <!-- BEGIN VENDOR CSS-->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css-rtl/vendors.css">
         <!-- END VENDOR CSS-->
         <!-- BEGIN MODERN CSS-->

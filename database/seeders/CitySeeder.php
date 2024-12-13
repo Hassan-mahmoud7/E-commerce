@@ -448,6 +448,106 @@ class CitySeeder extends Seeder
             ["governorate_id" => "40", "name" => ["ar" => "حي بدنة", "en" => "Badanah"]],
             ["governorate_id" => "41", "name" => ["ar" => "حي الفيصلية", "en" => "Al Faisaliyah"]],
             ["governorate_id" => "41", "name" => ["ar" => "حي الأثايبة", "en" => "Al Athaybah"]],
+             # India
+            ["governorate_id" => "42", "name" => ["ar" => "مومباي", "en" => "Mumbai"]],
+            ["governorate_id" => "42", "name" => ["ar" => "بونا", "en" => "Pune"]],
+            ["governorate_id" => "42", "name" => ["ar" => "ناجبور", "en" => "Nagpur"]],
+            ["governorate_id" => "42", "name" => ["ar" => "ناشيك", "en" => "Nashik"]],
+
+            ["governorate_id" => "43", "name" => ["ar" => "بنغالور", "en" => "Bangalore"]],
+            ["governorate_id" => "43", "name" => ["ar" => "ميسور", "en" => "Mysore"]],
+            ["governorate_id" => "43", "name" => ["ar" => "مانجالور", "en" => "Mangalore"]],
+            ["governorate_id" => "43", "name" => ["ar" => "بلاري", "en" => "Bellary"]],
+
+            ["governorate_id" => "44", "name" => ["ar" => "تشيناي", "en" => "Chennai"]],
+            ["governorate_id" => "44", "name" => ["ar" => "مدوراي", "en" => "Madurai"]],
+            ["governorate_id" => "44", "name" => ["ar" => "كويمباتور", "en" => "Coimbatore"]],
+            ["governorate_id" => "44", "name" => ["ar" => "سالم", "en" => "Salem"]],
+
+            # Indonesia
+            ["governorate_id" => "45", "name" => ["ar" => "سيريبون", "en" => "Cirebon"]],
+            ["governorate_id" => "45", "name" => ["ar" => "تانقيرانق", "en" => "Tangerang"]],
+            ["governorate_id" => "45", "name" => ["ar" => "بيكاسي", "en" => "Bekasi"]],
+            ["governorate_id" => "45", "name" => ["ar" => "ديبوك", "en" => "Depok"]],
+
+            ["governorate_id" => "46", "name" => ["ar" => "دينباسار", "en" => "Denpasar"]],
+            ["governorate_id" => "46", "name" => ["ar" => "كوتا", "en" => "Kuta"]],
+            ["governorate_id" => "46", "name" => ["ar" => "جيانيار", "en" => "Gianyar"]],
+            ["governorate_id" => "46", "name" => ["ar" => "سانور", "en" => "Sanur"]],
+
+            ["governorate_id" => "47", "name" => ["ar" => "سليمان", "en" => "Sleman"]],
+            ["governorate_id" => "47", "name" => ["ar" => "كولون بروجو", "en" => "Kulon Progo"]],
+            ["governorate_id" => "47", "name" => ["ar" => "بنتول", "en" => "Bantul"]],
+            ["governorate_id" => "47", "name" => ["ar" => "جونونج كيدول", "en" => "Gunung Kidul"]],
+
+            # United Kingdom
+            ["governorate_id" => "48", "name" => ["ar" => "كامدن", "en" => "Camden"]],
+            ["governorate_id" => "48", "name" => ["ar" => "إيزلينغتون", "en" => "Islington"]],
+            ["governorate_id" => "48", "name" => ["ar" => "ساوثوارك", "en" => "Southwark"]],
+            ["governorate_id" => "48", "name" => ["ar" => "هاكني", "en" => "Hackney"]],
+
+            ["governorate_id" => "49", "name" => ["ar" => "سالفورد", "en" => "Salford"]],
+            ["governorate_id" => "49", "name" => ["ar" => "بيري", "en" => "Bury"]],
+            ["governorate_id" => "49", "name" => ["ar" => "أولدهام", "en" => "Oldham"]],
+            ["governorate_id" => "49", "name" => ["ar" => "بولتون", "en" => "Bolton"]],
+
+            ["governorate_id" => "50", "name" => ["ar" => "سوليهل", "en" => "Solihull"]],
+            ["governorate_id" => "50", "name" => ["ar" => "ساندويل", "en" => "Sandwell"]],
+            ["governorate_id" => "50", "name" => ["ar" => "وولفرهامبتون", "en" => "Wolverhampton"]],
+            ["governorate_id" => "50", "name" => ["ar" => "دادلي", "en" => "Dudley"]],
+
+            # United Arab Emirates
+            ["governorate_id" => "51", "name" => ["ar" => "البرشاء", "en" => "Al Barsha"]],
+            ["governorate_id" => "51", "name" => ["ar" => "المارينا", "en" => "Dubai Marina"]],
+            ["governorate_id" => "51", "name" => ["ar" => "جبل علي", "en" => "Jebel Ali"]],
+            ["governorate_id" => "51", "name" => ["ar" => "السطوة", "en" => "Al Satwa"]],
+
+            ["governorate_id" => "52", "name" => ["ar" => "جزيرة ياس", "en" => "Yas Island"]],
+            ["governorate_id" => "52", "name" => ["ar" => "الريم", "en" => "Al Reem"]],
+            ["governorate_id" => "52", "name" => ["ar" => "الباهية", "en" => "Al Bahia"]],
+            ["governorate_id" => "52", "name" => ["ar" => "الشامخة", "en" => "Al Shamkha"]],
+
+            ["governorate_id" => "53", "name" => ["ar" => "القصباء", "en" => "Al Qasba"]],
+            ["governorate_id" => "53", "name" => ["ar" => "النهدة", "en" => "Al Nahda"]],
+            ["governorate_id" => "53", "name" => ["ar" => "المجاز", "en" => "Al Majaz"]],
+            ["governorate_id" => "53", "name" => ["ar" => "الخوانيج", "en" => "Al Khawaneej"]],
+
+             # Oman
+            ["governorate_id" => "57", "name" => ["ar" => "مسقط", "en" => "Muscat"]],
+            ["governorate_id" => "57", "name" => ["ar" => "صلالة", "en" => "Salalah"]],
+            ["governorate_id" => "57", "name" => ["ar" => "نزوى", "en" => "Nizwa"]],
+            ["governorate_id" => "57", "name" => ["ar" => "صحار", "en" => "Sohar"]],
+
+            ["governorate_id" => "58", "name" => ["ar" => "صور", "en" => "Sur"]],
+            ["governorate_id" => "58", "name" => ["ar" => "بهلاء", "en" => "Bahla"]],
+            ["governorate_id" => "58", "name" => ["ar" => "المصنعة", "en" => "Al Masnaah"]],
+            ["governorate_id" => "58", "name" => ["ar" => "عبري", "en" => "Ibri"]],
+
+            ["governorate_id" => "59", "name" => ["ar" => "دبا", "en" => "Dibba"]],
+            ["governorate_id" => "59", "name" => ["ar" => "خصب", "en" => "Khasab"]],
+            ["governorate_id" => "59", "name" => ["ar" => "ينقل", "en" => "Yanqul"]],
+            ["governorate_id" => "59", "name" => ["ar" => "وادي بني خالد", "en" => "Wadi Bani Khalid"]],
+
+            # United States
+            ["governorate_id" => "54", "name" => ["ar" => "نيويورك", "en" => "New York"]],
+            ["governorate_id" => "54", "name" => ["ar" => "لوس أنجلوس", "en" => "Los Angeles"]],
+            ["governorate_id" => "54", "name" => ["ar" => "شيكاغو", "en" => "Chicago"]],
+            ["governorate_id" => "54", "name" => ["ar" => "هيوستن", "en" => "Houston"]],
+
+            ["governorate_id" => "55", "name" => ["ar" => "فينيكس", "en" => "Phoenix"]],
+            ["governorate_id" => "55", "name" => ["ar" => "فيلادلفيا", "en" => "Philadelphia"]],
+            ["governorate_id" => "55", "name" => ["ar" => "سان أنطونيو", "en" => "San Antonio"]],
+            ["governorate_id" => "55", "name" => ["ar" => "سان دييغو", "en" => "San Diego"]],
+
+            ["governorate_id" => "56", "name" => ["ar" => "دالاس", "en" => "Dallas"]],
+            ["governorate_id" => "56", "name" => ["ar" => "سان خوسيه", "en" => "San Jose"]],
+            ["governorate_id" => "56", "name" => ["ar" => "أوستن", "en" => "Austin"]],
+            ["governorate_id" => "56", "name" => ["ar" => "جاكسونفيل", "en" => "Jacksonville"]],
+
+            ["governorate_id" => "55", "name" => ["ar" => "فورت وورث", "en" => "Fort Worth"]],
+            ["governorate_id" => "55", "name" => ["ar" => "كولومبوس", "en" => "Columbus"]],
+            ["governorate_id" => "55", "name" => ["ar" => "سان فرانسيسكو", "en" => "San Francisco"]],
+            ["governorate_id" => "55", "name" => ["ar" => "شارلوت", "en" => "Charlotte"]],
 
         ];
         foreach ($cities as $city) {

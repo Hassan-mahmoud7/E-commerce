@@ -243,6 +243,7 @@ return [
         'edit'  => 'تعديل',
         'permission'  => 'إذن',
         'status'   => 'حالة',
+        'price'   => 'السعر',
 
     ],
 ];

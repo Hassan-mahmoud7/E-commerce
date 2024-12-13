@@ -32,12 +32,43 @@ return [
     'admin_confirm_password' => 'تأكيد كلمة المرور',
     'admin_successfully' => 'تم انشاء المسؤل بنجاح',
 
+    'shipping_management' => 'ادارة الشحن',
+    #country
+    'countries' => 'الدول',
+    'country' => 'الدولة',
+    'country_dashboard' => 'لوحة معلومات الدول',
+    'country_status' => 'حالة الدولة',
+    'country_name' => 'اسم الدولة',
+    'country_count_governorates' => 'عدد المحافظات',
+    'country_phone_code' => 'رقم كود الدولة',
     
     
+    #governorate
+    'governorates' => 'المحافظات',
+    'governorate' => 'المحافظة',
+    'governorate_dashboard' => 'لوحة معلومات المحافظات',
+    'governorate_name' => 'اسم المحافظة',
+    'governorate_count_cities' => 'عدد المدن',
+    'governorate_status' => 'حالة المحافظة',
+    'shipping_price' => 'سعر الشحن',
+    'enter_shipping_price' => 'ادخل سعر الشحن',
+    'price_change' => 'تغير السعر',
+
+
     
+    #city
+    'cities' => 'المدن',
+    'city' => 'المدينة',
+    'city_dashboard' => 'لوحة معلومات المدن',
+    'city_name' => 'اسم المدينة',
+    'city_status' => 'حالة المدينة',
+    
+    
+    'count_of_users' => 'عدد المستخدمين',
     'created' => 'تم انشاء',
     'email' => 'البريد الالكترونى',
     'create' => 'انشاء',
+    'change' => 'تغير',
     'edit' => 'تعديل',
     'delete' => 'حذف',
     'warning' => 'تحذير',
@@ -48,9 +79,11 @@ return [
     'active' => 'نشط',
     'not_active' => 'غير فعال',
     
+
+    'manage_status' => 'ادارة الحالة',
     'status_active_updated_successfully' => 'تم التفعيل بنجاح',
     'status_not_active_updated_successfully' => 'تم الحظر بنجاح',
-    'updated_successfully' => 'تم تعديل  بنجاح',
+    'updated_successfully' => 'تم تعديل بنجاح',
     'deleted_successfully' => 'تم حذف بنجاح',
     'created_successfully' => 'تم انشاء بنجاح',
     'error_message' => 'فشلت العملية . حاول فى وقت لاحق!',

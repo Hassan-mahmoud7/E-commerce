@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('password');
             $table->foreignId('city_id')->constrained('cities')->cascadeOnDelete();
+            $table->foreignId('country_id')->constrained('countries')->cascadeOnDelete();
+            $table->foreignId('governorate_id')->constrained('governorates')->cascadeOnDelete();
             $table->rememberToken();
             $table->timestamps();
         });

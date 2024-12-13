@@ -245,6 +245,8 @@ return [
         'edit'  => 'Edit',
         'permission'  => 'permission',
         'status'   => 'Status',
+        'price'   => 'Price',
+
 
     ],  
 

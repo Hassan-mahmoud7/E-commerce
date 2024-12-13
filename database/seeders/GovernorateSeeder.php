@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Governorate;
+use App\Models\ShippingGovernorates;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -294,9 +295,110 @@ class GovernorateSeeder extends Seeder
                 "name" => ['ar' => "نجران", 'en' => "Najran"],
                 "country_id" => 2
             ],
+            # India
+            [
+                "id" => "42",
+                "name" => ["ar" => "ماهاراشترا", "en" => "Maharashtra"],
+                "country_id" => 3
+            ],
+            [
+                "id" => "43",
+                "name" => ["ar" => "كارناتاكا", "en" => "Karnataka"],
+                "country_id" => 3
+            ],
+            [
+                "id" => "44",
+                "name" => ["ar" => "تاميل نادو", "en" => "Tamil Nadu"],
+                "country_id" => 3
+            ],
+            # Indonesia
+            [
+                "id" => "45",
+                "name" => ["ar" => "جاكرتا", "en" => "Jakarta"],
+                "country_id" => 4
+            ],
+            [
+                "id" => "46",
+                "name" => ["ar" => "بالي", "en" => "Bali"],
+                "country_id" => 4
+            ],
+            [
+                "id" => "47",
+                "name" => ["ar" => "يوجياكارتا", "en" => "Yogyakarta"],
+                "country_id" => 4
+            ],
+            # United Kingdom
+            [
+                "id" => "48",
+                "name" => ["ar" => "لندن", "en" => "London"],
+                "country_id" => 5
+            ],
+            [
+                "id" => "49",
+                "name" => ["ar" => "مانشستر", "en" => "Manchester"],
+                "country_id" => 5
+            ],
+            [
+                "id" => "50",
+                "name" => ["ar" => "برمنغهام", "en" => "Birmingham"],
+                "country_id" => 5
+            ],
+            # United Arab Emirates
+            [
+                "id" => "51",
+                "name" => ["ar" => "دبي", "en" => "Dubai"],
+                "country_id" => 6
+            ],
+            [
+                "id" => "52",
+                "name" => ["ar" => "أبو ظبي", "en" => "Abu Dhabi"],
+                "country_id" => 6
+            ],
+            [
+                "id" => "53",
+                "name" => ["ar" => "الشارقة", "en" => "Sharjah"],
+                "country_id" => 6
+            ],
+            # United States
+            [
+                "id" => "54",
+                "name" => ["ar" => "كاليفورنيا", "en" => "California"],
+                "country_id" => 7
+            ],
+            [
+                "id" => "55",
+                "name" => ["ar" => "نيويورك", "en" => "New York"],
+                "country_id" => 7
+            ],
+            [
+                "id" => "56",
+                "name" => ["ar" => "فلوريدا", "en" => "Florida"],
+                "country_id" => 7
+            ], 
+            # Oman
+            [
+                "id" => "57",
+                "name" => ["ar" => "مسقط", "en" => "Muscat"],
+                "country_id" => 8
+            ],
+            [
+                "id" => "58",
+                "name" => ["ar" => "صلالة", "en" => "Salalah"],
+                "country_id" => 8
+            ],
+            [
+                "id" => "59",
+                "name" => ["ar" => "نزوى", "en" => "Nizwa"],
+                "country_id" => 8
+            ],
         ];
         foreach ($governorates as  $governorate) {
-            Governorate::create($governorate);
+           $gover =  Governorate::create($governorate);
+
+           ShippingGovernorates::create([
+            'price' => 100,
+            'governorate_id' => $gover->id,
+           ]);
         }
     }
 }

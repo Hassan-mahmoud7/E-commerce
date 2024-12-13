@@ -33,7 +33,36 @@ return [
     'admin_confirm_password' => 'Password Confirmation',
     'admin_successfully' => 'Admin created successfully',
 
+    'shipping_management' => 'Shipping Management',
+    #country
+    'countries' => 'countries',
+    'country' => 'Country',
+    'country_dashboard' => 'Country Dashboard',
+    'country_status' => 'Status Country',
+    'country_name' => 'Country Name',
+    'country_count_governorates' => 'Number of governorates',
+    'country_phone_code' => 'Phone Code',
     
+    #governorate
+    'governorates' => 'Governorates',
+    'governorate' => 'Governorate',
+    'governorate_dashboard' => 'Governorate Dashboard',
+    'governorate_status' => 'Status Governorate',
+    'governorate_count_cities' => 'Number of Cities',
+    'governorate_name' => 'Governorate Name',
+    'shipping_price' => 'Shipping price',
+    'enter_shipping_price' => 'Enter Shipping Price',
+    'price_change' => 'Price change',
+    
+    #cities
+    'cities' => 'Cities',
+    'city' => 'City',
+    'city_dashboard' => 'City Dashboard',
+    'city_status' => 'Status City',
+    'city_name' => 'City Name',
+    
+    
+    'count_of_users' => 'Number of Users',
     'created' => 'Created',
     'email' => 'Email',
     'create' => 'Create',
@@ -44,9 +73,10 @@ return [
     'cancel' => 'Cancel',
     'delete_msg' => 'Are you sure to delete?',
     'delete' => 'Delete',
-     'active' => 'Active',
+    'active' => 'Active',
     'not_active' => 'Not Active',
-    
+
+    'manage_status' => 'Manage Status',
     'status_active_updated_successfully' => 'Activated successfully',
     'status_not_active_updated_successfully' => 'Blocked successfully',
     'updated_successfully' => 'Updated Successfully',
@@ -54,6 +84,6 @@ return [
     'created_successfully' => 'Created Successfully',
     'error_message' => 'The operation failed. Try again later!',
 
-    
+
 
 ];

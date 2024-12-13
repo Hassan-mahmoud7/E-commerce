@@ -23,5 +23,6 @@ return [
         'faqs' => 'Manage FAQs',
         'comments' => 'Manage Comments',
         'socials' => 'Manage Socials',
-        'menus' => 'Manage Menus',   
+        'menus' => 'Manage Menus',  
+        'global_shipping' => 'Manage Shipping', 
 ];
