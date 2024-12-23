@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.auth')
-@section('title','reset')
+@section('title', __('auth.reset_password'))
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">

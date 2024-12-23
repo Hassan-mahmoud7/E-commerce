@@ -1,0 +1,1 @@
+<img src="{{ asset($brand->logo) }}" alt="{{ $brand->name }}" loading="lazy" width="40px" height="40px" >

@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.app')
-@section('title', 'Cities')
+@section('title', __('dashboard.governorates'))
 @section('content')
     <!-- Bordered striped start -->
     <div class="app-content content">
@@ -67,8 +67,8 @@
                                                     <th scope="row">{{ $loop->iteration }}</th>
                                                     <td><a class="" href="{{ route('dashboard.cities.by.governorate', $governorate->id) }}">{{ $governorate->name }} <i class="flag-icon flag-icon-{{ $governorate->flag_code }}"></i></a></td>
                                                     <td>{{ $governorate->country->name }} <i class="flag-icon flag-icon-{{ $governorate->country->flag_code }}"></i></td>
-                                                    <td><div class="badge badge-pill badge-border border-purple purple">{{ $governorate->cities->count() }}</div></td>
-                                                    <td><div class="badge badge-pill badge-border border-success success">{{ $governorate->users->count() }}</div></td>
+                                                    <td><div class="badge badge-pill badge-border border-purple purple">{{ $governorate->cities_count }}</div></td>
+                                                    <td><div class="badge badge-pill badge-border border-success success">{{ $governorate->users_count }}</div></td>
                                                     <td ><div id="status_{{ $governorate->id }}" class="badge badge-pill badge-border border-{{ $governorate->status == 1 ? 'success success' : 'danger danger' }}"> {{ $governorate->status == 1 ? __('dashboard.active') : __('dashboard.not_active') }}</div></td>
                                                     <td>   
                                                     {{-- status --}}
@@ -104,7 +104,13 @@
     
     <!-- Bordered striped end -->
 @endsection
+@push('css')
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/tables/datatable/datatables.min.css">
+@endpush
     @push('js')
+    <script src="{{ asset('assets/dashboard/') }}/js/scripts/tables/components/table-components.js" type="text/javascript"></script>
+    <script src="{{ asset('assets/dashboard/vendors/js/tables/datatable/datatables.min.js') }}" type="text/javascript"></script>
+ <script src="{{ asset('assets/dashboard/js/scripts/tables/datatables/datatable-basic.js') }}" type="text/javascript"></script>
     {{-- Change Price --}}
     <script>
         $(document).on('submit','.update_shipping_price', function (e) {
@@ -126,9 +132,7 @@
                         
                         $('#price_' + response.data.id).empty();
                         $('#price_' + response.data.id).text(response.data.shipping_price.price);
-                        
-                        console.log(response);
-                        
+                                                
                         setTimeout(function () {
                             $('.tostar_success').fadeOut(function () {
                                 $(this).attr('hidden', 'hidden').text('');

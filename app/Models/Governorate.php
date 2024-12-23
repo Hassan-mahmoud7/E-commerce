@@ -9,6 +9,7 @@ use Spatie\Translatable\HasTranslations;
 class Governorate extends Model
 {
     use HasTranslations;
+    protected $table = 'governorates';
     public $translatable = ['name'];
     protected $fillable = ['name','status','country_id'];
     public $timestamps = false;

@@ -43,6 +43,27 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'brands' => [
+            'driver' => 'local',
+            'root' => public_path('/assets/img/uploads/brands'),
+            'url' => env('APP_URL').'/assets/img/uploads/brands',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+        'products' => [
+            'driver' => 'local',
+            'root' => public_path('/assets/img/uploads/products'),
+            'url' => env('APP_URL').'/assets/img/uploads/products',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+        'users' => [
+            'driver' => 'local',
+            'root' => public_path('/assets/img/uploads/users'),
+            'url' => env('APP_URL').'/assets/img/uploads/users',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
 
         's3' => [
             'driver' => 's3',

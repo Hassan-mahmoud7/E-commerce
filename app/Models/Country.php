@@ -9,6 +9,7 @@ use Ramsey\Uuid\Codec\TimestampLastCombCodec;
 class Country extends Model
 {
     use HasTranslations;
+    protected $table = 'countries';
     public $translatable = ['name'];
     protected $fillable = ['name','phone_code','flag_code','status'];
     public $timestamps = false;

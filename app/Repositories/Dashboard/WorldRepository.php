@@ -11,7 +11,7 @@ class WorldRepository
     # country
     public function getCountries()
     {
-        $countries = Country::select('id','name','phone_code','flag_code','status')->get();
+        $countries = Country::withCount(['governorates' , 'users'])->get();
         return $countries;
     }
     public function getCountry($id)
@@ -22,13 +22,14 @@ class WorldRepository
     # Governorate
     public function getGovernoratesByCountry($country)
     {
-        $governorates = $country->governorates;
+        $governorates = $country->governorates()->with(['country' , 'shippingPrice'])->withCount(['cities' , 'users'])->get();
         return $governorates;
     }
     public function getGovernorates()
     {
-        $Governorates = Governorate::select('id','name','status','country_id')->get();
-        return $Governorates;
+        $governorates = Governorate::with(['country' , 'shippingPrice'])->withCount(['cities' , 'users'])->get();
+
+        return $governorates;
     }
     public function getGovernorate($id)
     {
@@ -39,12 +40,13 @@ class WorldRepository
     # City
     public function getCitiesByGovernorate($governorate)
     {
-        $cities = $governorate->cities;
+        $cities = $governorate->cities()->with(['governorate'])->withCount(['users'])->get();
         return $cities;
     }
     public function getCities()
     {
-        $Cities = City::select('id','name','status','governorate_id')->get();
+
+        $Cities = City::with(['governorate'])->withCount(['users'])->get();
         return $Cities;
     }
     public function getCity($id)

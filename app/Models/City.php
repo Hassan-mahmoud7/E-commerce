@@ -8,6 +8,7 @@ use Spatie\Translatable\HasTranslations;
 class City extends Model
 {
     use HasTranslations;
+    public $table = 'cities';
     public $translatable = ['name'];
     protected $fillable = ['name','status','governorate_id'];
     public $timestamps = false;

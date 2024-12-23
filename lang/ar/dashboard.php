@@ -32,7 +32,6 @@ return [
     'admin_confirm_password' => 'تأكيد كلمة المرور',
     'admin_successfully' => 'تم انشاء المسؤل بنجاح',
 
-    'shipping_management' => 'ادارة الشحن',
     #country
     'countries' => 'الدول',
     'country' => 'الدولة',
@@ -42,7 +41,7 @@ return [
     'country_count_governorates' => 'عدد المحافظات',
     'country_phone_code' => 'رقم كود الدولة',
     
-    
+    'shipping_management' => 'ادارة الشحن',
     #governorate
     'governorates' => 'المحافظات',
     'governorate' => 'المحافظة',
@@ -54,8 +53,6 @@ return [
     'enter_shipping_price' => 'ادخل سعر الشحن',
     'price_change' => 'تغير السعر',
 
-
-    
     #city
     'cities' => 'المدن',
     'city' => 'المدينة',
@@ -63,7 +60,44 @@ return [
     'city_name' => 'اسم المدينة',
     'city_status' => 'حالة المدينة',
     
+    #category
+    'categories' => 'الاقسام',
+    'category' => 'القسم',
+    'category_dashboard' => 'لوحة معلومات الاقسام',
+    'category_name' => 'اسم القسم',
+    'category_name_ar' => 'ادخل اسم القسم بالعربى',
+    'category_name_en' => 'ادخل اسم القسم بالانجليزى',
+    'category_status' => 'حالة القسم',
+    'category_slug' => 'العلامة التوضيحية',
+    'category_parent' => 'القسم الأصلي',
+    'create_category' => 'انشاء قسم جديدة',
+    'edit_category' => 'تعديل على القسم',
+    'delete_category' => 'حذف القسم',
+    'category_description' => 'وصف القسم',
+
+    #brand
+    'brands' => 'العلامات التجارية',
+    'brand' => 'العلامة التجارية',
+    'brand_dashboard' => 'لوحة معلومات العلامات التجارية',
+    'brand_slug' => 'العلامة التوضيحية',
+    'brand_logo' => 'الشعار',
+    'brand_name' => 'اسم العلامة التجارية',
+    'brand_name_ar_text' => 'ادخل اسم العلاممة التجارية بالعربى',
+    'brand_name_ar' => 'اسم العلاممة التجارية بالعربى',
+    'brand_name_en_text' => 'ادخل اسم العلاممة التجارية بالانجليزى',
+    'brand_name_en' => 'اسم العلاممة التجارية بالانجليزى',
+    'brand_status' => 'حالة العلامة التجارية',
+    'create_brand' => 'انشاء علامة تجارية جديدة',
+    'edit_brand' => 'تعديل على العلامة التجارية',
+    'delete_brand' => 'حذف العلامة التجارية',
     
+    #product
+    'products' => 'المنتجات',
+    'product' => 'المنتج',
+    'product_dashboard' => 'لوحة معلومات المنتجات',
+    'product_count' => 'عدد المنتجات',
+    
+    'not_found' => 'لا يوجد',
     'count_of_users' => 'عدد المستخدمين',
     'created' => 'تم انشاء',
     'email' => 'البريد الالكترونى',
@@ -74,8 +108,14 @@ return [
     'warning' => 'تحذير',
     'save' => 'حفظ',
     'cancel' => 'يلغي',
+    'canceled' => 'تم الغاء',
+    'cancel_msg' => 'ملفك الخيالي آمن :)',
+    'cancel_text' => 'لا، إلغاء!',
     'delete_msg' => 'هل أنت متأكد من الحذف؟',
-    'delete' => 'حذف',
+    'alert_delete_text' => 'لا يمكنك التراجع عن هذا الإجراء!',
+    'delete' => '!حذف',
+    'delete_success' => 'تم الحذف بنجاح.',
+    'delete_text' => 'نعم، احذفه!',
     'active' => 'نشط',
     'not_active' => 'غير فعال',
     

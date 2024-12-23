@@ -10,6 +10,7 @@ class Role extends Model
 {
     use HasTranslations;
 
+    public $table = 'roles';
     protected $fillable = ['role', 'permission'];
     public $translatable = ['role'];
 

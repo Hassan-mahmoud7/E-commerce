@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.app')
-@section('title', 'Admins')
+@section('title',  __('dashboard.admins'))
 @section('content')
     <!-- Bordered striped start -->
     <div class="app-content content">
@@ -85,7 +85,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                   @include('dashboard.admins.delete-model')
+                                                   @include('dashboard.admins._delete-model')
                                              </td>
                                         </tr>              
                                         @empty

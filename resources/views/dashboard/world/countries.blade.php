@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.app')
-@section('title', 'Countries')
+@section('title', __('dashboard.countries'))
 @section('content')
     <!-- Bordered striped start -->
     <div class="app-content content">
@@ -72,8 +72,8 @@
                                                   </div>
                                                 </fieldset>
                                               </div></td>
-                                            <td><div class="badge badge-pill badge-border border-success success">{{ $country->governorates->count() }}</div></td>
-                                            <td><div class="badge badge-pill badge-border border-primary primary">{{ $country->users->count() }}</div></td>
+                                            <td><div class="badge badge-pill badge-border border-success success">{{ $country->governorates_count }}</div></td>
+                                            <td><div class="badge badge-pill badge-border border-primary primary">{{ $country->users_count }}</div></td>
                                             <td ><div id="status_{{ $country->id }}" class="badge badge-pill badge-border border-{{ $country->status == 1 ? 'success success' : 'danger danger' }}"> {{ $country->status == 1 ? __('dashboard.active') : __('dashboard.not_active') }}</div></td>
                                             <td>   
                                              {{-- status --}}
@@ -105,7 +105,13 @@
     
     <!-- Bordered striped end -->
 @endsection
-    @push('js')
+@push('css')
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/tables/datatable/datatables.min.css">
+@endpush
+@push('js')
+    <script src="{{ asset('assets/dashboard/') }}/js/scripts/tables/components/table-components.js" type="text/javascript"></script>
+    <script src="{{ asset('assets/dashboard/vendors/js/tables/datatable/datatables.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/dashboard/js/scripts/tables/datatables/datatable-basic.js') }}" type="text/javascript"></script>
         <script>
             $(document).on('change' , '.change_status' , function () {
                 var id = $(this).attr('country-id');

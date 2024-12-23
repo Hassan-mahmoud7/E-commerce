@@ -31,7 +31,8 @@
             @endcan
             @can('admins')
                 <li class=" nav-item"><a href="#"><i class="la la-black-tie"></i><span class="menu-title"
-                            data-i18n="nav.templates.main">{{ __('dashboard.admins') }}</span></a>
+                            data-i18n="nav.templates.main">{{ __('dashboard.admins') }}</span><span
+                            class="badge badge badge-info badge-pill float-right mr-2">{{ $admins_count }}</span></a>
                     <ul class="menu-content">                   
                                 <li><a class="menu-item" href="{{ route('dashboard.admins.index') }}"
                                         data-i18n="nav.templates.vert.classic_menu"><i class="ft-eye"></i> {{ __('dashboard.admin_dashboard') }}</a>
@@ -57,6 +58,32 @@
                                         data-i18n="nav.templates.vert.classic_menu"><i class="la la-building"></i> {{ __('dashboard.city_dashboard') }}</a>
                                 </li>
 
+                        </ul>
+                </li> 
+               @endcan
+               @can('categories')
+               <li class=" nav-item"><a href="#"><i class="la la-bars"></i><span class="menu-title"
+                        data-i18n="nav.templates.main">{{ __('dashboard.categories') }}</span><span
+                        class="badge badge badge-info badge-pill float-right mr-2">{{ $categories_count }}</span></a>
+                        <ul class="menu-content">                   
+                                <li><a class="menu-item" href="{{ route('dashboard.categories.index') }}"
+                                        data-i18n="nav.templates.vert.classic_menu"><i class="la la-bars"></i> {{ __('dashboard.category_dashboard') }}</a>
+                                </li>
+                                <li><a class="menu-item" href="{{ route('dashboard.categories.create') }}"
+                                        data-i18n="nav.templates.vert.classic_menu"><i class="ft-edit"></i> {{ __('dashboard.create_category') }}</a>
+                                </li>
+                        </ul>
+                </li> 
+               @endcan
+               @can('brands')
+               <li class=" nav-item"><a href="#"><i class="la la-copyright"></i><span class="menu-title"
+                        data-i18n="nav.templates.main">{{ __('dashboard.brands') }}</span><span
+                        class="badge badge badge-info badge-pill float-right mr-2">{{ $brands_count }}</span></a>
+                        <ul class="menu-content">                   
+                                <li><a class="menu-item" href="{{ route('dashboard.brands.index') }}"
+                                        data-i18n="nav.templates.vert.classic_menu"><i class="la la-copyright"></i> {{ __('dashboard.brand_dashboard') }}</a>
+                                </li>
+                                
                         </ul>
                 </li> 
                @endcan

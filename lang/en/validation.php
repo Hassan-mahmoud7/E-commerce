@@ -233,7 +233,7 @@ return [
         'rate'                  => 'Rate',
         'id'                    => 'ID',
         'code'                  => 'Code',
-        'token'                  => 'Code',
+        'token'                 => 'Code',
         'STC'                   => 'STC',
         'name.ar'               => 'Name in Arabic',
         'name.en'               => 'Name in English',
@@ -242,10 +242,12 @@ return [
         'subcategory_id'        => 'Subcategory ID',
         'Code'                  => 'Code',
         'SubCat_ID'             => 'Subcategory ID',
-        'edit'  => 'Edit',
-        'permission'  => 'permission',
-        'status'   => 'Status',
-        'price'   => 'Price',
+        'edit'                  => 'Edit',
+        'permission'            => 'permission',
+        'status'                => 'Status',
+        'price'                 => 'Price',
+        'logo'                  => 'Logo',
+
 
 
     ],  

@@ -30,7 +30,7 @@ class RoleService
     }
     public function updateRole($request, $id)
     {
-        $role = self::getRoleById($id);
+        $role = $this->getRoleById($id);
          if (!$role) {
             return false;
         }
@@ -39,7 +39,7 @@ class RoleService
     }
     public function deleteRole($id)
     {
-        $role = self::getRoleById($id);
+        $role = $this->getRoleById($id);
         if ($role->admins->count() > 0 || !$role) {
             return false;
         }

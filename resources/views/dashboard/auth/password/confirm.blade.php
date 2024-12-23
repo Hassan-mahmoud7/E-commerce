@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.auth')
-@section('title','confirm')
+@section('title', __('auth.confirm'))
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">

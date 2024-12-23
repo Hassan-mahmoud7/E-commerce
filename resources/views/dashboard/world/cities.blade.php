@@ -1,5 +1,5 @@
     @extends('layouts.dashboard.app')
-    @section('title', 'Cities')
+    @section('title', __('dashboard.cities'))
     @section('content')
         <!-- Bordered striped start -->
         <div class="app-content content">
@@ -22,7 +22,7 @@
                     </div>
                     @include('dashboard.includes.button-header')
                 </div>
-                <section id="configuration">
+                {{-- <section id="configuration"> --}}
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -64,7 +64,7 @@
                                                 <th scope="row">{{ $loop->iteration }}</th>
                                                 <td>{{ $city->name }}</td>
                                                 <td><div class="badge badge-pill badge-border border-info text-dark ">{{ $city->governorate->name }}</div></td>
-                                                <td><div class="badge badge-pill badge-border border-primary primary">{{ $city->users->count() }}</div></td>
+                                                <td><div class="badge badge-pill badge-border border-primary primary">{{ $city->users_count }}</div></td>
                                                 <td ><div id="status_{{ $city->id }}" class="badge badge-pill badge-border border-{{ $city->status == 1 ? 'success success' : 'danger danger' }}"> {{ $city->status == 1 ? __('dashboard.active') : __('dashboard.not_active') }}</div></td>
                                                 <td>   
                                                 {{-- status --}}
@@ -80,7 +80,18 @@
                                             </tr>                     
                                             @endforelse
                                         </tbody>
-                                    </table>   
+                                        <tfoot>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">{{ __('dashboard.city_name') }}</th>
+                                                    <th scope="col">{{ __('dashboard.governorate_name') }}</th>
+                                                    <th scope="col">{{ __('dashboard.count_of_users') }}</th>
+                                                    <th scope="col">{{ __('dashboard.city_status') }}</th>
+                                                    <th scope="col">{{ __('dashboard.manage_status') }}</th>
+    
+                                                </tr>
+                                        </tfoot> 
+                                    </table>  
                                         <div class="col-12 float-md-right p-3">                           
                                             {{-- {{ $city->links() }} --}}
                                         </div>
@@ -90,13 +101,19 @@
                         </div>
                     </div>
                 </div>
-                </section>
+                {{-- </section> --}}
             </div>
         </div>
         
         <!-- Bordered striped end -->
     @endsection
+    @push('css')
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/tables/datatable/datatables.min.css">
+    @endpush
         @push('js')
+        <script src="{{ asset('assets/dashboard/') }}/js/scripts/tables/components/table-components.js" type="text/javascript"></script>
+        <script src="{{ asset('assets/dashboard/vendors/js/tables/datatable/datatables.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/dashboard/js/scripts/tables/datatables/datatable-basic.js') }}" type="text/javascript"></script>
             <script>
                 $(document).on('change' , '.change_status' , function () {
                     var id = $(this).attr('city-id');

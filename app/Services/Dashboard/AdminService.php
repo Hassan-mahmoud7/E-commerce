@@ -3,6 +3,7 @@
 namespace App\Services\Dashboard;
 
 use App\Models\Admin;
+use Illuminate\Support\Facades\Cache;
 use App\Repositories\Dashboard\AdminRepository;
 
 class AdminService
@@ -21,7 +22,7 @@ class AdminService
     {
         $admin = $this->adminRepository->getAdmin($id);
         if (!$admin) {
-            return abort(404);
+             abort(404);
         }
         return $admin;
     }
@@ -32,11 +33,12 @@ class AdminService
         if (!$admin) {
             return false;
         }
+        $this->adminCache();
         return $admin;
     }
     public function updateAdmin($id, $data)
     {
-        $admin = $this->adminRepository->getAdmin($id);
+        $admin = $this->getAdmin($id);
         if (!$admin) {
             return abort(404);
         }
@@ -51,11 +53,12 @@ class AdminService
     }
     public function destroyAdmin($id)
     {
-        $admin = $this->adminRepository->getAdmin($id);
+        $admin = $this->getAdmin($id);
         if (!$admin) {
             return abort(404);
         }
         $admin = $this->adminRepository->destroyAdmin($admin);
+        $this->adminCache();
         if (!$admin) {
             return false;
         }
@@ -63,7 +66,7 @@ class AdminService
     }
     public function changeStatus($id)
     {
-        $admin = $this->adminRepository->getAdmin($id);
+        $admin = $this->getAdmin($id);
         if (!$admin) {
             return abort(404);
         }
@@ -74,5 +77,9 @@ class AdminService
             $this->adminRepository->changeStatus($admin, 0);
             return 2;
         }
+    }
+    public function adminCache ()
+    {
+        Cache::forget('categories_count');
     }
 }

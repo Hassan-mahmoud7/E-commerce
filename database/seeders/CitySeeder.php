@@ -14,6 +14,9 @@ class CitySeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        City::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         // DB::table('cities')->truncate();
 
         $cities = [

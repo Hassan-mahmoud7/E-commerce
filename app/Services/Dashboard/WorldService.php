@@ -24,7 +24,7 @@ class WorldService
     }
     public function changeStatusCountry($id)
     {
-        $country = self::getCountry($id);
+        $country = $this->getCountry($id);
         return self::changeStatusService($country);
     }
    
@@ -45,7 +45,7 @@ class WorldService
     }
     public function changeStatusGovernorate($id)
     {
-        $governorate = self::getGovernorate($id);
+        $governorate = $this->getGovernorate($id);
         return self::changeStatusService($governorate);
     }
 
@@ -66,7 +66,7 @@ class WorldService
     }
     public function changeStatusCity($id)
     {
-        $city = self::getCity($id);
+        $city = $this->getCity($id);
         return self::changeStatusService($city);
     }
     # abort method
@@ -90,7 +90,7 @@ class WorldService
     }
     public function changeShippingPrice($request) 
     {
-        $governorate = self::getGovernorate($request->gover_id);
+        $governorate = $this->getGovernorate($request->gover_id);
         $governorate = $this->worldRepository->changeShippingPrice($governorate , $request->price);
         if (!$governorate) {
             return false;

@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.app')
-@section('title', 'Edit')
+@section('title', __('dashboard.edit_role'))
 @section('content')
 <div class="app-content content">
     <div class="content-wrapper">

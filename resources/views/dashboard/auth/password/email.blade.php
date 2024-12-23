@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.auth')
-@section('title', 'email')
+@section('title', __('auth.email'))
 @section('content')
     <div class="app-content content">
         <div class="content-wrapper">
