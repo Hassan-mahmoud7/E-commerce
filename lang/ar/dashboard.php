@@ -91,6 +91,22 @@ return [
     'edit_brand' => 'تعديل على العلامة التجارية',
     'delete_brand' => 'حذف العلامة التجارية',
     
+    #coupons
+    'coupons' => 'الكوبونات',
+    'coupon' => 'الكوبون',
+    'coupon_dashboard' => 'لوحة معلومات الكوبونات',
+    'coupon_code' => 'كود الكوبون',
+    'coupon_discount_percentage' => 'نسبة الخصم',
+    'coupon_amount' => 'قيمة الكوبون',
+    'coupon_start_date' => 'تاريخ بدء الكوبون',
+    'coupon_end_date' => 'تاريخ انتهاء الكوبون',
+    'coupon_limit' => 'الحدود الكوبون',
+    'coupon_time_used' => 'كم مرة استخدم',
+    'coupon_status' => 'حالة الكوبون',
+    'create_coupon' => 'انشاء كوبون جديد',
+    'edit_coupon' => 'تعديل على الكوبون',
+    'delete_coupon' => 'حذف الكوبون',
+
     #product
     'products' => 'المنتجات',
     'product' => 'المنتج',

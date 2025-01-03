@@ -70,7 +70,7 @@ class BrandController extends Controller
         if (!$brand) {
             return redirect()->back()->with('error', __('dashboard.error_message'));
         }
-        return redirect()->route('dashboard.brands.index')->with('success', __('dashboard.created_successfully'));
+        return redirect()->route('dashboard.brands.index')->with('success', __('dashboard.updated_successfully'));
     }
 
     /**
@@ -82,7 +82,7 @@ class BrandController extends Controller
         if (!$brand) {
             return redirect()->back()->with('error', __('dashboard.error_message'));
         }
-        return redirect()->back()->with('success', __('dashboard.created_successfully'));
+        return redirect()->back()->with('success', __('dashboard.deleted_successfully'));
     }
     public function changeStatus($id)  
     {

@@ -92,6 +92,22 @@ return [
     'edit_brand' => 'Edit Brand',
     'delete_brand' => 'Delete Brand',
     
+    #coupons
+    'coupons' => 'Coupons',
+    'coupon' => 'Coupon',
+    'coupon_dashboard' => 'Coupon Dashboard',
+    'coupon_code' => 'Coupon Code',
+    'coupon_discount_percentage' => 'Discount Percentage',
+    'coupon_amount' => 'Coupon Amount',
+    'coupon_start_date' => 'Coupon Start Date',
+    'coupon_end_date' => 'Coupon End Date',
+    'coupon_limit' => 'Coupon Limitation',
+    'coupon_time_used' => 'Time Used',
+    'coupon_status' => 'Coupon status',
+    'create_coupon' => 'Create Coupon',
+    'edit_coupon' => 'Edit Coupon',
+    'delete_coupon' => 'Delete Coupon',
+    
     #product
     'product_count' => 'Count Product',
     'products' => 'Products',

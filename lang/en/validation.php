@@ -247,6 +247,10 @@ return [
         'status'                => 'Status',
         'price'                 => 'Price',
         'logo'                  => 'Logo',
+        'start_date'            => 'Start Date',
+        'end_date'              => 'End Data',
+        'limit'                 => 'Limitation',
+        'discount_percentage'   => 'Discount Percentage',
 
 
 

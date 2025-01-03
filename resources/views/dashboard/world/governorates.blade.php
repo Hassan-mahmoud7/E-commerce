@@ -129,7 +129,9 @@
                     if (response.status == 'success') {
                         $('.tostar_success').removeAttr('hidden');
                         $('.tostar_success').text(response.message).show();
-                        
+                        $('#change_price_'+gover_id).removeClass('show').css('display', 'none').attr('aria-hidden', 'true');
+                        $('body').removeClass('modal-open');
+                        $('.modal-backdrop').remove();
                         $('#price_' + response.data.id).empty();
                         $('#price_' + response.data.id).text(response.data.shipping_price.price);
                                                 
@@ -167,7 +169,6 @@
                             $('#status_' + response.data.id).empty();
                             $('#status_' + response.data.id).text("{{  __('dashboard.active') }}");
                             $('#status_' + response.data.id).removeClass('border-danger danger').addClass('border-success success')
-                             
                             setTimeout(function () {
                                 $('.tostar_success').fadeOut(function () {
                                     $(this).attr('hidden', 'hidden').text('');

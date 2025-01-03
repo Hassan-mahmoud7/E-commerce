@@ -245,6 +245,10 @@ return [
         'status'                => 'حالة',
         'price'                 => 'السعر',
         'logo'                  => 'شعار',
+        'start_date'            => 'تاريخ البدء',
+        'end_date'              => 'تاريخ الانتهاء',
+        'limit'                 => 'الحد',
+        'discount_percentage'   => 'نسبة الخصم',
 
     ],
 ];

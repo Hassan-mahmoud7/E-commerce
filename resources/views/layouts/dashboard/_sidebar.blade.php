@@ -87,6 +87,18 @@
                         </ul>
                 </li> 
                @endcan
+               @can('coupons')
+               <li class=" nav-item"><a href="#"><i class="la la-ticket"></i><span class="menu-title"
+                        data-i18n="nav.templates.main">{{ __('dashboard.coupons') }}</span><span
+                        class="badge badge badge-info badge-pill float-right mr-2">{{ $coupons_count }}</span></a>
+                        <ul class="menu-content">                   
+                                <li><a class="menu-item" href="{{ route('dashboard.coupons.index') }}"
+                                        data-i18n="nav.templates.vert.classic_menu"><i class="la la-ticket"></i> {{ __('dashboard.coupon_dashboard') }}</a>
+                                </li>
+                                
+                        </ul>
+                </li> 
+               @endcan
             <li class=" navigation-header">
                 <span data-i18n="nav.category.layouts">Layouts</span><i class="la la-ellipsis-h ft-minus"
                     data-toggle="tooltip" data-placement="right" data-original-title="Layouts"></i>

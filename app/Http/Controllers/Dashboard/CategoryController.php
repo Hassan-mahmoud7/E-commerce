@@ -27,6 +27,9 @@ class CategoryController extends Controller
     public function create()
     {
         $categories = $this->categoryService->getParentCategories();
+        if (!$categories) {
+            return redirect()->back()->with('error', __('dashboard.error_message'));
+        }
         return view('dashboard.categories.create',compact('categories')); 
     }
 

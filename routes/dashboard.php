@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\Auth\ForgotPasswordController;
 use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
 use App\Http\Controllers\Dashboard\BrandController;
 use App\Http\Controllers\Dashboard\CategoryController;
+use App\Http\Controllers\Dashboard\CouponController;
 use App\Http\Controllers\Dashboard\RoleController;
 use App\Http\Controllers\Dashboard\WelcomeController;
 use App\Http\Controllers\Dashboard\WorldController;
@@ -92,6 +93,12 @@ Route::group(
                 Route::resource('brands', BrandController::class);
                 Route::get('brands-all', [BrandController::class, 'getAllBrandsForDatatable'])->name('brands.all');
                 Route::get('brands/{id}/status', [BrandController::class, 'changeStatus'])->name('brands.status');
+            });
+            #################################| Coupons Routes Dashboard |#################################
+            Route::group(['middleware' => 'can:coupons'], function () {
+                Route::resource('coupons', CouponController::class);
+                Route::get('coupons-all', [CouponController::class, 'getAllCouponsForDatatable'])->name('coupons.all');
+                Route::get('coupons/{id}/status', [CouponController::class, 'ChangeStatus'])->name('coupons.status');
             });
         });
     }

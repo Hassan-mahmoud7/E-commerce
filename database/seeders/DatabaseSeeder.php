@@ -25,8 +25,10 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             BrandSeeder::class,
             CategorySeeder::class,
+            CountrySeeder::class,
             GovernorateSeeder::class,
             CitySeeder::class,
+            CouponSeeder::class,
             // UserSeeder::class,
             
         ]);
