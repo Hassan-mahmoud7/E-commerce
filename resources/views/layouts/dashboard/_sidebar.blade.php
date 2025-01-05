@@ -99,11 +99,23 @@
                         </ul>
                 </li> 
                @endcan
+               @can('faqs')
+               <li class=" nav-item"><a href="#"><i class="la la-question"></i><span class="menu-title"
+                        data-i18n="nav.templates.main">{{ __('dashboard.faqs') }}</span><span
+                        class="badge badge badge-info badge-pill float-right mr-2">{{ $faqs_count }}</span></a>
+                        <ul class="menu-content">                   
+                                <li><a class="menu-item" href="{{ route('dashboard.faqs.index') }}"
+                                        data-i18n="nav.templates.vert.classic_menu"><i class="la la-question"></i> {{ __('dashboard.faq_dashboard') }}</a>
+                                </li>
+                                
+                        </ul>
+                </li> 
+               @endcan
             <li class=" navigation-header">
                 <span data-i18n="nav.category.layouts">Layouts</span><i class="la la-ellipsis-h ft-minus"
                     data-toggle="tooltip" data-placement="right" data-original-title="Layouts"></i>
             </li>
-            <li class=" nav-item"><a href="#"><i class="la la-columns"></i><span class="menu-title"
+            {{-- <li class=" nav-item"><a href="#"><i class="la la-columns"></i><span class="menu-title"
                         data-i18n="nav.page_layouts.main">Page layouts</span><span
                         class="badge badge badge-pill badge-danger float-right mr-2">New</span></a>
                 <ul class="menu-content">
@@ -1535,7 +1547,7 @@
                         class="la la-text-height"></i>
                     <span class="menu-title" data-i18n="nav.support_documentation.main">Documentation</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </div>

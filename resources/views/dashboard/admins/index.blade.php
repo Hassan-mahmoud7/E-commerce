@@ -90,7 +90,7 @@
                                         </tr>              
                                         @empty
                                         <tr>
-                                            <td colspan="4" class="text-info">No Data</td>                   
+                                            <td colspan="4" class="text-info">{{ __('dashboard.no_data') }}</td>                   
                                         </tr>                     
                                         @endforelse
                                     </tbody>

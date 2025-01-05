@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             GovernorateSeeder::class,
             CitySeeder::class,
             CouponSeeder::class,
+            FaqSeeder::class,
             // UserSeeder::class,
             
         ]);

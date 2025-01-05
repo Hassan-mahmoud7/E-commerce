@@ -107,7 +107,22 @@ return [
     'create_coupon' => 'Create Coupon',
     'edit_coupon' => 'Edit Coupon',
     'delete_coupon' => 'Delete Coupon',
-    
+
+    #faq
+    'faqs' => 'FAQs',
+    'faq' => 'FAQ',
+    'faq_dashboard' => 'Frequently asked questions Dashboard',
+    'faq_question' => 'Question',
+    'faq_answer_ar' => 'Answer Arabic',
+    'faq_answer_en' => 'Answer English',
+    'faq_question_ar' => 'Question Arabic',
+    'faq_question_en' => 'Question English',
+    'faq_answer' => 'Answer',
+    'faq_status' => 'Status Faq',
+    'create_faq' => 'Create FAQ',
+    'edit_faq' => 'Edit FAQ',
+    'delete_faq' => 'Delete FAQ',
+   
     #product
     'product_count' => 'Count Product',
     'products' => 'Products',
@@ -138,6 +153,9 @@ return [
     'cancel_text' => 'No, cancel!',
     'delete_msg' => 'Are you sure to delete?',
     'alert_delete_text' => "You cannot undo this action!",
+    'no_data' => 'No Data',
+    'enter' => 'Enter',
+
 
     'delete' => 'Delete',
     'active' => 'Active',

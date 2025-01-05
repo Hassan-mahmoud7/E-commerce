@@ -251,6 +251,10 @@ return [
         'end_date'              => 'End Data',
         'limit'                 => 'Limitation',
         'discount_percentage'   => 'Discount Percentage',
+        'answer.ar'             => 'Answer in arabic',
+        'answer.en'             => 'Answer in english',
+        'question.ar'           => 'Question in arabic',
+        'question.en'           => 'Question in english',
 
 
 

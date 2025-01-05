@@ -107,6 +107,21 @@ return [
     'edit_coupon' => 'تعديل على الكوبون',
     'delete_coupon' => 'حذف الكوبون',
 
+    #faq
+    'faqs' => 'الأسئلة الشائعة',
+    'faq' => 'الأسئلة الشائعة',
+    'faq_dashboard' => 'لوحة معلومات الأسئلة الشائعة',
+    'faq_question' => 'السؤال', 
+    'faq_question_en' => 'اسم السؤال بالأنجليزى', 
+    'faq_question_ar' => 'اسم السؤال بالعربى', 
+    'faq_answer' => 'الجواب',
+    'faq_answer_en' => 'الجواب بالأنجليزى', 
+    'faq_answer_ar' => 'الجواب بالعربى',
+    'faq_status' => 'حالة السؤال الشائعة',
+    'create_faq' => 'انشاء السؤال شائع جديدة',
+    'edit_faq' => 'تعديل على السؤال الشائعة',
+    'delete_faq' => 'حذف السؤال الشائعة',
+
     #product
     'products' => 'المنتجات',
     'product' => 'المنتج',
@@ -134,7 +149,8 @@ return [
     'delete_text' => 'نعم، احذفه!',
     'active' => 'نشط',
     'not_active' => 'غير فعال',
-    
+    'no_data' => 'لا يوجد اى بيانات',
+    'enter' => 'ادخل',
 
     'manage_status' => 'ادارة الحالة',
     'status_active_updated_successfully' => 'تم التفعيل بنجاح',
