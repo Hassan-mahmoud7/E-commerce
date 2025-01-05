@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Coupon;
 use App\Models\Faq;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,7 +26,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        view()->composer('dashboard.*',function($view){
+        view()->composer('dashboard.*', function ($view) {
             if (!Cache::has('categories_count')) {
                 Cache::remember('categories_count', now()->addMinutes(60), function () {
                     return Category::count();
@@ -59,5 +60,43 @@ class ViewServiceProvider extends ServiceProvider
                 'faqs_count' => Cache::get('faqs_count'),
             ]);
         });
+        // git setting And Share
+        view()->share('setting', $this->firstOrCreateSetting());
+    }
+    public function firstOrCreateSetting()
+    {
+        $getSetting = Setting::firstOr(function () {
+            return Setting::create([
+                'id' => 1,
+                'site_name' => [
+                    'en' => 'E-Commerce',
+                    'ar' => 'تجارة الكترونية',
+                ],
+                'small_desc' => [
+                    'en' => 'E-Commerce is a platform that offers various products and services.',
+                    'ar' => 'تجارة الكترونية هي منصة توفر منتجات وخدمات متنوعة.',
+                ],
+                'meta_desc' => [
+                    'en' => 'E-Commerce is a platform that offers various products and services.',
+                    'ar' => 'تجارة الكترونية هي منصة توفر منتجات وخدمات متنوعة.',
+                ],
+                'address' => [
+                    'en' => 'Egypt, Alexandria, Sidi Bishr',
+                    'ar' => 'مصر, الاسكندرية, سيدى بشر',
+                ],
+                'logo' => 'logo.png',
+                'favicon' => 'favicon.ico',
+                'email' => 'info@e-commerce.com',
+                'email_support' => 'support@e-commerce.com',
+                'phone' => '0123456789',
+                'facebook' => 'https://www.facebook.com/ecommerce',
+                'twitter' => 'https://www.twitter.com/ecommerce',
+                'instagram' => 'https://www.instagram.com/ecommerce',
+                'youtube' => 'https://www.youtube.com/ecommerce',
+                'site_copyright' => '�� 2022 E-Commerce. All rights reserved.',
+                'promotion_video_url' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            ]);
+        });
+        return $getSetting;
     }
 }

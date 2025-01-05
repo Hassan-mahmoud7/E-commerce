@@ -14,15 +14,20 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('site_name');
+            $table->text('small_desc');
             $table->string('logo');
             $table->string('favicon');
-            $table->text('small_desc');
+            $table->string('phone');
+            $table->string('address');
             $table->string('email');
             $table->string('email_support');
+            $table->string('meta_desc');
             $table->string('facebook');
             $table->string('twitter');
             $table->string('instagram');
             $table->string('youtube');
+            $table->string('site_copyright');
+            $table->string('promotion_video_url');
             $table->timestamps();
         });
     }

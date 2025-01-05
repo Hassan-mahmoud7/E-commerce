@@ -40,7 +40,7 @@ return [
     'country_name' => 'اسم الدولة',
     'country_count_governorates' => 'عدد المحافظات',
     'country_phone_code' => 'رقم كود الدولة',
-    
+
     'shipping_management' => 'ادارة الشحن',
     #governorate
     'governorates' => 'المحافظات',
@@ -59,7 +59,7 @@ return [
     'city_dashboard' => 'لوحة معلومات المدن',
     'city_name' => 'اسم المدينة',
     'city_status' => 'حالة المدينة',
-    
+
     #category
     'categories' => 'الاقسام',
     'category' => 'القسم',
@@ -90,7 +90,7 @@ return [
     'create_brand' => 'انشاء علامة تجارية جديدة',
     'edit_brand' => 'تعديل على العلامة التجارية',
     'delete_brand' => 'حذف العلامة التجارية',
-    
+
     #coupons
     'coupons' => 'الكوبونات',
     'coupon' => 'الكوبون',
@@ -111,23 +111,55 @@ return [
     'faqs' => 'الأسئلة الشائعة',
     'faq' => 'الأسئلة الشائعة',
     'faq_dashboard' => 'لوحة معلومات الأسئلة الشائعة',
-    'faq_question' => 'السؤال', 
-    'faq_question_en' => 'اسم السؤال بالأنجليزى', 
-    'faq_question_ar' => 'اسم السؤال بالعربى', 
+    'faq_question' => 'السؤال',
+    'faq_question_en' => 'اسم السؤال بالأنجليزى',
+    'faq_question_ar' => 'اسم السؤال بالعربى',
     'faq_answer' => 'الجواب',
-    'faq_answer_en' => 'الجواب بالأنجليزى', 
+    'faq_answer_en' => 'الجواب بالأنجليزى',
     'faq_answer_ar' => 'الجواب بالعربى',
     'faq_status' => 'حالة السؤال الشائعة',
     'create_faq' => 'انشاء السؤال شائع جديدة',
     'edit_faq' => 'تعديل على السؤال الشائعة',
     'delete_faq' => 'حذف السؤال الشائعة',
 
+    #setting
+    'settings' => 'الأعدادات العامة',
+    'setting' => 'الأعداد',
+    'setting_dashboard' => 'لوحة معلومات الأعدادات العامة',
+    'site_name' => 'اسم الموقع',
+    'site_name_ar' => 'اسم الموقع بالعربى',
+    'site_name_en' => 'اسم الموقع بالانجليزى',
+    'small_desc' => 'وصف الموقع',
+    'small_desc_ar' => 'وصف الموقع بالعربى',
+    'small_desc_en' => 'وصف الموقع بالانجليزى',
+    'setting_email' => 'البريد الألكترونى',
+    'email_support' => 'البريد الألكترونى للتواصل مع المسؤلين',
+    'site_phone' => 'رقم الهاتف',
+    'address' => 'العنوان',
+    'address_ar' => 'العنوان بالعربى',
+    'address_en' => 'العنوان بالانجليزى',
+    'logo' => 'شعار الموقع',
+    'favicon' => 'الرمز المفضل',
+    'meta_desc' => 'وصف موقعك',
+    'meta_desc_ar' => 'وصف موقعك بالعربى',
+    'meta_desc_en' => 'وصف موقعك بالانجليزى',
+    'facebook' => 'فيسبوك',
+    'twitter' => 'تويتر',
+    'instagram' => 'انستجرام',
+    'youtube' => 'يوتيوب',
+    'site_copyright' => 'حقوق الموقع',
+    'promotion_video_url' => 'رابط فيديو الترويجي',
+    'media_setting' => 'وسائط',
+    'social_setting' => 'وسائط',
+    'contact_setting' => 'التواصل',
+    'basic_settings' => 'الاساسى',
+
     #product
     'products' => 'المنتجات',
     'product' => 'المنتج',
     'product_dashboard' => 'لوحة معلومات المنتجات',
     'product_count' => 'عدد المنتجات',
-    
+
     'not_found' => 'لا يوجد',
     'count_of_users' => 'عدد المستخدمين',
     'created' => 'تم انشاء',

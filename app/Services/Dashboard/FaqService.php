@@ -18,7 +18,7 @@ class FaqService
     public function getFaqById($id)
     {
         $faq = $this->faqRepository->getFaqById($id);
-        return $faq ?? abort('404');
+        return $faq ?? abort(404);
     }
     public function storeFaq($data)
     {

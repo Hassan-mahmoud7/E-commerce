@@ -50,6 +50,13 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'settings' => [
+            'driver' => 'local',
+            'root' => public_path('/assets/img/uploads/settings'),
+            'url' => env('APP_URL').'/assets/img/uploads/settings',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
         'products' => [
             'driver' => 'local',
             'root' => public_path('/assets/img/uploads/products'),

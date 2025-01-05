@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\CouponController;
 use App\Http\Controllers\Dashboard\FaqController;
 use App\Http\Controllers\Dashboard\RoleController;
+use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Dashboard\WelcomeController;
 use App\Http\Controllers\Dashboard\WorldController;
 use Illuminate\Support\Facades\Route;
@@ -104,6 +105,11 @@ Route::group(
             #################################| Faqs Routes Dashboard |#################################
             Route::group(['middleware' => 'can:faqs'], function () {
                 Route::resource('faqs', FaqController::class);
+            });
+            #################################| Settings Routes Dashboard |#################################
+            Route::group(['middleware' => 'can:settings'], function () {
+                Route::get('settings', [SettingController::class, 'index'])->name('settings');
+                Route::put('settings/update/{id}', [SettingController::class, 'update'])->name('settings.update');
             });
         });
     }
