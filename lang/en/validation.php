@@ -161,7 +161,7 @@ return [
     'uuid' => 'The :attribute field must be a valid UUID.',
     'Invalid' => 'Invalid credentials. Please try again later!',
     'error' => 'try again later!',
-    
+
 
 
 
@@ -254,7 +254,7 @@ return [
         'answer.ar'             => 'Answer in arabic',
         'answer.en'             => 'Answer in english',
         'question.ar'           => 'Question in arabic',
-        'question.en'           => 'Question in english', 
+        'question.en'           => 'Question in english',
         'site_name.ar'          => 'Site Name in arabic',
         'site_name.en'          => 'Site Name in english',
         'small_desc.ar'         => 'Small Description in arabic',
@@ -271,8 +271,9 @@ return [
         'youtube'               => 'Youtube',
         'site_copyright'        => 'Site Copyright',
         'promotion_video_url'   => 'Promotion Video URL',
+        'value.*.en'              => 'Value English',
+        'value.*.ar'              => 'Value Arabic',
 
-
-    ],  
+    ],
 
 ];

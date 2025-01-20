@@ -2,6 +2,7 @@
 return [
     'dashboard' => 'لوحة القيادة',
     'welcome' => 'الصفحة الرئيسية',
+    'systems' => 'النظام',
     #Roles
     'role' => 'الصلاحيات',
     'role_dashboard' => 'لوحة معلومات الصلاحيات',
@@ -153,6 +154,21 @@ return [
     'social_setting' => 'وسائط',
     'contact_setting' => 'التواصل',
     'basic_settings' => 'الاساسى',
+    
+    #attribute
+    'attributes' => 'السمات',
+    'attribute' => 'السمة',
+    'attribute_dashboard' => 'لوحة معلومات السمات',
+    'attribute_name' => 'اسم السمة',
+    'attribute_name_ar' => 'اسم السمة بالعربى',
+    'attribute_name_en' => 'اسم السمة بالانجليزى',
+    'attribute_value' => 'قيمة السمة',
+    'attribute_value_ar' => 'قيمة السمة بالعربى',
+    'attribute_value_en' => 'قيمة السمة بالانجليزى',
+    'create_attribute' => 'انشاء سمة جديدة',
+    'edit_attribute' => 'تعديل على السمة',
+    'delete_attribute' => 'حذف السمة',
+    
 
     #product
     'products' => 'المنتجات',

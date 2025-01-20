@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\AdminController;
+use App\Http\Controllers\Dashboard\AttributeController;
 use App\Http\Controllers\Dashboard\Auth\AuthController;
 use App\Http\Controllers\Dashboard\Auth\ForgotPasswordController;
 use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
@@ -110,6 +111,11 @@ Route::group(
             Route::group(['middleware' => 'can:settings'], function () {
                 Route::get('settings', [SettingController::class, 'index'])->name('settings');
                 Route::put('settings/update/{id}', [SettingController::class, 'update'])->name('settings.update');
+            });
+            #################################| Attributes Routes Dashboard |#################################
+            Route::group(['middleware' => 'can:attributes'], function () {
+                Route::resource('attributes', AttributeController::class);
+                Route::get('attributes-all', [AttributeController::class, 'getAllAttributesForDatatable'])->name('attributes.all');
             });
         });
     }

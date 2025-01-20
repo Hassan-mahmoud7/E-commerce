@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.app')
-@section('title', __('dashboard.coupons'))
+@section('title', __('dashboard.attributes'))
 @section('content')
     <!-- Bordered striped start -->
     <div class="app-content content">
@@ -13,7 +13,7 @@
                                 <li class="breadcrumb-item"><a
                                         href="{{ route('dashboard.welcome') }}">{{ __('dashboard.welcome') }}</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#">{{ __('dashboard.coupon') }}</a>
+                                <li class="breadcrumb-item"><a href="#">{{ __('dashboard.attribute') }}</a>
                                 </li>
                             </ol>
                         </div>
@@ -26,7 +26,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"><b>{{ __('dashboard.coupons') }}</b></h4>
+                                <h4 class="card-title"><b>{{ __('dashboard.attributes') }}</b></h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -40,29 +40,22 @@
                             <div class="card-content collapse show">
                                 <div class="card-body">
                                     <button class="btn btn-success px-2 round btn-glow" data-toggle="modal"
-                                        data-target="#bootstrap"> <i class="ft-edit"></i>
-                                        {{ __('dashboard.create_coupon') }}</button>
+                                        data-target="#attributeModal"> <i class="ft-edit"></i>
+                                        {{ __('dashboard.create_attribute') }}</button>
 
-                                    @include('dashboard.coupons._create')
-                                    @include('dashboard.coupons._edit')
+                                    @include('dashboard.products.attributes._create')
+                                    @include('dashboard.products.attributes._edit')
 
                                 </div>
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
-                                        @include('dashboard.includes.tostar-success')
-                                        @include('dashboard.includes.tostar-error')
                                         <table id="yajra_table"
                                             class="table table-striped language-file table-bordered column-rendering dataTable">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_code') }}</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_discount_percentage') }}</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_start_date') }}</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_end_date') }}</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_limit') }}</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_time_used') }}</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_status') }}</th>
+                                                    <th scope="col">{{ __('dashboard.attribute_name') }}</th>
+                                                    <th scope="col">{{ __('dashboard.attribute_value') }}</th>
                                                     <th scope="col">{{ __('dashboard.created') }}</th>
                                                     <th scope="col">{{ __('dashboard.operations') }}</th>
                                                 </tr>
@@ -73,14 +66,8 @@
                                             <tfoot>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_code') }}</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_discount_percentage') }}
-                                                    </th>
-                                                    <th scope="col">{{ __('dashboard.coupon_start_date') }}</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_end_date') }}</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_limit') }}</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_time_used') }}</th>
-                                                    <th scope="col">{{ __('dashboard.coupon_status') }}</th>
+                                                    <th scope="col">{{ __('dashboard.attribute_name') }}</th>
+                                                    <th scope="col">{{ __('dashboard.attribute_value') }}</th>
                                                     <th scope="col">{{ __('dashboard.created') }}</th>
                                                     <th scope="col">{{ __('dashboard.operations') }}</th>
 
@@ -88,7 +75,7 @@
                                             </tfoot>
                                         </table>
                                         <div class="col-12 float-md-right p-3">
-                                            {{-- {{ $coupon->links() }} --}}
+                                            {{-- {{ $attribute->links() }} --}}
                                         </div>
                                     </div>
                                 </div>
@@ -119,17 +106,17 @@
             // scrollCollapse: true,
             // scroller: true,
             // scrollY: 500,
-            rowReorder: {
-                update:false,
-                selector:'td:not(:first-child)',
-            },
+            // rowReorder: {
+            //     update:false,
+            //     selector:'td:not(:first-child)',
+            // },
             // select: true,
             responsive: {
                 details: {
                     display: DataTable.Responsive.display.modal({
                         header: function(row) {
                             var data = row.data();
-                            return 'Details for {{ __('dashboard.coupon') }}:' + data['code'];
+                            return 'Details for {{ __('dashboard.attribute') }}:' + data['code'];
                         }
                     }),
                     renderer: DataTable.Responsive.renderer.tableAll({
@@ -137,39 +124,19 @@
                     })
                 }
             },
-            ajax: "{{ route('dashboard.coupons.all') }}",
+            ajax: "{{ route('dashboard.attributes.all') }}",
             columns: [{
                     data: 'DT_RowIndex',
                     searchable: false,
                     orderable: false,
                 },
                 {
-                    data: 'code',
-                    name: 'code',
+                    data: 'name',
+                    name: 'name',
                 },
                 {
-                    data: 'discount_percentage',
-                    name: 'Discount Percentage',
-                },
-                {
-                    data: 'start_date',
-                    name: 'Start Date',
-                },
-                {
-                    data: 'end_date',
-                    name: 'End Date',
-                },
-                {
-                    data: 'limit',
-                    name: 'Limit',
-                },
-                {
-                    data: 'time_used',
-                    name: 'Time Used',
-                },
-                {
-                    data: 'status',
-                    name: 'status',
+                    data: 'attributeValue',
+                    name: 'attributeValue',
                 },
                 {
                     data: 'created_at',
@@ -177,7 +144,6 @@
                 },
                 {
                     data: 'action',
-                    name: 'action',
                     searchable: false,
                     orderable: false,
                 },
@@ -192,29 +158,60 @@
             } : {},
         });
         // disable the row order when cliking
-        $('table').on('mousedown' , 'button',function (e) { 
+        $('table').on('mousedown', 'button', function(e) {
             table.rowReorder.disable();
-         });
-         // enable the row order when mouseup
-         $('table').on('mouseup', 'button', function (e) { 
+        });
+        // enable the row order when mouseup
+        $('table').on('mouseup', 'button', function(e) {
             table.rowReorder.enable();
-         });
-        // create coupon using Ajax
-        $('#create_coupon').on('submit', function(e) {
+        });
+
+        //add more row in create
+        $(document).ready(function() {
+            let valueIndex = 2;
+            $('#add_more').on('click', function(e) {
+                e.preventDefault();
+                let newRow = `<div class="row attribute_value_row">
+                        <fieldset class="form-group floating-label-form-group col-md-5">
+                            <label for="value_en_${valueIndex}">{{ __('dashboard.attribute_value_en') }}</label>
+                            <input type="text" name="value[${valueIndex}][en]" class="form-control" id="value_en_${valueIndex}"
+                                placeholder="{{ __('dashboard.attribute_value_en') }}" value="{{ old('value.en') }}">
+                        </fieldset>
+                        <fieldset class="form-group floating-label-form-group col-md-5 ">
+                            <label for="value_ar_${valueIndex}">{{ __('dashboard.attribute_value_ar') }}</label>
+                            <input type="text" name="value[${valueIndex}][ar]" class="form-control" id="value_ar_${valueIndex}"
+                                placeholder="{{ __('dashboard.attribute_value_ar') }}" value="{{ old('value.ar') }}">
+                        </fieldset>
+                         <div class="col-md-2 m-auto">
+                             <button type="button" class="btn btn-outline-danger btn-sm remove_attribute_value">
+                                 <i class="ft-x"></i> 
+                             </button>
+                         </div>
+                    </div>`;
+                $('.attribute_value_row:last').after(newRow);
+                valueIndex++;
+            });
+            $(document).on('click', '.remove_attribute_value', function() {
+                $(this).closest('.attribute_value_row').remove();
+            });
+           
+        });
+        // create attribute using Ajax
+        $('#create_attribute').on('submit', function(e) {
             e.preventDefault();
             var currentPage = $('#yajra_table').DataTable().page();
             $.ajax({
-                url: "{{ route('dashboard.coupons.store') }}",
+                url: "{{ route('dashboard.attributes.store') }}",
                 method: "POST",
                 data: new FormData(this),
                 processData: false,
                 contentType: false,
                 success: function(data) {
                     if (data.status == 'success') {
-                        $('#create_coupon')[0].reset();
+                        $('#create_attribute')[0].reset();
                         $('#yajra_table').DataTable().page(currentPage).draw(false);
-                        $('#bootstrap').removeClass('show').css('display', 'none').attr('aria-hidden',
-                            'true');
+                        $('#attributeModal').removeClass('show').css('display', 'none').attr(
+                            'aria-hidden', 'true');
                         $('body').removeClass('modal-open');
                         $('.modal-backdrop').remove();
                         Swal.fire({
@@ -228,6 +225,7 @@
                 },
                 error: function(data) {
                     if (data.responseJSON.errors) {
+                        $('#error_list').empty();
                         $.each(data.responseJSON.errors, function(key, value) {
                             $('#error_list').append('<li>' + value[0] + '</li>');
                             $('#error_div').show();
@@ -237,40 +235,91 @@
             });
         });
 
-        // edit coupon using Ajax
-        $(document).on('click', '.edit_coupon', function(e) {
+        // // edit attribute using Ajax
+        $(document).on('click', '.edit_attribute', function(e) {
             e.preventDefault();
+            let attribute_id = $(this).data('id');
+            let attribute_name_en = $(this).data('name-en');
+            let attribute_name_ar = $(this).data('name-ar');
+            let Values = $(this).data('values');
+            
+            $('.attribute_value_row_edit').empty();
 
-            $('#coupon_id').val($(this).attr('coupon_id'));
-            $('#coupon_code').val($(this).attr('coupon_code'));
-            $('#coupon_discount').val($(this).attr('coupon_discount'));
-            $('#coupon_limit').val($(this).attr('coupon_limit'));
-            $('#coupon_start_date').val($(this).attr('coupon_start_date'));
-            $('#coupon_end_date').val($(this).attr('coupon_end_date'));
+            $('#attribute_Id').val(attribute_id);
+            $('#attributeNameEn').val(attribute_name_en);
+            $('#attributeNameAr').val(attribute_name_ar);
 
-            if ($(this).attr('coupon_status') == 1) {
-                $('#coupon_active').prop('checked', true);
-            } else {
-                $('#coupon_not_active').prop('checked', true);
-            }
-
-            $('#edit_bootstrap').modal('show');
+            let valueContainer = $('.attribute_value_row_edit:last');
+            valueContainer.empty();
+            Values.forEach(value => {
+                valueContainer.after(`
+                <div class="row attribute_value_row_edit">
+                        <fieldset class="form-group floating-label-form-group col-md-5">
+                            <label for="attribute_value_en">{{ __('dashboard.attribute_value_en') }}</label>
+                            <input type="text" name="value[${value.id}][en]" class="form-control" id="attribute_value_en"
+                                placeholder="{{ __('dashboard.attribute_value_en') }}" value="${value.value_en}">
+                        </fieldset>
+                        <fieldset class="form-group floating-label-form-group col-md-5 ">
+                            <label for="attribute_value_ar">{{ __('dashboard.attribute_value_ar') }}</label>
+                            <input type="text" name="value[${value.id}][ar]" class="form-control" id="attribute_value_ar"
+                                placeholder="{{ __('dashboard.attribute_value_ar') }}" value="${value.value_ar}">
+                        </fieldset>
+                        <div class="col-md-2 m-auto">
+                            <button type="button" class="btn btn-outline-danger btn-sm remove_attribute_value_edit">
+                                <i class="ft-x"></i> 
+                            </button>
+                        </div>
+                 </div>`);
+            });
+            $('#error_list_edit').empty();
+            $('#error_div_edit').hide();
+            $('#updateAttributeModal').modal('show').attr('aria-hidden', 'true');
         });
-        // update coupon using Ajax
-        $('#update_coupon').on('submit', function(e) {
+        // add new value to attribute in case edit
+        $(document).ready(function() {
+            let valueIndex = 2;
+            $('#add_more_edit').on('click', function(e) {
+                e.preventDefault();
+                let newRow = ` <div class="row attribute_value_row_edit">
+                        <fieldset class="form-group floating-label-form-group col-md-5">
+                            <label for="attribute_value_en">{{ __('dashboard.attribute_value_en') }}</label>
+                            <input type="text" name="value[${valueIndex}][en]" class="form-control" id="attribute_value_en"
+                                placeholder="{{ __('dashboard.attribute_value_en') }}" >
+                        </fieldset>
+                        <fieldset class="form-group floating-label-form-group col-md-5 ">
+                            <label for="attribute_value_ar">{{ __('dashboard.attribute_value_ar') }}</label>
+                            <input type="text" name="value[${valueIndex}][ar]" class="form-control" id="attribute_value_ar"
+                                placeholder="{{ __('dashboard.attribute_value_ar') }}" >
+                        </fieldset>
+                        <div class="col-md-2 m-auto">
+                            <button type="button" class="btn btn-outline-danger btn-sm remove_attribute_value_edit">
+                                <i class="ft-x"></i> 
+                            </button>
+                        </div>
+                 </div>`;
+                $('.attribute_value_row_edit:last').after(newRow);
+                valueIndex++;
+            });
+            $(document).on('click', '.remove_attribute_value_edit', function() {
+                $(this).closest('.attribute_value_row_edit').remove();
+            });
+        });
+        // // update attribute using Ajax
+        $('#update_attribute').on('submit', function(e) {
             e.preventDefault();
             var currentPage = $('#yajra_table').DataTable().page();
-            var edit_coupon_id = $('#coupon_id').val();
+            var edit_attribute_id = $('#attribute_Id').val();            
             $.ajax({
-                url: "{{ route('dashboard.coupons.update', 'id') }}".replace('id', edit_coupon_id),
+                url: "{{ route('dashboard.attributes.update', ':id') }}".replace(':id', edit_attribute_id),
                 method: "POST",
-                data: new FormData(this),
+                data: new FormData($(this)[0]),
                 processData: false,
                 contentType: false,
                 success: function(data) {
                     if (data.status == 'success') {
                         $('#yajra_table').DataTable().page(currentPage).draw(false);
-                        $('#edit_bootstrap').removeClass('show').css('display', 'none').attr('aria-hidden', 'true');
+                        $('#update_attribute')[0].reset();
+                        $('#updateAttributeModal').modal('hide');
                         $('body').removeClass('modal-open');
                         $('.modal-backdrop').remove();
                         Swal.fire({
@@ -294,7 +343,7 @@
                 },
             });
         });
-        // delete coupon using Ajax
+        // // delete attribute using Ajax
         $(document).on('click', '.delete_confirm_btn', function(e) {
             e.preventDefault();
             var title = "{{ __('dashboard.delete_msg') }}";
@@ -303,7 +352,8 @@
             var btnCancel = "{{ __('dashboard.cancel_text') }}";
             var Delete = "{{ __('dashboard.delete') }}";
             var Delete_success = "{{ __('dashboard.delete_success') }}";
-            var delete_coupon_id = $(this).attr('coupon_id');
+            var delete_attribute_id = $(this).attr('attribute_id');
+            console.log(delete_attribute_id);
             Swal.fire({
                 title: title,
                 text: text,
@@ -316,7 +366,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: "{{ route('dashboard.coupons.destroy', 'id') }}".replace('id', delete_coupon_id),
+                        url: "{{ route('dashboard.attributes.destroy', 'id') }}".replace('id', delete_attribute_id),
                         method: "DELETE",
                         data:{
                             _token: "{{ csrf_token() }}"

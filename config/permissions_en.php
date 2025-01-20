@@ -25,4 +25,5 @@ return [
         'socials' => 'Manage Socials',
         'menus' => 'Manage Menus',  
         'global_shipping' => 'Manage Shipping', 
+        'attributes' => 'Manage Product Attributes',
 ];

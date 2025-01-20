@@ -2,6 +2,7 @@
 return [
     'dashboard' => 'Dashboard',
     'welcome' => 'Home',
+    'systems' => 'Systems',
     #role
     'role' => 'role',
     'role_dashboard' => 'Role Dashboard',
@@ -42,7 +43,7 @@ return [
     'country_name' => 'Country Name',
     'country_count_governorates' => 'Number of governorates',
     'country_phone_code' => 'Phone Code',
-    
+
     #governorate
     'governorates' => 'Governorates',
     'governorate' => 'Governorate',
@@ -53,7 +54,7 @@ return [
     'shipping_price' => 'Shipping price',
     'enter_shipping_price' => 'Enter Shipping Price',
     'price_change' => 'Price change',
-    
+
     #cities
     'cities' => 'Cities',
     'city' => 'City',
@@ -91,7 +92,7 @@ return [
     'create_brand' => 'Create Brand',
     'edit_brand' => 'Edit Brand',
     'delete_brand' => 'Delete Brand',
-    
+
     #coupons
     'coupons' => 'Coupons',
     'coupon' => 'Coupon',
@@ -122,7 +123,7 @@ return [
     'create_faq' => 'Create FAQ',
     'edit_faq' => 'Edit FAQ',
     'delete_faq' => 'Delete FAQ',
-   
+
     #setting
     'settings' => 'Settings',
     'setting' => 'Setting',
@@ -155,6 +156,20 @@ return [
     'contact_setting' => 'Contact',
     'basic_settings' => 'Basic',
 
+    #attribute
+    'attributes' => 'Attributes',
+    'attribute' => 'Attribute',
+    'attribute_dashboard' => 'Attributes Dashboard',
+    'attribute_name' => 'Attribute Name',
+    'attribute_name_ar' => 'Attribute Arabic',
+    'attribute_name_en' => 'Attribute English',
+    'attribute_value' => 'Attribute Value',
+    'attribute_value_en' => 'Attribute Value English',
+    'attribute_value_ar' => 'Attribute Value Arabic',
+    'create_attribute' => 'Create Attribute',
+    'edit_attribute' => 'Edit Attribute',
+    'delete_attribute' => 'Delete Attribute',
+   
     #product
     'product_count' => 'Count Product',
     'products' => 'Products',
@@ -167,7 +182,7 @@ return [
     'product_quantity' => 'Quantity',
     'product_image' => 'Image',
     'product_category' => 'Category',
-    
+
     'not_found' => 'Not Found',
     'count_of_users' => 'Number of Users',
     'created' => 'Created',
