@@ -43,8 +43,8 @@
                                         data-target="#attributeModal"> <i class="ft-edit"></i>
                                         {{ __('dashboard.create_attribute') }}</button>
 
-                                    @include('dashboard.products.attributes._create')
-                                    @include('dashboard.products.attributes._edit')
+                                    @include('dashboard.attributes._create')
+                                    @include('dashboard.attributes._edit')
 
                                 </div>
                                 <div class="card-content collapse show">

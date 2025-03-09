@@ -271,8 +271,13 @@ return [
         'youtube'               => 'Youtube',
         'site_copyright'        => 'Site Copyright',
         'promotion_video_url'   => 'Promotion Video URL',
-        'value.*.en'              => 'Value English',
-        'value.*.ar'              => 'Value Arabic',
+        'value.*.en'            => 'Value English',
+        'value.*.ar'            => 'Value Arabic',
+        'quantity'              => 'Quantity',
+        'desc.en'               => 'Description English',
+        'desc.ar'               => 'Description Arabic',
+        'samll_desc.en'         => 'Small Description English',
+        'samll_desc.ar'         => 'Small Description English',
 
     ],
 

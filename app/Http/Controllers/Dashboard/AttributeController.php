@@ -16,7 +16,7 @@ class AttributeController extends Controller
     }
     public function index()
     {
-        return view('dashboard.products.attributes.index');
+        return view('dashboard.attributes.index');
     }
     public function getAllAttributesForDatatable()
     {

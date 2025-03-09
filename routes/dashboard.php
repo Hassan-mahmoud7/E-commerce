@@ -1,20 +1,22 @@
 <?php
 
-use App\Http\Controllers\Dashboard\AdminController;
-use App\Http\Controllers\Dashboard\AttributeController;
-use App\Http\Controllers\Dashboard\Auth\AuthController;
-use App\Http\Controllers\Dashboard\Auth\ForgotPasswordController;
-use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
-use App\Http\Controllers\Dashboard\BrandController;
-use App\Http\Controllers\Dashboard\CategoryController;
-use App\Http\Controllers\Dashboard\CouponController;
+use Livewire\Livewire;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\FaqController;
 use App\Http\Controllers\Dashboard\RoleController;
+use App\Http\Controllers\Dashboard\AdminController;
+use App\Http\Controllers\Dashboard\BrandController;
+use App\Http\Controllers\Dashboard\WorldController;
+use App\Http\Controllers\Dashboard\CouponController;
+use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Dashboard\WelcomeController;
-use App\Http\Controllers\Dashboard\WorldController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dashboard\CategoryController;
+use App\Http\Controllers\Dashboard\AttributeController;
+use App\Http\Controllers\Dashboard\Auth\AuthController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
+use App\Http\Controllers\Dashboard\Auth\ForgotPasswordController;
 
 
 Route::group(
@@ -117,6 +119,18 @@ Route::group(
                 Route::resource('attributes', AttributeController::class);
                 Route::get('attributes-all', [AttributeController::class, 'getAllAttributesForDatatable'])->name('attributes.all');
             });
+             #################################| Products Routes Dashboard |#################################
+             Route::group(['middleware' => 'can:products'], function () {
+                Route::resource('products', ProductController::class);
+                Route::get('products-all', [ProductController::class, 'getAllProductsForDatatable'])->name('products.all');
+                Route::get('products/{id}/status', [ProductController::class, 'changeStatus'])->name('products.status');
+                
+                //Variants
+                Route::delete('products/variants/{variant_id}',[ProductController::class, 'deleteVariant'])->name('products.variants.delete');
+            });
+        });
+        Livewire::setUpdateRoute(function ($handle) {
+            return Route::post('/livewire/update', $handle);
         });
     }
 );

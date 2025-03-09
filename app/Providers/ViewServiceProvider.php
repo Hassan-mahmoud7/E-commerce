@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Coupon;
 use App\Models\Faq;
+use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
@@ -52,12 +53,18 @@ class ViewServiceProvider extends ServiceProvider
                     return Faq::count();
                 });
             }
+            if (!Cache::has('products_count')) {
+                Cache::remember('products_count', now()->addMinutes(60), function () {
+                    return Product::count();
+                });
+            }
             view()->share([
                 'categories_count' => Cache::get('categories_count'),
                 'brands_count' => Cache::get('brands_count'),
                 'admins_count' => Cache::get('admins_count'),
                 'coupons_count' => Cache::get('coupons_count'),
                 'faqs_count' => Cache::get('faqs_count'),
+                'products_count' => Cache::get('products_count'),
             ]);
         });
         // git setting And Share

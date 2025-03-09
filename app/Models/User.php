@@ -64,4 +64,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Governorate::class , 'governorate_id');
     }
+    public function productPreviews()
+    {
+        return $this->hasMany(ProductPreview::class,'user_id');
+    }
 }

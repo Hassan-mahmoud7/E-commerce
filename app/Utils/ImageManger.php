@@ -8,23 +8,14 @@ use Illuminate\Support\Facades\Storage;
 
 class ImageManger
 {
-    // public static function uploadImage($request, $post = null, $user = null)
-    // {
-    //     if ($request->hasFile('images')) {
-    //         foreach ($request->images as $image) {
-    //             $file = self::generateImageName($image);
-    //             $path = self::storeImageInLocal($image,'posts', $file);
-    //             $post->images()->create(['path' => $path]);
-    //         }
-    //     }
-    //     if ($request->hasFile('image')) {
-    //         self::deleteImageFromLocal($user->image);
-    //         $file = self::generateImageName($request->image);
-    //         $path = self::storeImageInLocal($request->image, 'users', $file);
-    //         // update imge in db
-    //         $user->update(['image' => $path]);
-    //     }
-    // }
+    public function uploadImages($images, $model , $disk)
+    {
+        foreach ($images as $image) {
+            $file_name = $this->generateImageName($image);
+            $this->storeImageInLocal($image, '/', $file_name, $disk);
+            $model->images()->create(['file_name' => $file_name]);
+        }
+    }
     // public static function deleteImages($images)
     // {
     //     if ($images->count() > 0) {
@@ -41,7 +32,7 @@ class ImageManger
         $this->storeImageInLocal($image, $path, $file_name, $disk);
         return $file_name;
     }
-    public  function generateImageName($image)
+    public function generateImageName($image)
     {
         $file = Str::uuid() . time() . '.' . $image->getClientOriginalExtension();
         return $file;

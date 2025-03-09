@@ -26,13 +26,17 @@ class AttributeService
                 return $item->name;
             })
             ->addColumn('attributeValue', function ($item) {
-                return view('dashboard.products.attributes.datatable.attributes-value' ,compact('item'));
+                return view('dashboard.attributes.datatable.attributes-value' ,compact('item'));
             })
             ->addColumn('action', function ($attribute) {
-                return view('dashboard.products.attributes.datatable.actions', compact('attribute'));
+                return view('dashboard.attributes.datatable.actions', compact('attribute'));
             })
             ->rawColumns(['action'])
             ->make(true);
+    }
+    public function getAttributes()
+    {
+        return $this->attributeRepositroy->getAttributes();
     }
     public function getAttributeById($id)
     {

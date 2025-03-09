@@ -58,11 +58,22 @@
                 </li>
             @endcan
             <li class=" nav-item"><a href="#"><i class="fa-solid fa-cart-flatbed"></i><span class="menu-title"
-                data-i18n="nav.templates.main">{{ __('dashboard.products') }}</span></a>
+                data-i18n="nav.templates.main">{{ __('dashboard.products') }}</span><span
+                class="badge badge badge-info badge-pill float-right mr-2">{{ $products_count }}</span></a>
                 <ul class="menu-content">
+                            @can('products')
+                                <li><a class="menu-item" href="{{ route('dashboard.products.index') }}"
+                                        data-i18n="nav.templates.vert.classic_menu"><i class="fa-solid fa-boxes-stacked"></i>
+                                        {{ __('dashboard.product_dashboard') }}</a>
+                                </li>
+                                <li><a class="menu-item" href="{{ route('dashboard.products.create') }}"
+                                        data-i18n="nav.templates.vert.classic_menu"><i class="la la-edit"></i>
+                                        {{ __('dashboard.create_product') }}</a>
+                                </li>
+                            @endcan
                             @can('attributes')
                                 <li><a class="menu-item" href="{{ route('dashboard.attributes.index') }}"
-                                        data-i18n="nav.templates.vert.classic_menu"><i class="fa-solid fa-boxes-stacked"></i>
+                                        data-i18n="nav.templates.vert.classic_menu"><i class="fa-solid fa-box-open"></i>`
                                         {{ __('dashboard.attribute_dashboard') }}</a>
                                 </li>
                             @endcan

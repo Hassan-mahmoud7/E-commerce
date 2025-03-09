@@ -26,11 +26,7 @@ class Brand extends Model
     }
     public function getStatusTranslated()
     {
-        if (Config('app.locale') == 'ar') {
-            return $this->status == 1 ? 'مفعل' : 'غير مفعل' ;
-        }else{
-            return $this->status == 1 ? 'Active' : 'Not Active' ;
-        }     
+        return $this->status == 1 ? __('dashboard.active') : __('dashboard.not_active') ;    
     }
     public function products()
     {
