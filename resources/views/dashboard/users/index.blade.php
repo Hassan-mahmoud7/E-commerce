@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.app')
-@section('title', __('dashboard.products'))
+@section('title', __('dashboard.users'))
 @section('content')
     <!-- Bordered striped start -->
     <div class="app-content content">
@@ -13,7 +13,7 @@
                                 <li class="breadcrumb-item"><a
                                         href="{{ route('dashboard.welcome') }}">{{ __('dashboard.welcome') }}</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#">{{ __('dashboard.product') }}</a>
+                                <li class="breadcrumb-item"><a href="#">{{ __('dashboard.user') }}</a>
                                 </li>
                             </ol>
                         </div>
@@ -26,7 +26,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"><b>{{ __('dashboard.products') }}</b></h4>
+                                <h4 class="card-title"><b>{{ __('dashboard.users') }}</b></h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -39,10 +39,12 @@
                             </div>
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    <a href="{{ route('dashboard.products.create') }}" class="btn btn-success px-2 round btn-glow"> <i class="ft-edit"></i>
-                                        {{ __('dashboard.create_product') }}</a>
+                                    <button class="btn btn-success px-2 round btn-glow" data-toggle="modal"
+                                        data-target="#bootstrap"> <i class="ft ft-user-plus"></i>
+                                        {{ __('dashboard.create_user') }}</button>
 
-
+                                    @include('dashboard.users._create')
+                                    @include('dashboard.users._edit')
 
                                 </div>
                                 <div class="card-content collapse show">
@@ -54,16 +56,15 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">{{ __('dashboard.product_name') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_has_variants') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_images') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_status') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_sku') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_available_for') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_price') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_quantity') }}</th>
-                                                    <th scope="col">{{ __('dashboard.category') }}</th>
-                                                    <th scope="col">{{ __('dashboard.brand') }}</th>
+                                                    <th scope="col">{{ __('dashboard.user_name') }}</th>
+                                                    <th scope="col">{{ __('dashboard.user_phone') }}</th>
+                                                    <th scope="col">{{ __('dashboard.user_email') }}</th>
+                                                    <th scope="col">{{ __('dashboard.email_verified_at') }}</th>
+                                                    <th scope="col">{{ __('dashboard.user_status') }}</th>
+                                                    <th scope="col">{{ __('dashboard.country') }}</th>
+                                                    <th scope="col">{{ __('dashboard.governorate') }}</th>
+                                                    <th scope="col">{{ __('dashboard.city') }}</th>
+                                                    <th scope="col">{{ __('dashboard.num_of_orders') }}</th>
                                                     <th scope="col">{{ __('dashboard.created') }}</th>
                                                     <th scope="col">{{ __('dashboard.operations') }}</th>
                                                 </tr>
@@ -74,23 +75,23 @@
                                             <tfoot>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">{{ __('dashboard.product_name') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_has_variants') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_images') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_status') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_sku') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_available_for') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_price') }}</th>
-                                                    <th scope="col">{{ __('dashboard.product_quantity') }}</th>
-                                                    <th scope="col">{{ __('dashboard.category') }}</th>
-                                                    <th scope="col">{{ __('dashboard.brand') }}</th>
+                                                    <th scope="col">{{ __('dashboard.user_name') }}</th>
+                                                    <th scope="col">{{ __('dashboard.user_phone') }}</th>
+                                                    <th scope="col">{{ __('dashboard.user_email') }}</th>
+                                                    <th scope="col">{{ __('dashboard.email_verified_at') }}</th>
+                                                    <th scope="col">{{ __('dashboard.user_status') }}</th>
+                                                    <th scope="col">{{ __('dashboard.country') }}</th>
+                                                    <th scope="col">{{ __('dashboard.governorate') }}</th>
+                                                    <th scope="col">{{ __('dashboard.city') }}</th>
+                                                    <th scope="col">{{ __('dashboard.num_of_orders') }}</th>
                                                     <th scope="col">{{ __('dashboard.created') }}</th>
                                                     <th scope="col">{{ __('dashboard.operations') }}</th>
+
                                                 </tr>
                                             </tfoot>
                                         </table>
                                         <div class="col-12 float-md-right p-3">
-                                            {{-- {{ $product->links() }} --}}
+                                            {{-- {{ $user->links() }} --}}
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +124,7 @@
             // scrollY: 500,
             rowReorder: {
                 update:false,
-                selector:'td:not(:first-child):not(:nth-child(4))',
+                selector:'td:not(:first-child)',
             },
             // select: true,
             responsive: {
@@ -131,7 +132,7 @@
                     display: DataTable.Responsive.display.modal({
                         header: function(row) {
                             var data = row.data();
-                            return 'Details for {{ __('dashboard.product') }}:' + data['code'];
+                            return 'Details for {{ __('dashboard.user') }}:' + data['code'];
                         }
                     }),
                     renderer: DataTable.Responsive.renderer.tableAll({
@@ -139,7 +140,7 @@
                     })
                 }
             },
-            ajax: "{{ route('dashboard.products.all') }}",
+            ajax: "{{ route('dashboard.users.all') }}",
             columns: [{
                     data: 'DT_RowIndex',
                     searchable: false,
@@ -150,40 +151,36 @@
                     name: 'name',
                 },
                 {
-                    data: 'has_variants',
-                    name: 'has_variants',
+                    data: 'phone',
+                    name: 'Phone',
                 },
                 {
-                    data: 'images',
-                    name: 'images',
+                    data: 'email',
+                    name: 'Email',
+                },
+                {
+                    data: 'email_verified_at',
+                    name: 'Email Verifier',
                 },
                 {
                     data: 'status',
-                    name: 'status',
+                    name: 'Status',
                 },
                 {
-                    data: 'sku',
-                    name: 'sku',
+                    data: 'country',
+                    name: 'country',
                 },
                 {
-                    data: 'available_for',
-                    name: 'available_for',
+                    data: 'governorate',
+                    name: 'Governorate',
                 },
                 {
-                    data: 'price',
-                    name: 'price',
+                    data: 'city',
+                    name: 'City',
                 },
                 {
-                    data: 'quantity',
-                    name: 'quantity',
-                },
-                {
-                    data: 'category',
-                    name: 'category',
-                },
-                {
-                    data: 'brand',
-                    name: 'brand',
+                    data: 'num_of_orders',
+                    name: 'Number Of Orders',
                 },
                 {
                     data: 'created_at',
@@ -191,6 +188,7 @@
                 },
                 {
                     data: 'action',
+                    name: 'action',
                     searchable: false,
                     orderable: false,
                 },
@@ -205,19 +203,56 @@
             } : {},
         });
         // disable the row order when cliking
-        $('table').on('mousedown', 'button', function(e) {
+        $('table').on('mousedown' , 'button',function (e) { 
             table.rowReorder.disable();
-        });
-        // enable the row order when mouseup
-        $('table').on('mouseup', 'button', function(e) {
+         });
+         // enable the row order when mouseup
+         $('table').on('mouseup', 'button', function (e) { 
             table.rowReorder.enable();
-        });
+         });
+        // create user using Ajax
+        // $('#create_user').on('submit', function(e) {
+        //     e.preventDefault();
+        //     var currentPage = $('#yajra_table').DataTable().page();
+        //     $.ajax({
+        //         url: "{{ route('dashboard.users.store') }}",
+        //         method: "POST",
+        //         data: new FormData(this),
+        //         processData: false,
+        //         contentType: false,
+        //         success: function(data) {
+        //             if (data.status == 'success') {
+        //                 $('#create_user')[0].reset();
+        //                 $('#yajra_table').DataTable().page(currentPage).draw(false);
+        //                 $('#bootstrap').removeClass('show').css('display', 'none').attr('aria-hidden',
+        //                     'true');
+        //                 $('body').removeClass('modal-open');
+        //                 $('.modal-backdrop').remove();
+        //                 Swal.fire({
+        //                     position: "center",
+        //                     icon: "success",
+        //                     title: data.message,
+        //                     showConfirmButton: false,
+        //                     timer: 2000
+        //                 });
+        //             }
+        //         },
+        //         error: function(data) {
+        //             if (data.responseJSON.errors) {
+        //                 $.each(data.responseJSON.errors, function(key, value) {
+        //                     $('#error_list').append('<li>' + value[0] + '</li>');
+        //                     $('#error_div').show();
+        //                 });
+        //             }
+        //         },
+        //     });
+        // });
         // change status using Ajax
         $(document).on('click' , '.change_status' , function (e) {
                     e.preventDefault();
                     var currentPage = $('#yajra_table').DataTable().page();
-                    var id = $(this).attr('product-id');
-                    var url = "{{ route('dashboard.products.status',':id') }}";
+                    var id = $(this).attr('user-id');
+                    var url = "{{ route('dashboard.users.status',':id') }}";
                     url = url.replace(':id', id);
                     $.ajax({
                         url: url,
@@ -257,8 +292,64 @@
                         
                     });
                 });
+        // edit user using Ajax
+        // $(document).on('click', '.edit_user', function(e) {
+        //     e.preventDefault();
 
-        // // // delete product using Ajax
+        //     $('#user_id').val($(this).attr('user_id'));
+        //     $('#user_code').val($(this).attr('user_code'));
+        //     $('#user_discount').val($(this).attr('user_discount'));
+        //     $('#user_limit').val($(this).attr('user_limit'));
+        //     $('#user_start_date').val($(this).attr('user_start_date'));
+        //     $('#user_end_date').val($(this).attr('user_end_date'));
+
+        //     if ($(this).attr('user_status') == 1) {
+        //         $('#user_active').prop('checked', true);
+        //     } else {
+        //         $('#user_not_active').prop('checked', true);
+        //     }
+
+        //     $('#edit_bootstrap').modal('show');
+        // });
+        // update user using Ajax
+        // $('#update_user').on('submit', function(e) {
+        //     e.preventDefault();
+        //     var currentPage = $('#yajra_table').DataTable().page();
+        //     var edit_user_id = $('#user_id').val();
+        //     $.ajax({
+        //         url: "{{ route('dashboard.users.update', 'id') }}".replace('id', edit_user_id),
+        //         method: "POST",
+        //         data: new FormData(this),
+        //         processData: false,
+        //         contentType: false,
+        //         success: function(data) {
+        //             if (data.status == 'success') {
+        //                 $('#yajra_table').DataTable().page(currentPage).draw(false);
+        //                 $('#edit_bootstrap').removeClass('show').css('display', 'none').attr('aria-hidden', 'true');
+        //                 $('body').removeClass('modal-open');
+        //                 $('.modal-backdrop').remove();
+        //                 Swal.fire({
+        //                     position: "center",
+        //                     icon: "success",
+        //                     title: data.message,
+        //                     showConfirmButton: false,
+        //                     timer: 2000
+        //                 });
+        //             }
+        //         },
+        //         error: function(data) {
+        //             if (data.responseJSON.errors) {
+        //                 $('#error_list_edit').empty();
+        //                 $('#error_div_edit').hide();
+        //                 $.each(data.responseJSON.errors, function(key, value) {
+        //                     $('#error_list_edit').append('<li>' + value[0] + '</li>');
+        //                     $('#error_div_edit').show();
+        //                 });
+        //             }
+        //         },
+        //     });
+        // });
+        // delete user using Ajax
         $(document).on('click', '.delete_confirm_btn', function(e) {
             e.preventDefault();
             var currentPage = $('#yajra_table').DataTable().page();
@@ -268,8 +359,8 @@
             var btnCancel = "{{ __('dashboard.cancel_text') }}";
             var Delete = "{{ __('dashboard.delete') }}";
             var Delete_success = "{{ __('dashboard.delete_success') }}";
-            var delete_product_id = $(this).attr('product_id');
-            console.log(delete_product_id);
+            var delete_user_id = $(this).attr('user_id');
+            console.log(delete_user_id);
             Swal.fire({
                 title: title,
                 text: text,
@@ -282,7 +373,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: "{{ route('dashboard.products.destroy', 'id') }}".replace('id', delete_product_id),
+                        url: "{{ route('dashboard.users.destroy', 'id') }}".replace('id', delete_user_id),
                         method: "DELETE",
                         data:{
                             _token: "{{ csrf_token() }}"

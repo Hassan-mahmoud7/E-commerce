@@ -33,6 +33,26 @@ return [
     'admin_confirm_password' => 'تأكيد كلمة المرور',
     'admin_successfully' => 'تم انشاء المسؤل بنجاح',
 
+    #users
+    'users' => 'المستخدمين',
+    'user' => 'المستخدم',
+    'user_dashboard' => 'لوحة معلومات المستخدمين',
+    'user_name_en' => 'اسم المستخدمين بالانجليزى',
+    'user_name_ar' => 'اسم المستخدمين بالعربى',
+    'user_name' => 'اسم المستخدمين',
+    'user_email' => 'البريد الإلكتروني المستخدمين',
+    'email_verified_at' => 'التحقق من البريد الإلكتروني',
+    'user_phone' => 'رقم الهاتف المستخدمين',
+    'user_image' => 'صورة المستخدمين',
+    'user_password' => 'كلمة المرور',
+    'user_confirm_password' => 'تأكيد كلمة المرور',
+    'user_status' => 'حالة المستخدم',
+    'num_of_orders' => 'عدد الطلبات',
+    'create_user' => 'انشاء مستخدم جديد',
+    'edit_user' => 'تعديل على المستخدم',
+    'delete_user' => 'حذف المستخدم',
+    'user_successfully' => 'تم انشاء المستخدم بنجاح',
+
     #country
     'countries' => 'الدول',
     'country' => 'الدولة',

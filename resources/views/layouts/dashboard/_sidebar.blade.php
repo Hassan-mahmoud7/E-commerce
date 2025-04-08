@@ -138,6 +138,22 @@
                     </ul>
                 </li>
             @endcan
+            @can('users')
+            <li class=" nav-item"><a href="#"><i class="la la-user"></i><span class="menu-title"
+                        data-i18n="nav.templates.main">{{ __('dashboard.users') }}</span><span
+                        class="badge badge badge-info badge-pill float-right mr-2">{{ $users_count }}</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{{ route('dashboard.users.index') }}"
+                            data-i18n="nav.templates.vert.classic_menu"><i class="fa-solid fa-users"></i>
+                            {{ __('dashboard.user_dashboard') }}</a>
+                    </li>
+                    <li><a class="menu-item" href="{{ route('dashboard.users.create') }}"
+                        data-i18n="nav.templates.vert.classic_menu"><i class="ft ft-user-plus"></i>
+                        {{ __('dashboard.create_user') }}</a>
+                    </li>
+                </ul>
+            </li>
+            @endcan
             @can('global_shipping')
                 <li class=" nav-item"><a href="#"><i class="la la-globe"></i><span class="menu-title"
                             data-i18n="nav.templates.main">{{ __('dashboard.shipping_management') }}</span></a>

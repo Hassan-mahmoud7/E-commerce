@@ -4,11 +4,6 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\AttributeValue;
-use App\Models\Brand;
-use App\Models\Category;
-use App\Models\ProductVariant;
-use App\Models\VariantAttribute;
 use App\Services\Dashboard\AttributeService;
 use App\Services\Dashboard\BrandService;
 use App\Services\Dashboard\CategoryService;

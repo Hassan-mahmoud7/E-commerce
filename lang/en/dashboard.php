@@ -35,6 +35,35 @@ return [
     'admin_successfully' => 'Admin created successfully',
 
     'shipping_management' => 'Shipping Management',
+
+    #users
+    'users' => 'Users',
+    'user' => 'User',
+    'user_dashboard' => 'User Dashboard',
+    'user_name' => 'User Name',
+    'user_name_ar' => 'User Name Arabic',
+    'user_name_en' => 'User Name English',
+    'user_phone' => 'Phone',
+    'user_email' => 'Email',
+    'email_verified_at' => 'Email Verifier',
+    'user_image' => 'Image',
+    'user_status' => 'Status',
+    'user_password' => 'Password',
+    'user_confirm_password' => 'Password Confirmation',
+    'num_of_orders' => 'Number Of Orders',
+    'create_user' => 'Create User',
+    'edit_user' => 'Edit User',
+    'delete_user' => 'Delete User',
+    'user_successfully' => 'User created successfully',
+
+    #products
+    'products' => 'Products',
+    'product' => 'Product',
+    'product_dashboard' => 'Product Dashboard',
+    'product_name' => 'Product Name',
+    'product_name_ar' => 'Product Name Arabic',
+    'product_name_en' => 'Product Name English',
+
     #country
     'countries' => 'countries',
     'country' => 'Country',

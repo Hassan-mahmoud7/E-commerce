@@ -17,7 +17,7 @@ use App\Http\Controllers\Dashboard\Auth\AuthController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
 use App\Http\Controllers\Dashboard\Auth\ForgotPasswordController;
-
+use App\Http\Controllers\Dashboard\UserController;
 
 Route::group(
     [
@@ -127,6 +127,12 @@ Route::group(
                 
                 //Variants
                 Route::delete('products/variants/{variant_id}',[ProductController::class, 'deleteVariant'])->name('products.variants.delete');
+            });
+             #################################| Users Routes Dashboard |#################################
+             Route::group(['middleware' => 'can:users'], function () {
+                Route::resource('users', UserController::class);
+                Route::get('users-all', [UserController::class, 'getAllUsersForDatatable'])->name('users.all');
+                Route::get('users/{id}/status', [UserController::class, 'ChangeStatus'])->name('users.status');
             });
         });
         Livewire::setUpdateRoute(function ($handle) {

@@ -68,4 +68,20 @@ class User extends Authenticatable
     {
         return $this->hasMany(ProductPreview::class,'user_id');
     }
+    public function orders()
+    {
+        return $this->hasMany(Order::class,'user_id');        
+    }
+    public function getStatusTranslated()
+    {
+        return $this->status == 1 ? __('dashboard.active') : __('dashboard.not_active');
+    }
+    public function getCreatedAtAttribute($created)
+    {
+        return date('d/m/Y h:m A', strtotime($created));
+    }
+    public function getEmailVerifiedAtAttribute($value)
+    {
+        return date('d/m/Y h:m A', strtotime($value));
+    }
 }
