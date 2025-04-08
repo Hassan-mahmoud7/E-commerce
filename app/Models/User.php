@@ -84,4 +84,8 @@ class User extends Authenticatable
     {
         return date('d/m/Y h:m A', strtotime($value));
     }
+    public function user($value)
+    {
+        return date('d/m/Y h:m A', strtotime($value));
+    }
 }
