@@ -55,15 +55,7 @@ class UserService
         $this->usersCache();
         return $user ?? false;
     }
-    public function updateUser($id, $data)
-    {
-        $user = $this->getUserById($id);
-        $updatedUser = $this->userRepository->updateUser($user, $data);
-        if (!$updatedUser) {
-            return false;
-        }
-        return true;
-    }
+   
     public function destroyUser($id)
     {
         $user = $this->getUserById($id);

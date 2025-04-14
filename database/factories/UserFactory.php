@@ -47,7 +47,7 @@ class UserFactory extends Factory
             'country_id' => $country->id,
             'governorate_id' => $governorate->id,
             'city_id' => $city->id,
-            'image' => asset('assets/img/uploads/users/user_profile.jpg'),
+            'image' => 'user_profile.jpg',
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];

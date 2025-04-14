@@ -1,47 +1,52 @@
- {{-- <div class="modal fade text-left" id="bootstrap" tabindex="-1" role="dialog" aria-labelledby="myModalLabel35"
+ <div class="modal fade text-left" id="bootstrap" tabindex="-1" role="dialog" aria-labelledby="myModalLabel35"
      aria-hidden="true">
      <div class="modal-dialog" role="document">
          <div class="modal-content">
              <div class="modal-header">
-                 <h3 class="modal-title" id="myModalLabel35"> {{ __('dashboard.create_coupon') }}</h3>
+                 <h3 class="modal-title" id="myModalLabel35"> {{ __('dashboard.create_user') }}</h3>
                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                  </button>
              </div>
-             <form action="" method="POST" id="create_coupon" class="form">
+             <form action="" method="POST" id="createUser" class="form">
                  @csrf
-                 <div class="modal-body"> --}}
+                 <div class="modal-body"> 
                     {{-- validations errors --}}
-                    {{-- <div class="alert alert-danger" id="error_div" style="display: none;">
+                     <div class="alert alert-danger" id="error_div" style="display: none;">
                         <ul id="error_list"></ul>
                     </div> 
                      <fieldset class="form-group floating-label-form-group">
-                         <label for="code">{{ __('dashboard.coupon_code') }}</label>
-                         <input type="text" name="code" class="form-control" id="code" value="{{ old('code') }}"
-                             placeholder="{{ __('dashboard.coupon_code') }}">
+                         <label for="name">{{ __('dashboard.user_name') }}</label>
+                         <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}"
+                             placeholder="{{ __('dashboard.enter') }} {{ __('dashboard.user_name') }}">
                      </fieldset>
                      <fieldset class="form-group floating-label-form-group">
-                         <label for="discount_percentage">{{ __('dashboard.coupon_discount_percentage') }}</label>
-                         <input type="number" name="discount_percentage" class="form-control" id="discount_percentage"
-                             placeholder="{{ __('dashboard.coupon_discount_percentage') }}" value="{{ old('discount_percentage') }}">
+                         <label for="email">{{ __('dashboard.user_email') }}</label>
+                         <input type="text" name="email" class="form-control" id="email" value="{{ old('email') }}"
+                             placeholder="{{ __('dashboard.enter') }} {{ __('dashboard.user_email') }}">
                      </fieldset>
                      <fieldset class="form-group floating-label-form-group">
-                         <label for="limit">{{ __('dashboard.coupon_limit') }}</label>
-                         <input type="number" name="limit" class="form-control" id="limit"
-                             placeholder="{{ __('dashboard.coupon_limit') }}" value="{{ old('limit') }}">
+                         <label for="user_phone">{{ __('dashboard.user_phone') }}</label>
+                         <input type="tel" name="phone" class="form-control" id="user_phone"
+                             placeholder="{{ __('dashboard.enter') }} {{ __('dashboard.user_phone') }}" value="{{ old('phone') }}">
                      </fieldset>
                      <fieldset class="form-group floating-label-form-group">
-                         <label for="start_date">{{ __('dashboard.coupon_start_date') }}</label>
-                         <input type="date" name="start_date" class="form-control" id="start_date"
-                             placeholder="{{ __('dashboard.coupon_start_date') }}" value="{{ old('start_date') }}">
+                         <label for="password">{{ __('dashboard.user_password') }}</label>
+                         <input type="password" name="password" class="form-control" id="user_password"
+                             placeholder="{{ __('dashboard.enter') }} {{ __('dashboard.user_password') }}" value="{{ old('password') }}">
                      </fieldset>
-                     <fieldset class="form-group floating-label-form-group">
-                         <label for="end_date">{{ __('dashboard.coupon_end_date') }}</label>
-                         <input type="date" name="end_date" class="form-control" id="end_date"
-                             placeholder="{{ __('dashboard.coupon_end_date') }}" value="{{ old('end_date') }}">
-                     </fieldset>
-                     <fieldset class="form-group floating-label-form-group">
-                         <label>{{ __('dashboard.coupon_status') }}</label>
+                        <fieldset class="form-group floating-label-form-group">
+                            <label for="password_confirmation">{{ __('dashboard.user_confirm_password') }}</label>
+                            <input type="password" name="password_confirmation" class="form-control"
+                                id="password_confirmation"
+                                placeholder="{{ __('dashboard.enter') }} {{ __('dashboard.user_confirm_password') }}"
+                                value="{{ old('password_confirmation') }}">
+                        </fieldset>
+
+                        @livewire('general.address-drop-down-debpendent')
+
+                     <fieldset class="form-group floating-label-form-group mt-2">
+                         <label>{{ __('dashboard.user_status') }}</label>
                          <div class="input-group">
                              <div class="d-inline-block custom-control custom-radio mr-1">
                                  <input type="radio" name="status" checked class="custom-control-input"
@@ -65,4 +70,4 @@
              </form>
          </div>
      </div>
- </div> --}}
+ </div>

@@ -24,10 +24,6 @@
                                 data-i18n="nav.templates.vert.classic_menu"><i class="la la-bars"></i>
                                 {{ __('dashboard.category_dashboard') }}</a>
                         </li>
-                        <li><a class="menu-item" href="{{ route('dashboard.categories.create') }}"
-                                data-i18n="nav.templates.vert.classic_menu"><i class="ft-edit"></i>
-                                {{ __('dashboard.create_category') }}</a>
-                        </li>
                     </ul>
                 </li>
             @endcan

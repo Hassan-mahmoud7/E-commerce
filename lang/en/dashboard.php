@@ -41,8 +41,6 @@ return [
     'user' => 'User',
     'user_dashboard' => 'User Dashboard',
     'user_name' => 'User Name',
-    'user_name_ar' => 'User Name Arabic',
-    'user_name_en' => 'User Name English',
     'user_phone' => 'Phone',
     'user_email' => 'Email',
     'email_verified_at' => 'Email Verifier',

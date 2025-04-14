@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 use App\Services\Dashboard\UserService;
 use Illuminate\Http\Request;
 use function PHPUnit\Framework\isNull;
@@ -34,9 +35,14 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        $data = $request->only(['name','email','password','phone','status','city_id','country_id','governorate_id']);
+        $user = $this->userService->storeUser($data);
+        if (!$user) {
+            return response()->json(['status' => 'error', 'message' => __('dashboard.error_message')], 500);
+        }
+        return response()->json(['status' => 'success', 'message' => __('dashboard.created_successfully')], 201);
     }
 
     /**

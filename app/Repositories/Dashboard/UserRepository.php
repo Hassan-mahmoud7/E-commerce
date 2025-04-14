@@ -18,11 +18,6 @@ class UserRepository
     {
         return User::create($data);
     }
-    public function updateUser($user, $data)
-    {
-        $user = $user->update($data);
-        return $user;
-    }
     public function destroyUser($user)
     {
         return $user->delete();

@@ -211,42 +211,44 @@
             table.rowReorder.enable();
          });
         // create user using Ajax
-        // $('#create_user').on('submit', function(e) {
-        //     e.preventDefault();
-        //     var currentPage = $('#yajra_table').DataTable().page();
-        //     $.ajax({
-        //         url: "{{ route('dashboard.users.store') }}",
-        //         method: "POST",
-        //         data: new FormData(this),
-        //         processData: false,
-        //         contentType: false,
-        //         success: function(data) {
-        //             if (data.status == 'success') {
-        //                 $('#create_user')[0].reset();
-        //                 $('#yajra_table').DataTable().page(currentPage).draw(false);
-        //                 $('#bootstrap').removeClass('show').css('display', 'none').attr('aria-hidden',
-        //                     'true');
-        //                 $('body').removeClass('modal-open');
-        //                 $('.modal-backdrop').remove();
-        //                 Swal.fire({
-        //                     position: "center",
-        //                     icon: "success",
-        //                     title: data.message,
-        //                     showConfirmButton: false,
-        //                     timer: 2000
-        //                 });
-        //             }
-        //         },
-        //         error: function(data) {
-        //             if (data.responseJSON.errors) {
-        //                 $.each(data.responseJSON.errors, function(key, value) {
-        //                     $('#error_list').append('<li>' + value[0] + '</li>');
-        //                     $('#error_div').show();
-        //                 });
-        //             }
-        //         },
-        //     });
-        // });
+        $('#createUser').on('submit', function(e) {
+            e.preventDefault();
+            var currentPage = $('#yajra_table').DataTable().page();
+            $.ajax({
+                url: "{{ route('dashboard.users.store') }}",
+                method: "POST",
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    if (data.status == 'success') {
+                        $('#createUser')[0].reset();
+                        $('#yajra_table').DataTable().page(currentPage).draw(false);
+                        $('#bootstrap').removeClass('show').css('display', 'none').attr('aria-hidden',
+                            'true');
+                        $('body').removeClass('modal-open');
+                        $('.modal-backdrop').remove();
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: data.message,
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
+                    }
+                },
+                error: function(data) {
+                    if (data.responseJSON.errors) {
+                        $('#error_list').empty();
+                        $('#error_div').hide();
+                        $.each(data.responseJSON.errors, function(key, value) {
+                            $('#error_list').append('<li>' + value[0] + '</li>');
+                            $('#error_div').show();
+                        });
+                    }
+                },
+            });
+        });
         // change status using Ajax
         $(document).on('click' , '.change_status' , function (e) {
                     e.preventDefault();
@@ -292,63 +294,7 @@
                         
                     });
                 });
-        // edit user using Ajax
-        // $(document).on('click', '.edit_user', function(e) {
-        //     e.preventDefault();
-
-        //     $('#user_id').val($(this).attr('user_id'));
-        //     $('#user_code').val($(this).attr('user_code'));
-        //     $('#user_discount').val($(this).attr('user_discount'));
-        //     $('#user_limit').val($(this).attr('user_limit'));
-        //     $('#user_start_date').val($(this).attr('user_start_date'));
-        //     $('#user_end_date').val($(this).attr('user_end_date'));
-
-        //     if ($(this).attr('user_status') == 1) {
-        //         $('#user_active').prop('checked', true);
-        //     } else {
-        //         $('#user_not_active').prop('checked', true);
-        //     }
-
-        //     $('#edit_bootstrap').modal('show');
-        // });
-        // update user using Ajax
-        // $('#update_user').on('submit', function(e) {
-        //     e.preventDefault();
-        //     var currentPage = $('#yajra_table').DataTable().page();
-        //     var edit_user_id = $('#user_id').val();
-        //     $.ajax({
-        //         url: "{{ route('dashboard.users.update', 'id') }}".replace('id', edit_user_id),
-        //         method: "POST",
-        //         data: new FormData(this),
-        //         processData: false,
-        //         contentType: false,
-        //         success: function(data) {
-        //             if (data.status == 'success') {
-        //                 $('#yajra_table').DataTable().page(currentPage).draw(false);
-        //                 $('#edit_bootstrap').removeClass('show').css('display', 'none').attr('aria-hidden', 'true');
-        //                 $('body').removeClass('modal-open');
-        //                 $('.modal-backdrop').remove();
-        //                 Swal.fire({
-        //                     position: "center",
-        //                     icon: "success",
-        //                     title: data.message,
-        //                     showConfirmButton: false,
-        //                     timer: 2000
-        //                 });
-        //             }
-        //         },
-        //         error: function(data) {
-        //             if (data.responseJSON.errors) {
-        //                 $('#error_list_edit').empty();
-        //                 $('#error_div_edit').hide();
-        //                 $.each(data.responseJSON.errors, function(key, value) {
-        //                     $('#error_list_edit').append('<li>' + value[0] + '</li>');
-        //                     $('#error_div_edit').show();
-        //                 });
-        //             }
-        //         },
-        //     });
-        // });
+      
         // delete user using Ajax
         $(document).on('click', '.delete_confirm_btn', function(e) {
             e.preventDefault();

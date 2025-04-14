@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('phone')->unique();
             $table->boolean('status')->default(1);
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image')->default('user_profile.jpg');
             $table->string('password');
             $table->foreignId('city_id')->constrained('cities')->cascadeOnDelete();
             $table->foreignId('country_id')->constrained('countries')->cascadeOnDelete();
