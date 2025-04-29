@@ -38,7 +38,6 @@ class ReplayContact extends Component
             return;
         }
         $this->dispatch('close-modal');
-        // $this->dispatch('contact-replay-success');
 
     }
     public function render()
