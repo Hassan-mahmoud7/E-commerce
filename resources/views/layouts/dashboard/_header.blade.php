@@ -58,7 +58,6 @@
         <!-- BEGIN Page Level CSS-->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css-rtl/core/menu/menu-types/vertical-menu-modern.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css-rtl/core/colors/palette-gradient.css">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css-rtl/core/colors/palette-gradient.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css-rtl/pages/timeline.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css-rtl/pages/dashboard-ecommerce.css">
         <!-- END Page Level CSS-->
@@ -76,7 +75,6 @@
         <!-- END MODERN CSS-->
         <!-- BEGIN Page Level CSS-->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css/core/menu/menu-types/vertical-menu-modern.css">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css/core/colors/palette-gradient.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css/core/colors/palette-gradient.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css/pages/timeline.css">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css/pages/dashboard-ecommerce.css">

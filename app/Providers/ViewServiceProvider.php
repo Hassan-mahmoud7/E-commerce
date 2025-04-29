@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Admin;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Coupon;
 use App\Models\Faq;
 use App\Models\Product;
@@ -64,6 +65,11 @@ class ViewServiceProvider extends ServiceProvider
                     return User::count();
                 });
             }
+            if(!Cache::has('contacts_count')) {
+                Cache::remember('contact_count', now()->addMinutes(60), function () {
+                    return Contact::where('is_read',0)->count();
+                });
+            }
             view()->share([
                 'categories_count' => Cache::get('categories_count'),
                 'brands_count' => Cache::get('brands_count'),
@@ -72,6 +78,7 @@ class ViewServiceProvider extends ServiceProvider
                 'faqs_count' => Cache::get('faqs_count'),
                 'products_count' => Cache::get('products_count'),
                 'users_count' => Cache::get('users_count'),
+                'contacts_count' => Cache::get('contact_count'),
             ]);
         });
         // git setting And Share

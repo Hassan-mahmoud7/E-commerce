@@ -13,7 +13,7 @@ return [
         'dashboard' => 'Manage Dashboard',
         'profile' => 'Manage Profile',
         'home' => 'Manage Home',
-        'contact' => 'Manage Contact',
+        'contacts' => 'Manage Contact',
         'about' => 'Manage About',
         'blog' => 'Manage Blog',
         'newsLetters' => 'Manage News Letters',

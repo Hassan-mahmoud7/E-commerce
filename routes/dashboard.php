@@ -17,6 +17,7 @@ use App\Http\Controllers\Dashboard\Auth\AuthController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
 use App\Http\Controllers\Dashboard\Auth\ForgotPasswordController;
+use App\Http\Controllers\Dashboard\ContactController;
 use App\Http\Controllers\Dashboard\UserController;
 
 Route::group(
@@ -134,6 +135,11 @@ Route::group(
                 Route::get('users-all', [UserController::class, 'getAllUsersForDatatable'])->name('users.all');
                 Route::get('users/{id}/status', [UserController::class, 'ChangeStatus'])->name('users.status');
             });
+            #################################| Contacts Routes Dashboard |#################################
+            Route::controller(ContactController::class)->prefix('contacts/')->middleware('can:contacts')->group(function () {
+                Route::get('/', 'index')->name('contacts.index');
+            });
+
         });
         Livewire::setUpdateRoute(function ($handle) {
             return Route::post('/livewire/update', $handle);

@@ -89,6 +89,7 @@ return [
     'city_status' => 'Status City',
     'city_name' => 'City Name',
 
+
     #category
     'categories' => 'Categories',
     'category' => 'Category',
@@ -250,6 +251,42 @@ return [
     'product_variants' => 'Product Variants',
     'new_image_uploaded' => 'New Image Uploaded',
 
+    #contact
+    'contacts' => 'Contacts',
+    'contact' => 'Contact',
+    'contact_dashboard' => 'Contact Dashboard',
+    'contact_name' => 'Contact Name',
+    'contact_email' => 'Contact Email',
+    'contact_phone' => 'Contact Phone',
+    'contact_subject' => 'Contact Subject',
+    'contact_message' => 'Contact Message',
+    'contact_show_messages' => 'Show Messages',
+    'contact_is_read' => 'Contact Is Read',
+    'contact_user' => 'Contact User',
+    'contact_new' => 'New Contact',
+    'contact_readed' => 'Readed',
+    'contact_replay' => 'Replay',
+    'starred' => 'Starred',
+    'trash' => 'Trashed',
+    'contact_created_at' => 'Contact Created At',
+    'contact_updated_at' => 'Contact Updated At',
+    'create_contact' => 'Contact Created Successfully',
+    'edit_contact' => 'Contact Edited Successfully',
+    'delete_message' => 'Message Deleted Successfully',
+    'restore_message_success' => 'Message Restored Successfully',
+    'restore_message' => 'Restore Message',
+    'forece_delete' => 'Force Delete',
+    'mark_unreaded' => 'Mark Unreaded',
+    'more' => 'More',
+    'inbox' => 'Inbox',
+    'readed' => 'Readed',
+    'answered' => 'Answered',
+    'mark_all_as_read' => 'Mark All As Read',
+    'delete_all_read_contacts' => 'Delete All Read Contacts',
+    'delete_all_answered_contacts' => 'Delete All Answered Contacts',
+
+
+
 
     'add_new_variant' =>'Add New Variant',
     'remove_variant' =>'Remove Variant',
@@ -259,6 +296,7 @@ return [
     'email' => 'Email',
     'create' => 'Create',
     'edit' => 'Edit',
+    'actions' => 'Actions',
     'delete' => 'Delete!',
     'delete_success' => 'has been deleted successfully.',
     'delete_text' => 'Yes, delete it!',
@@ -276,10 +314,12 @@ return [
     'enter' => 'Enter',
     'no' => 'No',
     'yes' => 'Yes',
+    'send' => 'Send',
     'fullscreen' => 'Fullscreen',
     'select' => 'Select',
     'well_done' => 'Well done',
     'failed' => 'Failed',
+    'no_message_found' => 'No Message Found',
 
 
     'delete' => 'Delete',

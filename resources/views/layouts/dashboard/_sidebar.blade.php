@@ -170,6 +170,23 @@
                     </ul>
                 </li>
             @endcan
+            @can('contacts')
+            <li class=" nav-item"><a href="#"><i class="fa-solid fa-headset"></i><span class="menu-title"
+                        data-i18n="nav.templates.main">{{ __('dashboard.contacts') }}</span>
+                        <span class="badge badge badge-info badge-pill float-right mr-2">{{ $contacts_count }}</span>
+                    </a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{{ route('dashboard.contacts.index') }}"
+                            data-i18n="nav.templates.vert.classic_menu"><i class="ft ft-headphones"></i>
+                            {{ __('dashboard.contact_dashboard') }}</a>
+                    </li>
+                    {{-- <li><a class="menu-item" href="{{ route('dashboard.contacts.create') }}"
+                        data-i18n="nav.templates.vert.classic_menu"><i class="ft ft-contact-plus"></i>
+                        {{ __('dashboard.create_contact') }}</a>
+                    </li> --}}
+                </ul>
+            </li>
+            @endcan
         </ul>
     </div>
 </div>
