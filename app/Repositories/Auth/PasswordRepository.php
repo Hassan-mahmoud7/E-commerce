@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Auth;
 
+use App\Models\User;
 use App\Models\Admin;
 use Ichtrojan\Otp\Otp;
 use Illuminate\Support\Facades\DB;
@@ -26,10 +27,9 @@ class PasswordRepository
         $otp = $this->otp->validate($email,$token);
         return $otp;  
     }
-    public function resetPassword($email,$password)
+    public function resetPassword($guard,$password)
     {
-        $admin = $this->getAdminByEmail($email);
-        return $admin->update(['password' => bcrypt($password)]);
+        return $guard->update(['password' => bcrypt($password)]);
          
     }
     public function checkExsits($email , $token) 
@@ -40,4 +40,10 @@ class PasswordRepository
         ])->first();
         return $OtpToken;
     }
+    public function getUserByEmail($email)  
+    {
+       $user = User::where('email', $email)->first();
+       return $user;
+    }
+
 }

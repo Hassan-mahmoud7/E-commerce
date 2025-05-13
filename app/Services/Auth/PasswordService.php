@@ -17,9 +17,15 @@ class PasswordService
     }
     public function sendOtp($email)  
     {
-       $admin = $this->passwordRepository->getAdminByEmail($email);   
-       $admin->notify(new SendOtpNotify());
-       return $admin;
+        if (request()->is('*/dashboard/*')) {
+            $admin = $this->passwordRepository->getAdminByEmail($email);   
+            $admin->notify(new SendOtpNotify());
+            return $admin;
+        }else {
+            $user = $this->passwordRepository->getUserByEmail($email);    
+            $user->notify(new SendOtpNotify());
+            return $user;
+        }
 
     }
     public function verifyOtp($email,$token) 
@@ -41,6 +47,12 @@ class PasswordService
         if (!$checkExsits) {
             return false;
         }
-        return $this->passwordRepository->resetPassword($email,$password);
+        if (request()->is('*/dashboard/*')) {
+            $admin = $this->passwordRepository->getAdminByEmail($email);
+            return $this->passwordRepository->resetPassword($admin,$password);
+        }else {
+            $user = $this->passwordRepository->getUserByEmail($email);
+            return $this->passwordRepository->resetPassword($user,$password);
+        }
     }
 }

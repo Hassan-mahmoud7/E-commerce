@@ -15,13 +15,14 @@ class ResetPasswordController extends Controller
     public function __construct(PasswordService $passwordService)
     {
         $this->dependency_injection = $passwordService;
+        $this->middleware('guest:admin');
     }
-    public static function middleware(): array
-    {
-        return [
-            new Middleware(middleware: 'guest:admin'),
-        ];
-    }
+    // public static function middleware(): array
+    // {
+    //     return [
+    //         new Middleware(middleware: 'guest:admin'),
+    //     ];
+    // }
     public function resetPassword($email,$token)
     {
         return view('dashboard.auth.password.reset',compact('email','token'));

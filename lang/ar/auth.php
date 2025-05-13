@@ -20,8 +20,10 @@ return [
     'logout' => 'تسجيل الخروج',
     'register' => 'تسجيل',
     'email' => 'ادخل البريد الألكتروني',
+    'email_address' => 'البريد الألكتروني',
     'confirm_password' => 'تأكيد كلمة المرور',
     'password_name' => 'ادخل كلمة المرور',
+    'password_title' => 'كلمة المرور',
     'remember_me' => 'تذكرني',
     'forgot_password' => 'هل نسيت كلمة المرور؟',
     'reset_password' => 'عادة تعيين كلمة المرور جديد',
@@ -33,6 +35,7 @@ return [
     'update_profile' => 'تحديث الملف الشخصي',
     'change_password' => 'تغيير كلمة المرور',
     'update_password' => 'تحديث كلمة المرور',
+    'registration_successful' => 'تم التسجيل بنجاح! يرجى التحقق من بريدك الإلكتروني للتحقق.',
     'logned_successfuly' => 'تم تسجيل الدخول بنجاح اهلا بك',
     'loggout_successfuly' => 'تم تسجيل الدخول بنجاح',
     'message_send_code' => 'سنرسل لك رمزًا لإعادة تعيين كلمة المرور.',
@@ -46,7 +49,8 @@ return [
     'confirm' => 'تأكيد',
     'add_new_password' => 'ادخل كلمة المرور الجديدة',
     'add_new_password_confirmation' => 'ادخل كلمة المرور الجديدة للتأكيد',
-    
-    
+    'verify_email' => 'تأكيد البريد الألكتروني',
+
+
 
 ];

@@ -30,7 +30,7 @@ class SettingRequest extends FormRequest
             'email' => ['required', 'email','max:255'],
             'email_support' => ['required', 'email','max:255'],
             'phone' => ['required', 'string','max:20'],
-            'logo' => ['nullable','mimes:jpeg,png,jpg,ico','max:2048'],
+            'logo' => ['nullable','mimes:jpeg,png,jpg,gif,bmp,webp,svg,ico,tiff','max:2048'],
             'favicon' => ['nullable','mimes:jpeg,png,jpg,gif,bmp,webp,svg,ico,tiff','max:2048'],
 
             'facebook' => ['required', 'url','max:255'],

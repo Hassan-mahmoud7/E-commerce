@@ -12,19 +12,20 @@ use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Support\Facades\Redis;
 
-class AuthController extends Controller implements HasMiddleware
+class AuthController extends Controller //implements HasMiddleware
 {
     protected $dependency_injection;
     public function __construct(AuthService $authService)
     {
         $this->dependency_injection = $authService;
+        $this->middleware('guest:admin')->except('logout');
     }
-    public static function middleware(): array
-    {
-        return [
-            new Middleware(middleware: 'guest:admin', except: ['logout']),
-        ];
-    }
+    // public static function middleware(): array
+    // {
+    //     return [
+    //         new Middleware(middleware: 'guest:admin', except: ['logout']),
+    //     ];
+    // }
     public function showLoginForm()
     {
         return view('dashboard.auth.login');

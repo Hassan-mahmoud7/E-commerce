@@ -20,12 +20,15 @@ return [
     'logout' => 'Logout',
     'register' => 'Register',
     'password_name' => 'Please enter your Password.',
+    'password_title' => 'Password',
     'confirm_password' => 'Confirm Password',
     'remember_me' => 'Remember Me',
     'forgot_password' => 'Forgot Password?',
     'reset_password' => 'Reset new Password',
     'send_password_reset_link' => 'Send Password Reset Link',
     'email' => 'Please enter your Email.',
+    'email_address' => 'Email Address',
+    'registration_successful' => 'Registration successful! Please check your email for verification.',
     'logned_successfuly' => 'You have successfully logged in. Welcome!',
     'loggout_successfuly' => 'You have logouted successfully',
     'message_send_code' => 'We will send you a code to reset password.',
@@ -39,6 +42,7 @@ return [
     'confirm' => 'Confirm',
     'add_new_password' => 'Enter new Password',
     'add_new_password_confirmation' => 'Enter new password to confirm',
+    'verify_email' => 'Verify Email',
 
 
 ];

@@ -20,13 +20,9 @@ class ForgotPasswordController extends Controller
     {
         $this->dependency_injection = $passwordService;
         $this->otp2 = new Otp;
+        $this->middleware('guest:admin');
     }
-    public static function middleware(): array
-    {
-        return [
-            new Middleware(middleware: 'guest:admin'),
-        ];
-    }
+
 
     public function showForgotPasswordForm()
     {
