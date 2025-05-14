@@ -20,7 +20,6 @@ class ProductService
     public function getAllProductsForDatatable()
     {
         $products = $this->productRepository->getProducts();
-        // dd($products);
         return DataTables::of($products)
             ->addIndexColumn()
             ->addColumn('name', function ($item) {

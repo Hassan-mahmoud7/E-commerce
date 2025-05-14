@@ -14,6 +14,7 @@ use App\Http\Controllers\Dashboard\{
     ContactController,
     RoleController,
     AdminController,
+    SliderController,
     WelcomeController,
     UserController
 };
@@ -116,6 +117,13 @@ Route::group(
             Route::group(['middleware' => 'can:settings'], function () {
                 Route::get('settings', [SettingController::class, 'index'])->name('settings');
                 Route::put('settings/update/{id}', [SettingController::class, 'update'])->name('settings.update');
+            });
+            #################################| Sliders Routes Dashboard |#################################
+            Route::controller(SliderController::class)->middleware('can:sliders')->group(function () {
+                Route::get('sliders','index')->name('sliders');
+                Route::get('sliders/all','getSliders')->name('sliders.all');
+                Route::post('sliders/store','store')->name('sliders.store');
+                Route::delete('sliders/destroy/{id}','destroy')->name('sliders.destroy');
             });
             #################################| Attributes Routes Dashboard |#################################
             Route::group(['middleware' => 'can:attributes'], function () {

@@ -94,11 +94,25 @@
                     </ul>
                 </li>
             @endcan
-            @can('settings')
-                <li data-i18n="nav.templates.main"><a class="menu-title" href="{{ route('dashboard.settings') }}">
-                        <i class="ft ft-settings"></i> {{ __('dashboard.setting_dashboard') }}</a>
+            <li class=" nav-item"><a href="#"><i class="fa-solid fa-gears"></i><span class="menu-title"
+                data-i18n="nav.templates.main">{{ __('dashboard.settings') }}</span></a>
+                <ul class="menu-content">
+                        @can('settings')
+                        <li data-i18n="nav.templates.main"><a class="menu-title" href="{{ route('dashboard.settings') }}">
+                            <i class="ft ft-settings"></i> {{ __('dashboard.setting_dashboard') }}</a>
+                        </li>
+                        @endcan
+                        @can('sliders')
+                            
+                        <li><a class="menu-item" href="{{ route('dashboard.sliders') }}"
+                            data-i18n="nav.templates.vert.classic_menu"><i class="fa-solid fa-sliders"></i>
+                            {{ __('dashboard.sliders') }}</a>
+                        </li>
+                        @endcan
+
+                    </ul>
                 </li>
-            @endcan
+                
             @can('roles')
                 <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title"
                             data-i18n="nav.templates.main">{{ __('dashboard.role') }}</span></a>

@@ -174,6 +174,22 @@ return [
     'social_setting' => 'وسائط',
     'contact_setting' => 'التواصل',
     'basic_settings' => 'الاساسى',
+
+     #slider
+    'sliders' => 'منزلقات',
+    'slider' => 'المنزلق',
+    'slider_dashboard' => 'لوحة معلومات المنزلقات',
+    'slider_image' => 'صورة',
+    'slider_note' => 'ملاحظة',
+    'slider_note_ar' => 'ملاحظة المنزلق بالعربى',
+    'slider_note_en' => 'ملاحظة المنزلق بالانجليزى',
+    'slider_created_at' => 'تاريخ انشاء المنزلق',
+    'create_slider' => 'انشاء منزلق جديد',
+    'edit_slider' => 'تعديل على المنزلق',
+    'delete_slider' => 'حذف المنزلق',
+    'delete_slider_successfully' => 'تم حذف شريط التمرير بنجاح',
+    'create_slider_successfully' => 'تم انشاء شريط التمرير بنجاح',
+    'edit_slider_successfully' => 'تم تعديل شريط التمرير بنجاح',
     
     #attribute
     'attributes' => 'السمات',

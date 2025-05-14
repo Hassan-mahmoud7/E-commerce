@@ -187,6 +187,22 @@ return [
     'contact_setting' => 'Contact',
     'basic_settings' => 'Basic',
 
+    #slider
+    'sliders' => 'Sliders',
+    'slider' => 'Slider',
+    'slider_dashboard' => 'Slider Dashboard',
+    'slider_image' => 'Image',
+    'slider_note' => 'Note',
+    'slider_created_at' => 'Created At',
+    'slider_note_ar' => 'Slider Note Arabic',
+    'slider_note_en' => 'Slider Note English',
+    'create_slider' => 'Create Slider',
+    'edit_slider' => 'Edit Slider',
+    'delete_slider' => 'Delete Slider',
+    'delete_slider_successfully' => 'Slider Deleted Successfully',
+    'create_slider_successfully' => 'Slider created successfully',
+    'edit_slider_successfully' => 'Slider edited successfully',
+
     #attribute
     'attributes' => 'Attributes',
     'attribute' => 'Attribute',
@@ -288,8 +304,8 @@ return [
 
 
 
-    'add_new_variant' =>'Add New Variant',
-    'remove_variant' =>'Remove Variant',
+    'add_new_variant' => 'Add New Variant',
+    'remove_variant' => 'Remove Variant',
     'not_found' => 'Not Found',
     'count_of_users' => 'Number of Users',
     'created' => 'Created',

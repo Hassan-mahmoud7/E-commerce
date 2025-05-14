@@ -15,6 +15,7 @@ class HomeController extends Controller
     }
     public function index()
     {
-        return view('website.index');
+        $sliders = $this->HomeService->getSlider();
+        return view('website.index',compact('sliders'));
     }
 }

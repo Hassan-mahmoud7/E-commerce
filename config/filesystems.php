@@ -64,6 +64,13 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'sliders' => [
+            'driver' => 'local',
+            'root' => public_path('/assets/img/uploads/sliders'),
+            'url' => env('APP_URL').'/assets/img/uploads/sliders',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
         'users' => [
             'driver' => 'local',
             'root' => public_path('/assets/img/uploads/users'),

@@ -2,13 +2,12 @@
 
 namespace App\Repositories\Website;
 
+use App\Models\Slider;
+
 class HomeRepository
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
+    public function getSlider()
     {
-        //
+        return Slider::latest()->get();
     }
 }

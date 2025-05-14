@@ -61,7 +61,7 @@
                     <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="descdescription_en">{{ __('dashboard.product_description_en') }}</label>
-                            <textarea wire:model.live="desc_en" id="description_en" class="form-control @error('desc_en') is-invalid  @enderror"
+                            <textarea wire:model="desc_en" id="description_en" class="form-control @error('desc_en') is-invalid  @enderror"
                                 rows="5"></textarea>
                             @error('desc_en')
                                 <strong class="invalid-feedback"> {{ $message }}</strong>
@@ -71,7 +71,7 @@
                     <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="descdescription_ar">{{ __('dashboard.product_description_ar') }}</label>
-                            <textarea wire:model.live="desc_ar" id="descdescription_ar" class="form-control @error('desc_ar') is-invalid  @enderror"
+                            <textarea wire:model="desc_ar" id="descdescription_ar" class="form-control @error('desc_ar') is-invalid  @enderror"
                                 rows="5"></textarea>
                             @error('desc_ar')
                                 <strong class="invalid-feedback"> {{ $message }}</strong>
