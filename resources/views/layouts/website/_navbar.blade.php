@@ -3,14 +3,14 @@
         <div class="container">
             <div class="header-top">
                 <div class="header-profile">
-                    <a href="user-profile.html"><span>Account</span></a>
+                    <a href="{{ route('website.profile') }}"><span>Account</span></a>
                     <a href="order.html"><span>Track Order</span></a>
-                    <a href="faq.html"><span>Support</span></a>
+                    <a href="{{ route('website.faqs.index') }}"><span>{{ __('website.support') }}</span></a>
                 </div>
                 <div class="header-contact d-none d-lg-block">
                     <a href="#">
                         <span>Need help? Call us:</span>
-                        <span class="contact-number">+ 00645 4568</span>
+                        <span class="contact-number">+ {{ $setting->phone }}</span>
                     </a>
                 </div>
             </div>
@@ -234,10 +234,10 @@
                         </div>
                     </div>
                     <div class="header-user">
-                        <a href="user-profile.html">
+                        <a href="{{ route('website.profile') }}">
                             <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                                    class="fill-current">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                    height="24" class="fill-current">
                                     <path fill="none" d="M0 0h24v24H0z"></path>
                                     <path
                                         d="M20 22H4v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2zm-8-9a6 6 0 1 1 0-12 6 6 0 0 1 0 12z">
@@ -252,22 +252,24 @@
     </div>
     <nav class="mobile-menu d-block d-lg-none">
         <div class="mobile-menu-header d-flex justify-content-between align-items-center">
-            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-                aria-controls="offcanvasWithBothOptions">
+            <button class="btn" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                 <span>
-                    <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="14" height="9" viewBox="0 0 14 9" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <rect width="14" height="1" fill="#1D1D1D" />
                         <rect y="8" width="14" height="1" fill="#1D1D1D" />
                         <rect y="4" width="10" height="1" fill="#1D1D1D" />
                     </svg>
                 </span>
             </button>
-            <a href="index-2.html" class="mobile-header-logo">
+            <a href="{{ route('website.home') }}" class="mobile-header-logo">
                 <img src="{{ asset('assets/website/assets/images/logos/logo.webp') }}" alt="logo">
             </a>
             <a href="cart.html" class="header-cart cart-item">
                 <span>
-                    <svg width="35" height="28" viewBox="0 0 35 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="35" height="28" viewBox="0 0 35 28" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M16.4444 21.897C14.8444 21.897 13.2441 21.8999 11.6441 21.8963C9.79233 21.892 8.65086 21.0273 8.12595 19.2489C7.04294 15.5794 5.95756 11.9107 4.87166 8.24203C4.6362 7.4468 4.37783 7.25412 3.55241 7.25175C2.7786 7.24964 2.00507 7.25754 1.23127 7.24911C0.512247 7.24148 0.0157813 6.79109 0.000242059 6.15064C-0.0160873 5.48281 0.475637 5.01689 1.23232 5.00873C2.11121 4.99952 2.99089 4.99214 3.86951 5.01268C5.36154 5.04769 6.52014 5.93215 6.96393 7.35415C7.14171 7.92378 7.34055 8.49026 7.46382 9.07201C7.54968 9.47713 7.77881 9.49661 8.10566 9.49582C11.8335 9.48897 15.5611 9.49134 19.2889 9.49134C21.0825 9.49134 22.8761 9.48108 24.6694 9.49503C26.0848 9.50608 27.0907 10.4906 27.0156 11.7778C27.0006 12.0363 26.925 12.2958 26.8473 12.5457C26.1317 14.8411 25.4124 17.1351 24.6879 19.4279C24.1851 21.0186 23.0223 21.8826 21.3504 21.8944C19.7151 21.906 18.0797 21.897 16.4444 21.897Z"
                             fill="#6E6D79" />
@@ -377,7 +379,8 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('assets/website/assets/images/homepage-one/category-img/bags.webp') }}" alt="Bags">
+                                            <img src="{{ asset('assets/website/assets/images/homepage-one/category-img/bags.webp') }}"
+                                                alt="Bags">
                                         </span>
                                         <span class="dropdown-text">
                                             Bags
@@ -454,7 +457,8 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('assets/website/assets/images/homepage-one/category-img/gift.webp') }}" alt="gift">
+                                            <img src="{{ asset('assets/website/assets/images/homepage-one/category-img/gift.webp') }}"
+                                                alt="gift">
                                         </span>
                                         <span class="dropdown-text">
                                             Gifts
@@ -531,7 +535,8 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('assets/website/assets/images/homepage-one/category-img/ring.webp') }}" alt="ring">
+                                            <img src="{{ asset('assets/website/assets/images/homepage-one/category-img/ring.webp') }}"
+                                                alt="ring">
                                         </span>
                                         <span class="dropdown-text">
                                             Gold Ring
@@ -556,7 +561,8 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('assets/website/assets/images/homepage-one/category-img/cap.webp') }}" alt="cap">
+                                            <img src="{{ asset('assets/website/assets/images/homepage-one/category-img/cap.webp') }}"
+                                                alt="cap">
                                         </span>
                                         <span class="dropdown-text">
                                             Cap
@@ -607,7 +613,8 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('assets/website/assets/images/homepage-one/category-img/baby.webp') }}" alt="baby">
+                                            <img src="{{ asset('assets/website/assets/images/homepage-one/category-img/baby.webp') }}"
+                                                alt="baby">
                                         </span>
                                         <span class="dropdown-text">
                                             Baby Shop
@@ -995,13 +1002,14 @@
                                     </div>
                                 </div>
                                 <div class="shop-menu-img">
-                                    <img src="{{ asset('assets/website/assets/images/homepage-one/empty-wishlist.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/assets/images/homepage-one/empty-wishlist.webp') }}"
+                                        alt="img">
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <a href="#">
-                                <span class="list-text">Pages</span>
+                            <a href="javascript:void(0)">
+                                <span class="list-text">{{ __('website.pages') }}</span>
                                 <span>
                                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -1019,16 +1027,25 @@
                                 </span>
                             </a>
                             <ul class="header-sub-menu">
-                                <li><a href="product-info.html">Product-details</a></li>
+                                @if ($pages->count() > 0)
+                                    @foreach ($pages as $page)
+                                        <li>
+                                            <a href="{{ route('website.page', $page->slug) }}">
+                                                {{ $page->title }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                @endif
+                                <li><a href="{{ route('website.faqs.index') }}">{{ __('website.faq') }}</a></li>
+                                {{-- <li><a href="product-info.html">Product-details</a></li>
                                 <li><a href="privacy.html">Privacy Policy</a></li>
-                                <li><a href="terms.html">Terms & Condition</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="product-sidebar.html">Shop Category Icon</a></li>
-                                <li><a href="product-sidebar.html">Shop List View</a></li>
+                                <li><a href="terms.html">Terms & Condition</a></li> --}}
+                                {{-- <li><a href="product-sidebar.html">Shop Category Icon</a></li>
+                                <li><a href="product-sidebar.html">Shop List View</a></li> --}}
                             </ul>
                         </li>
                         <li>
-                            <a href="about.html">
+                            <a href="">
                                 <span class="list-text">About</span>
                             </a>
                         </li>

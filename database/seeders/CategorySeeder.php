@@ -21,31 +21,37 @@ class CategorySeeder extends Seeder
             [
                 'name' => ['en' => 'Electronics', 'ar' => 'إلكترونيات'],
                 'status' => 1,
+                'image' => 'sweaters.webp',
                 'parent' => null,
             ],
             [
                 'name' => ['en' => 'Clothing', 'ar' => 'ملابس'],
                 'status' => 1,
+                'image' => 'sweaters.webp',
                 'parent' => null,
             ],
             [
                 'name' => ['en' => 'Books', 'ar' => 'كتب'],
                 'status' => 1,
+                'image' => 'sweaters.webp',
                 'parent' => null,
             ],
             [
                 'name' => ['en' => 'Furniture', 'ar' => 'أثاث'],
                 'status' => 1,
+                'image' => 'sweaters.webp',
                 'parent' => null,
             ],
             [
                 'name' => ['en' => 'Toys', 'ar' => 'ألعاب'],
                 'status' => 1,
+                'image' => 'sweaters.webp',
                 'parent' => null,
             ],
             [
                 'name' => ['en' => 'Groceries', 'ar' => 'بقالة'],
                 'status' => 1,
+                'image' => 'sweaters.webp',
                 'parent' => null,
             ],
         ];

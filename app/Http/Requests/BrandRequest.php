@@ -27,9 +27,9 @@ class BrandRequest extends FormRequest
             'status' => ['required', 'in:1,0'],
         ];
         if (in_array($this->method(), ['PUT', 'PATCH'])) {
-            $rules['logo'] = ['nullable', 'image','mimes:jpeg,png,jpg,svg,gif,','max:2048'];
+            $rules['logo'] = ['nullable', 'image','mimes:jpeg,png,jpg,svg,gif,webp,','max:2048'];
         }else{
-            $rules['logo'] = ['required', 'image','mimes:jpeg,png,jpg,svg,gif,','max:2048'];
+            $rules['logo'] = ['required', 'image','mimes:jpeg,png,jpg,svg,gif,webp,','max:2048'];
         }
         return $rules;
     }

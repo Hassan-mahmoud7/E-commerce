@@ -94,6 +94,18 @@
                     </ul>
                 </li>
             @endcan
+            @can('faqs')
+                <li class=" nav-item"><a href="#"><i class="fa-solid fa-message"></i><span class="menu-title"
+                            data-i18n="nav.templates.main">{{ __('dashboard.faq_questions') }}</span></a>
+                    <ul class="menu-content">
+                        <li><a class="menu-item" href="{{ route('dashboard.faq.questions.index') }}"
+                                data-i18n="nav.templates.vert.classic_menu"><i class="fa-solid fa-comments"></i>
+                                {{ __('dashboard.faq_question_dashboard') }}</a>
+                        </li>
+
+                    </ul>
+                </li>
+            @endcan
             <li class=" nav-item"><a href="#"><i class="fa-solid fa-gears"></i><span class="menu-title"
                 data-i18n="nav.templates.main">{{ __('dashboard.settings') }}</span></a>
                 <ul class="menu-content">
@@ -157,10 +169,6 @@
                             data-i18n="nav.templates.vert.classic_menu"><i class="fa-solid fa-users"></i>
                             {{ __('dashboard.user_dashboard') }}</a>
                     </li>
-                    <li><a class="menu-item" href="{{ route('dashboard.users.create') }}"
-                        data-i18n="nav.templates.vert.classic_menu"><i class="ft ft-user-plus"></i>
-                        {{ __('dashboard.create_user') }}</a>
-                    </li>
                 </ul>
             </li>
             @endcan
@@ -191,13 +199,26 @@
                     </a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{ route('dashboard.contacts.index') }}"
-                            data-i18n="nav.templates.vert.classic_menu"><i class="ft ft-headphones"></i>
-                            {{ __('dashboard.contact_dashboard') }}</a>
+                        data-i18n="nav.templates.vert.classic_menu"><i class="ft ft-headphones"></i>
+                        {{ __('dashboard.contact_dashboard') }}</a>
                     </li>
-                    {{-- <li><a class="menu-item" href="{{ route('dashboard.contacts.create') }}"
-                        data-i18n="nav.templates.vert.classic_menu"><i class="ft ft-contact-plus"></i>
-                        {{ __('dashboard.create_contact') }}</a>
-                    </li> --}}
+                </ul>
+            </li>
+            @endcan
+            @can('pages')
+            <li class=" nav-item"><a href="#"><i class="fa-regular fa-folder-open"></i><span class="menu-title"
+                data-i18n="nav.templates.main">{{ __('dashboard.pages') }}</span>
+                <span class="badge badge badge-info badge-pill float-right mr-2">{{ $pages_count }}</span>
+            </a>
+            <ul class="menu-content">
+                <li><a class="menu-item" href="{{ route('dashboard.pages.index') }}"
+                    data-i18n="nav.templates.vert.classic_menu"><i class="fa-regular fa-file-lines"></i>
+                    {{ __('dashboard.contact_dashboard') }}</a>
+                </li>
+                <li><a class="menu-item" href="{{ route('dashboard.pages.create') }}"
+                    data-i18n="nav.templates.vert.classic_menu"><i class="fa-solid fa-file-circle-plus"></i>
+                    {{ __('dashboard.create_page') }}</a>
+                </li>
                 </ul>
             </li>
             @endcan

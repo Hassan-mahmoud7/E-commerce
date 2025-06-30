@@ -18,7 +18,7 @@ class SliderService
     {
         return $this->sliderRepository->getSliders();
     }
-     public function getAllSlidersForDatatable()
+    public function getAllSlidersForDatatable()
     {
         $sliders = $this->getSliders();
         return DataTables::of($sliders)

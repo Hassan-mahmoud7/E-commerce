@@ -23,7 +23,7 @@
                    
                     <fieldset class="form-group floating-label-form-group">
                         <label for="singleImage">{{ __('dashboard.slider_image') }}</label>
-                        <input type="file" name="file_name" class="form-control" id="singleImage" placeholder="Password">
+                        <input type="file" name="file_name" class="form-control" id="singleImage">
                     </fieldset>
                     <br>
                 </div>

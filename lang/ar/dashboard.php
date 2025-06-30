@@ -51,6 +51,28 @@ return [
     'delete_user' => 'حذف المستخدم',
     'user_successfully' => 'تم انشاء المستخدم بنجاح',
 
+    #pages
+    'pages' => 'الصفحات',
+    'page' => 'الصفحة',
+    'page_dashboard' => 'لوحة معلومات الصفحات',
+    'page_title' => 'عنوان الصفحة',
+    'page_title_ar' => 'عنوان الصفحة بالعربى',
+    'page_title_en' => 'عنوان الصفحة بالانجليزى',
+    'page_content' => 'محتوى الصفحة',
+    'page_content_ar' => 'محتوى الصفحة بالعربى',
+    'page_content_en' => 'محتوى الصفحة بالانجليزى',
+    'page_image' => 'صورة الصفحة',
+    'page_slug' => 'العلامة التوضيحية',
+    'show_content' => 'عرض المحتوى',
+    'page_status' => 'حالة الصفحة',
+    'page_created_at' => 'تاريخ انشاء الصفحة',
+    'create_page' => 'انشاء صفحة جديدة',
+    'edit_page' => 'تعديل على الصفحة',
+    'delete_page' => 'حذف الصفحة',
+    'create_page_successfully' => 'تم انشاء الصفحة بنجاح',
+    'edit_page_successfully' => 'تم تعديل الصفحة بنجاح',
+    'delete_page_successfully' => 'تم حذف الصفحة بنجاح',
+
     #country
     'countries' => 'الدول',
     'country' => 'الدولة',
@@ -84,6 +106,7 @@ return [
     'category' => 'القسم',
     'category_dashboard' => 'لوحة معلومات الاقسام',
     'category_name' => 'اسم القسم',
+    'category_image' => 'صورة',
     'category_name_ar' => 'ادخل اسم القسم بالعربى',
     'category_name_en' => 'ادخل اسم القسم بالانجليزى',
     'category_status' => 'حالة القسم',
@@ -142,6 +165,23 @@ return [
     'create_faq' => 'انشاء السؤال شائع جديدة',
     'edit_faq' => 'تعديل على السؤال الشائعة',
     'delete_faq' => 'حذف السؤال الشائعة',
+
+    #faq Question
+    'faq_questions' => 'أسئلة شائعة',
+    'faq_question' => 'السؤال الشائع',
+    'faq_question_dashboard' => 'لوحة معلومات الأسئلة الشائعة',
+    'faq_question_name' => 'الاسم',
+    'faq_question_email' => 'البريد الإلكتروني',
+    'faq_question_subject' => 'موضوع',
+    'faq_question_message' => 'رسالة',
+    'show_message' => 'عرض الرسالة',
+    'faq_question_created' => 'تاريخ انشاء',
+    'create_faq_question' => 'انشاء سؤال شائع جديد',
+    'edit_faq_question' => 'تعديل على السؤال الشائع',
+    'delete_faq_question' => 'حذف السؤال الشائع',
+    'create_faq_question_successfully' => 'تم انشاء السؤال الشائع بنجاح',
+    'delete_faq_question_successfully' => 'تم حذف السؤال الشائع بنجاح',
+    
 
     #setting
     'settings' => 'الأعدادات العامة',
@@ -329,6 +369,7 @@ return [
     'well_done' => 'أحسنت',
     'failed' => 'فشل',
     'no_message_found' => 'لا توجد رسائل',
+    'no_image' => 'لا توجد صورة',
 
     'manage_status' => 'ادارة الحالة',
     'status_active_updated_successfully' => 'تم التفعيل بنجاح',

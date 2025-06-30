@@ -35,4 +35,24 @@ class Setting extends Model
     {
         return '/assets/img/uploads/settings/'. $favicon;
     }
+    public function getPromotionVideoUrlAttribute($value)
+    {
+        return $this->convertToEmbedUrl($value);
+    }
+    private function convertToEmbedUrl($url)
+    {
+        if(strpos($url,'watch?v=') !== false) {
+            $url = str_replace('watch?v=', 'embed/', $url);
+        }
+        if(strpos($url,'youtu.be/') !== false) {
+            $url = str_replace('youtu.be/', 'www.youtube.com/embed/', $url);
+        }
+        if(strpos($url,'v=') !== false) {
+            $url = str_replace('v=', 'embed/', $url);
+        }
+        if(strpos($url,'youtube.com/watch') !== false) {
+            $url = str_replace('youtube.com/watch', 'youtube.com/embed', $url);
+        }
+        return $url;
+    }
 }

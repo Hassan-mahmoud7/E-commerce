@@ -54,6 +54,28 @@ return [
     'delete_user' => 'Delete User',
     'user_successfully' => 'User created successfully',
 
+    #pages
+    'pages' => 'Pages',
+    'page' => 'Page',
+    'page_dashboard' => 'Page Dashboard',
+    'page_title' => 'Page Title',
+    'page_title_ar' => 'Page Title Arabic',
+    'page_title_en' => 'Page Title English',
+    'page_content' => 'Page Content',
+    'page_content_ar' => 'Page Content Arabic',
+    'page_content_en' => 'Page Content English',
+    'page_image' => 'Page Image',
+    'page_slug' => 'Slug',
+    'show_content' => 'Show Content',
+    'page_status' => 'Page Status',
+    'page_created_at' => 'Created At',
+    'create_page' => 'Create New Page',
+    'edit_page' => 'Edit Page',
+    'delete_page' => 'Delete Page',
+    'create_page_successfully' => 'Page created successfully',
+    'edit_page_successfully' => 'Page edited successfully',
+    'delete_page_successfully' => 'Page deleted successfully',
+
     #products
     'products' => 'Products',
     'product' => 'Product',
@@ -97,6 +119,7 @@ return [
     'category_status' => 'Status Category',
     'category_slug' => 'Slug',
     'category_name' => 'Category Name',
+    'category_image' => 'Image',
     'category_name_ar' => 'Category Name Arabic',
     'category_name_en' => 'Category Name English',
     'category_description' => 'Description',
@@ -139,6 +162,7 @@ return [
     'create_coupon' => 'Create Coupon',
     'edit_coupon' => 'Edit Coupon',
     'delete_coupon' => 'Delete Coupon',
+    
 
     #faq
     'faqs' => 'FAQs',
@@ -154,7 +178,23 @@ return [
     'create_faq' => 'Create FAQ',
     'edit_faq' => 'Edit FAQ',
     'delete_faq' => 'Delete FAQ',
-
+    
+    #faq Question
+    'faq_questions' => 'FAQ Questions',
+    'faq_question' => 'FAQ Question',
+    'faq_question_dashboard' => 'FAQ Question Dashboard',
+    'faq_question_name' => 'Name',
+    'faq_question_email' => 'Email',
+    'faq_question_subject' => 'Subject',
+    'faq_question_message' => 'Message',
+    'show_message' => 'Show Message',
+    'faq_question_created' => 'Created At',
+    'create_faq_question' => 'Create FAQ Question',
+    'edit_faq_question' => 'Edit FAQ Question',
+    'delete_faq_question' => 'Delete FAQ Question',
+    'create_faq_question_successfully' => 'FAQ Question created successfully',
+    'delete_faq_question_successfully' => 'FAQ Question deleted successfully',
+    
     #setting
     'settings' => 'Settings',
     'setting' => 'Setting',
@@ -336,6 +376,7 @@ return [
     'well_done' => 'Well done',
     'failed' => 'Failed',
     'no_message_found' => 'No Message Found',
+    'no_image' => 'No Image',
 
 
     'delete' => 'Delete',

@@ -9,6 +9,8 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Website\FaqController;
+use App\Http\Controllers\Website\PageController;
 use App\Http\Controllers\Website\UserProfileController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Illuminate\Support\Facades\Auth;
@@ -50,12 +52,16 @@ Route::group(
         
         Route::group(['middleware' => ['verified', 'auth:web']], function () {
 
-            ####------------------------# User Profile #------------------------####
+            ####------------------------#| User Profile |#------------------------####
             Route::controller(UserProfileController::class)->group(function () {
                 Route::get('/profile', 'index')->name('profile');
             });
         });
-
+        ####------------------------#| Page |#--------------------------------####
+        Route::get('page/{slug}',[PageController::class, 'showPage'])->name('page');
+        
+        ####------------------------#| FAQ |#--------------------------------####
+        Route::get('faqs', [FaqController::class, 'ShowFaqPage'])->name('faqs.index');
        
         Auth::routes(['verify' => true]);
         #livewire

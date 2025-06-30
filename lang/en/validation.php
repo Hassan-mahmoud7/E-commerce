@@ -278,6 +278,10 @@ return [
         'desc.ar'               => 'Description Arabic',
         'samll_desc.en'         => 'Small Description English',
         'samll_desc.ar'         => 'Small Description English',
+        'title.en'            => 'Title English',
+        'title.ar'            => 'Title Arabic',
+        'content.en'          => 'Content English',
+        'content.ar'          => 'Content Arabic',
 
     ],
 

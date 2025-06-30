@@ -7,12 +7,14 @@ use function PHPUnit\Framework\isNull;
 
 use Yajra\DataTables\Facades\DataTables;
 use App\Repositories\Dashboard\CategoryRepository;
+use App\Utils\ImageManger;
 
 class CategoryService
 {
-    protected $categoryRepository;
-    public function __construct(CategoryRepository $categoryRepository)
+    protected $categoryRepository ,$imageManager;
+    public function __construct(CategoryRepository $categoryRepository ,ImageManger $imageManager)
     {
+        $this->imageManager = $imageManager;
         $this->categoryRepository = $categoryRepository;
     }
     public function getAllCategoriesForDatatable()
@@ -29,9 +31,13 @@ class CategoryService
             ->addColumn('status', function ($category) {
                 return $category->getStatusTranslated();
             })
+           ->addColumn('image', function ($category) {
+                return view('dashboard.categories.images', compact('category'));
+            })
             ->addColumn('action', function ($category) {
                 return view('dashboard.categories.actions', compact('category'));
             })
+            ->rawColumns(['image','action'])
             ->make(true);
     }
     public function getAllCategories()
@@ -48,6 +54,9 @@ class CategoryService
     }
     public function store($data)
     {
+        if (array_key_exists('image',$data) && $data['image'] != Null){
+            $data['image'] = $this->imageManager->uploadSingleImage('/',$data['image'], 'categories'); 
+        }
         $category = $this->categoryRepository->store($data);
         if (!$category) {
             return false;
@@ -58,8 +67,9 @@ class CategoryService
     public function update($data,$id)
     {
         $category = $this->getCategoryById($id);
-        if (!$category) {
-            return false;
+        if (isset($data['image']) && $data['image'] != Null){
+            $this->imageManager->deleteImageFromLocal($category->image); 
+            $data['image'] = $this->imageManager->uploadSingleImage('/', $data['image'], 'categories'); 
         }
         $category = $this->categoryRepository->update($category, $data);
         if (!$category) {
@@ -70,6 +80,9 @@ class CategoryService
     public function destroy($id)
     {
         $category = $this->getCategoryById($id);
+        if (isset($category->image) && $category->image != null) {
+            $this->imageManager->deleteImageFromLocal($category->image);
+        }
         $category = $this->categoryRepository->destroy($category);
         $this->categoryCache();
         if (!$category) {

@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Coupon;
 use App\Models\Faq;
+use App\Models\Page;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\User;
@@ -70,6 +71,11 @@ class ViewServiceProvider extends ServiceProvider
                     return Contact::where('is_read',0)->count();
                 });
             }
+            if(!Cache::has('pages_count')){
+                Cache::remember('pages_count', now()->addMinutes(60), function () {
+                    return Page::count();
+                });
+            }
             view()->share([
                 'categories_count' => Cache::get('categories_count'),
                 'brands_count' => Cache::get('brands_count'),
@@ -79,8 +85,15 @@ class ViewServiceProvider extends ServiceProvider
                 'products_count' => Cache::get('products_count'),
                 'users_count' => Cache::get('users_count'),
                 'contacts_count' => Cache::get('contact_count'),
+                'pages_count' => Cache::get('pages_count'),
             ]);
         });
+        view()->composer('website.*', function ($view) {
+            $pages = Page::select('id','slug','title')->active()->get();
+            view()->share([
+                'pages'=> $pages,
+            ]);
+        });       
         // git setting And Share
         view()->share('setting', $this->firstOrCreateSetting());
     }
@@ -109,7 +122,7 @@ class ViewServiceProvider extends ServiceProvider
                 'favicon' => 'icon.png',
                 'email' => 'info@e-commerce.com',
                 'email_support' => 'support@e-commerce.com',
-                'phone' => '0123456789',
+                'phone' => '01287587134',
                 'facebook' => 'https://www.facebook.com/ecommerce',
                 'twitter' => 'https://www.twitter.com/ecommerce',
                 'instagram' => 'https://www.instagram.com/ecommerce',

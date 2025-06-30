@@ -11,7 +11,7 @@ class Category extends Model
 {
     use HasTranslations , Sluggable;
     protected $table = 'categories';
-    protected $fillable = ['name', 'slug','status','parent'];
+    protected $fillable = ['id','name', 'slug','status','parent','image'];
     protected $translatable = ['name'];
     public function sluggable(): array
     {
@@ -49,5 +49,9 @@ class Category extends Model
     {
         return $query->where('status', 0);
     } 
+    public function getImageAttribute($image)
+    {
+        return asset('assets/img/uploads/categories/' . $image);
+    }
 
 }

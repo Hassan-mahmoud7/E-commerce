@@ -47,7 +47,7 @@ class BrandService
     {
         $brand = $this->brandRepository->getBrandById($id);
         if (!$brand) {
-            abort('404');
+            abort(404);
         }
         return $brand;
     }

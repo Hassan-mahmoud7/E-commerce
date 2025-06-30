@@ -14,6 +14,8 @@ use App\Http\Controllers\Dashboard\{
     ContactController,
     RoleController,
     AdminController,
+    FaqQuestionController,
+    PageController,
     SliderController,
     WelcomeController,
     UserController
@@ -113,6 +115,12 @@ Route::group(
             Route::group(['middleware' => 'can:faqs'], function () {
                 Route::resource('faqs', FaqController::class);
             });
+            #################################| Faq Questions Routes Dashboard |#################################
+            Route::controller(FaqQuestionController::class)->middleware('can:faqs')->group(function () {
+                Route::get('faq-questions','index')->name('faq.questions.index');
+                Route::get('faq-questions-all','getAllFaqQuestionForDatatable')->name('faq.questions.all');
+                Route::delete('faq-question/destroy/{id}','destroy')->name('faq.question.destroy');
+            });
             #################################| Settings Routes Dashboard |#################################
             Route::group(['middleware' => 'can:settings'], function () {
                 Route::get('settings', [SettingController::class, 'index'])->name('settings');
@@ -124,6 +132,7 @@ Route::group(
                 Route::get('sliders/all','getSliders')->name('sliders.all');
                 Route::post('sliders/store','store')->name('sliders.store');
                 Route::delete('sliders/destroy/{id}','destroy')->name('sliders.destroy');
+                
             });
             #################################| Attributes Routes Dashboard |#################################
             Route::group(['middleware' => 'can:attributes'], function () {
@@ -144,6 +153,13 @@ Route::group(
                 Route::resource('users', UserController::class);
                 Route::get('users-all', [UserController::class, 'getAllUsersForDatatable'])->name('users.all');
                 Route::get('users/{id}/status', [UserController::class, 'ChangeStatus'])->name('users.status');
+            });
+            #################################| Pages Routes Dashboard |#################################
+            Route::group(['middleware' => 'can:pages'], function () {
+                Route::resource('pages', PageController::class);
+                Route::get('pages-all', [PageController::class, 'getAllPagesForDatatable'])->name('pages.all');
+                Route::get('pages/{id}/status', [PageController::class, 'ChangeStatus'])->name('pages.status');
+                Route::post('pages/{id}/delete/image', [PageController::class, 'deleteImage'])->name('pages.delete.image');
             });
             #################################| Contacts Routes Dashboard |#################################
             Route::controller(ContactController::class)->prefix('contacts/')->middleware('can:contacts')->group(function () {

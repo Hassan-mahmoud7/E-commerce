@@ -25,11 +25,11 @@ return Application::configure(basePath: dirname(__DIR__))
             }
         });
         $middleware->redirectUsersTo(function(){  // if Is Set Auth use redirectUsersTo
-            if (Auth::guard('admin')->check()) 
-                return  route('dashboard.welcome');               
-            else
+            if (Auth::guard('web')->check()) {
                 return route('website.home');
-            
+            }elseif (Auth::guard('admin')->check()) {
+                return  route('dashboard.welcome');               
+            }
         });
         $middleware->alias([
             /**** OTHER MIDDLEWARE ALIASES ****/

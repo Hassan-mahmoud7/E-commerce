@@ -44,7 +44,7 @@
                             <div class="card-content collapse show">
                                 <div class="card-body">
                                     @include('dashboard.includes.validations-errors')
-                                    <form action="{{ route('dashboard.categories.store') }}" method="POST" class="form">
+                                    <form action="{{ route('dashboard.categories.store') }}" method="POST" class="form" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-body">
                                             <div class="row">
@@ -72,7 +72,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="userinput52">{{ __('dashboard.category_parent') }}</label>
                                                         <select name="parent" class="form-control  @error('parent') is-invalid  @enderror" id="userinput52">
@@ -85,6 +85,18 @@
                                                         @error('parent')
                                                             <strong class="invalid-feedback"> {{ $message }}</strong>
                                                         @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                        <fieldset class="form-group floating-label-form-group">
+                                                            <label for="singleImage">{{ __('dashboard.slider_image') }}</label>
+                                                            <input type="file" name="image" class="form-control" id="singleImage">
+                                                        
+                                                            @error('image')
+                                                                <strong class="invalid-feedback"> {{ $message }}</strong>
+                                                            @enderror
+                                                        </fieldset>
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-12 mb-2">
@@ -124,3 +136,19 @@
     </div>
 
 @endsection
+@push('js')
+  <script>
+        var lang = "{{ app()->getLocale() }}";
+        $(function() {
+            $('#singleImage').fileinput({
+                theme: 'fa5',
+                language:lang,
+                allowedFileTypes: ['image'],
+                maxFileCount: 1,
+                enableResumableUpload:false,
+                showUpload: false,
+            });
+        });
+    </script>
+    
+@endpush

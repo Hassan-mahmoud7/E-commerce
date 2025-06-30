@@ -54,6 +54,7 @@
                                                     <th scope="col">{{ __('dashboard.product_count') }}</th>
                                                     <th scope="col">{{ __('dashboard.category_slug') }}</th>
                                                     <th scope="col">{{ __('dashboard.category_status') }}</th>
+                                                    <th scope="col">{{ __('dashboard.category_image') }}</th>
                                                     <th scope="col">{{ __('dashboard.created') }}</th>
                                                     <th scope="col">{{ __('dashboard.operations') }}</th>
 
@@ -69,6 +70,7 @@
                                                     <th scope="col">{{ __('dashboard.product_count') }}</th>
                                                     <th scope="col">{{ __('dashboard.category_slug') }}</th>
                                                     <th scope="col">{{ __('dashboard.category_status') }}</th>
+                                                    <th scope="col">{{ __('dashboard.category_image') }}</th>
                                                     <th scope="col">{{ __('dashboard.created') }}</th>
                                                     <th scope="col">{{ __('dashboard.operations') }}</th>
 
@@ -146,6 +148,10 @@
                 {
                     data: 'status',
                     name: 'status',
+                },
+                {
+                    data: 'image',
+                    name: 'image',
                 },
                 {
                     data: 'created_at',

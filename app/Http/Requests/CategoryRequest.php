@@ -22,10 +22,16 @@ class CategoryRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        $data = [
             'name.*' => ['required','string','max:100', UniqueTranslationRule::for('categories')->ignore($this->id)],
             'status' => ['required','in:1,0'],
             'parent' => ['nullable','exists:categories,id'],
         ];
+        if (in_array($this->method(), ['PUT', 'PATCH'])) {
+            $data['image'] = ['nullable','mimes:jpeg,png,jpg,svg,gif,webp,','max:2048'];
+        }else{
+            $data['image'] = ['required','mimes:jpeg,png,jpg,svg,gif,webp,','max:2048'];
+        }
+        return $data;
     }
 }

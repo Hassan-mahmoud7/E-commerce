@@ -50,6 +50,13 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'categories' => [
+            'driver' => 'local',
+            'root' => public_path('/assets/img/uploads/categories'),
+            'url' => env('APP_URL').'/assets/img/uploads/categories',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
         'settings' => [
             'driver' => 'local',
             'root' => public_path('/assets/img/uploads/settings'),
@@ -75,6 +82,13 @@ return [
             'driver' => 'local',
             'root' => public_path('/assets/img/uploads/users'),
             'url' => env('APP_URL').'/assets/img/uploads/users',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+        'pages' => [
+            'driver' => 'local',
+            'root' => public_path('/assets/img/uploads/pages'),
+            'url' => env('APP_URL').'/assets/img/uploads/pages',
             'visibility' => 'public',
             'throw' => false,
         ],

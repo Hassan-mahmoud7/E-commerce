@@ -2,18 +2,20 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
 class Product extends Model
 {
-    use HasTranslations, HasFactory;
+    use HasTranslations, HasFactory ,Sluggable;
 
     protected $table = 'products';
     protected $fillable = [
         'name',
         'small_desc',
+        'slug',
         'desc',
         'sku',
         'available_for',
@@ -32,6 +34,14 @@ class Product extends Model
         'category_id',
         'brand_id'
     ];
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'name',
+            ]
+        ];
+    }
     protected $translatable = ['name', 'desc', 'small_desc'];
     protected $casts = [
         'price' => 'float',
