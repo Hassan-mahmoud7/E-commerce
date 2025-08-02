@@ -9,9 +9,13 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Website\BrandController;
+use App\Http\Controllers\Website\CategoryController;
 use App\Http\Controllers\Website\FaqController;
 use App\Http\Controllers\Website\PageController;
+use App\Http\Controllers\Website\ProductController;
 use App\Http\Controllers\Website\UserProfileController;
+use App\Http\Controllers\Website\wishlistController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Illuminate\Support\Facades\Auth;
 
@@ -50,19 +54,44 @@ Route::group(
             Route::post('reset/add/new/password', 'addNewPassword')->name('add.new.password');
         });
         
-        Route::group(['middleware' => ['verified', 'auth:web']], function () {
+      
+        ############################| Page |######################################
+        Route::get('page/{slug}',[PageController::class, 'showPage'])->name('page');
+        
+        ############################| FAQ |######################################
+        Route::get('faqs', [FaqController::class, 'ShowFaqPage'])->name('faqs.index');
+        
+        ############################| Category |######################################
+        Route::controller(CategoryController::class)->name('category.')->group(function () {
+            Route::get('categories', 'index')->name('index');
+            Route::get('category/{slug}/products', 'getProductsByCategory')->name('products');
+        });
+        
+        ############################| Brand |######################################
+        Route::controller(BrandController::class)->name('brand.')->group(function () {
+            Route::get('brands', 'index')->name('index');
+            Route::get('brand/{slug}/products', 'getProductsByBrand')->name('products');
+        });
+        
+        ############################| Product |######################################
+        Route::controller(ProductController::class)->prefix('products/')->as('products.')->group(function () {
+            Route::get('shop', 'allProducts')->name('shop');
+            Route::get('show/{slug}', 'showProductPage')->name('show');
+            Route::get('{type}', 'getProductsByType')->name('by.type');
+            Route::get('{slug}/related-products', 'relatedProduct')->name('related');
 
-            ####------------------------#| User Profile |#------------------------####
+        });
+
+          Route::group(['middleware' => ['verified', 'auth:web']], function () {
+
+            #############################| User Profile |############################
             Route::controller(UserProfileController::class)->group(function () {
                 Route::get('/profile', 'index')->name('profile');
             });
+            ############################| Wishlist |######################################
+            Route::get('wishlist',wishlistController::class)->name('wishlist.index');
         });
-        ####------------------------#| Page |#--------------------------------####
-        Route::get('page/{slug}',[PageController::class, 'showPage'])->name('page');
-        
-        ####------------------------#| FAQ |#--------------------------------####
-        Route::get('faqs', [FaqController::class, 'ShowFaqPage'])->name('faqs.index');
-       
+
         Auth::routes(['verify' => true]);
         #livewire
         Livewire::setUpdateRoute(function ($handle) {
@@ -73,5 +102,6 @@ Route::group(
  Route::get('email/verify', [VerificationController::class,'show'])->name('verification.notice');
  Route::get('email/verify/{id}/{hash}', [VerificationController::class,'verify'])->name('verification.verify');
  Route::post('email/resend', [VerificationController::class,'resend'])->name('verification.resend');
+
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

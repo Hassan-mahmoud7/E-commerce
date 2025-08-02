@@ -44,7 +44,7 @@ class LoginController extends Controller
     }
     protected function authenticated()
     {
-        return redirect()->route('website.profile')->with('success', __('auth.logned_successfuly'));
+        return redirect()->intended()->with('success', __('auth.logned_successfuly'));
     }
     
     protected function loggedOut()

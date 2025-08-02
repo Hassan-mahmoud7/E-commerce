@@ -3,19 +3,25 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
-use App\services\Website\HomeService;
+use App\services\Website\GlobalService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    protected $HomeService;
-    public function __construct(HomeService $HomeService)
+    protected $globalService;
+    public function __construct(GlobalService $globalService)
     {
-        $this->HomeService = $HomeService;
+        $this->globalService = $globalService;
     }
     public function index()
-    {
-        $sliders = $this->HomeService->getSlider();
-        return view('website.index',compact('sliders'));
+    {                 
+        $homePageProducts =             $this->globalService->getHomePageProducts(8, 6);
+        return view('website.index',[
+            'sliders'        => $this->globalService->getSlider(),
+            'someBrands'     => $this->globalService->getBrands(12),
+            'someCategories' => $this->globalService->getCategories(12),
+            'homePageProducts'   => $homePageProducts
+        ]);
     }
+
 }

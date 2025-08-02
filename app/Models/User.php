@@ -72,6 +72,10 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Order::class, 'user_id');
     }
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class, 'user_id');
+    }
     public function getStatusTranslated()
     {
         return $this->status == 1 ? __('dashboard.active') : __('dashboard.not_active');

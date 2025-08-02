@@ -47,4 +47,58 @@ return [
     'success' => 'نجاح',
     'error' => 'خطأ',
 
+    # products page
+    'products' => 'المنتجات',
+    'product' => 'المنتج',
+    'no_products_found' => 'لا توجد منتجات متاحة',
+    'egp' => 'جنيه مصري',
+    'has_variants' => 'لديه خيارات متعددة',
+    'view_details' => 'عرض التفاصيل',
+    'showing' => 'عرض',
+    'results' => 'النتائج',
+    'of' => 'من',
+    'show' => 'عرض',
+    'empty_product' => 'لا توجد منتجات حتى الآن',
+    'back_to_shop' => 'العودة إلى المتجر',
+
+    # product details page
+    'product_details' => 'تفاصيل المنتج',
+    'shop' => 'المتجر',
+    'related_product' => 'المنتجات ذات الصلة',
+    'reviews' => 'المراجعات',
+    'description' => 'الوصف',
+    'no_reviews_yet' => 'لا توجد مراجعات حتى الآن',
+    'sku' => 'SKU',
+    'price' => 'السعر',
+    'product_has_variant' => 'المنتج لديه خيارات متعددة',
+    'out_of_stock' => 'غير متوفر',
+    'in_stock' => 'متوفر',
+    'availabillity' => 'التوفر',
+    'products_available' => 'المنتجات المتاحة',
+    'variants' => 'خيارات متعددة',
+    'select_variant' => 'أختار خيار واحد',
+    'share_this' => 'شارك هذا',
+    'wishlist' => 'المفضلات',
+    'added_to_wishlist_successfully' => 'تمت إضافته إلى المفضلة بنجاح',
+    'removed_from_wishlist_successfully' => 'تمت إزالته من المفضلة بنجاح',
+    'wishlist_cleared_successfully' => 'تم مسح المفضلة بنجاح',
+    'action' => 'الإجراء',
+    'clean_wishlist' => 'تنظيف المفضلات',
+    'view_cards' => 'عرض البطاقات',
+
+
+    
+    # index page
+    'our_categories' => 'فئاتنا',
+    'brand_of_prodcuts' => 'علامات المنتجات',
+    'view_all' => 'عرض الكل',
+    'flash_sale' => 'خصم سريع',
+    'new_arrivals' => 'المنتجات المضافة حديثًا',
+    'days' => 'أيام',
+    'hours' => 'ساعات',
+    'minutes' => 'دقائق',
+    'seconds' => 'ثواني',
+
+
+
 ];

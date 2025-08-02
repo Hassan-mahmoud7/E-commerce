@@ -13,6 +13,7 @@ use App\Models\Product;
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class ViewServiceProvider extends ServiceProvider
@@ -95,7 +96,9 @@ class ViewServiceProvider extends ServiceProvider
             ]);
         });       
         // git setting And Share
-        view()->share('setting', $this->firstOrCreateSetting());
+        if (Schema::hasTable('settings')) {
+            view()->share('setting', $this->firstOrCreateSetting());
+        }
     }
     public function firstOrCreateSetting()
     {

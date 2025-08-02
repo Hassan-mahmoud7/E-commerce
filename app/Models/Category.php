@@ -41,11 +41,11 @@ class Category extends Model
     {
         return $this->hasMany(Category::class , 'parent');
     }
-    public function ScoopeActive($query)
+    public function ScopeActive($query)
     {
         return $query->where('status', 1);
     } 
-    public function ScoopeNotActive($query)
+    public function ScopeNotActive($query)
     {
         return $query->where('status', 0);
     } 

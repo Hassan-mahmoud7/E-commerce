@@ -71,6 +71,10 @@ class Product extends Model
     {
         return $this->hasMany(ProductVariant::class, 'product_id');
     }
+    public function wishlists() 
+    {
+        return $this->hasMany(Wishlist::class, 'product_id');
+    }
     public function isSimple()
     {
         return !$this->has_variants;
@@ -116,5 +120,12 @@ class Product extends Model
     public function scopeInactive($query)
     {
         return $query->where('status', 0);
+    }
+    public function getPriceAfterDiscount()
+    {
+        if ($this->has_discount) {
+            return number_format($this->price - ($this->price * ($this->discount / 100)), 2);
+        }
+        return number_format($this->price);
     }
 }
