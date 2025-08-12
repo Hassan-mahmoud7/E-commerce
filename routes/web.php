@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Website\BrandController;
+use App\Http\Controllers\Website\CartController;
 use App\Http\Controllers\Website\CategoryController;
 use App\Http\Controllers\Website\FaqController;
 use App\Http\Controllers\Website\PageController;
@@ -90,6 +91,8 @@ Route::group(
             });
             ############################| Wishlist |######################################
             Route::get('wishlist',wishlistController::class)->name('wishlist.index');
+            ############################| Cart |######################################
+            Route::get('cart',CartController::class)->name('cart');
         });
 
         Auth::routes(['verify' => true]);

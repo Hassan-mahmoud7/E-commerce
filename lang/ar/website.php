@@ -79,14 +79,32 @@ return [
     'select_variant' => 'أختار خيار واحد',
     'share_this' => 'شارك هذا',
     'wishlist' => 'المفضلات',
+    'add_to_wishlist' => 'إضافة إلى المفضلة',
+    'remove_from_wishlist' => 'إزالة من المفضلة',
     'added_to_wishlist_successfully' => 'تمت إضافته إلى المفضلة بنجاح',
     'removed_from_wishlist_successfully' => 'تمت إزالته من المفضلة بنجاح',
     'wishlist_cleared_successfully' => 'تم مسح المفضلة بنجاح',
     'action' => 'الإجراء',
     'clean_wishlist' => 'تنظيف المفضلات',
     'view_cards' => 'عرض البطاقات',
+    'quantity' => 'الكمية',
 
-
+    # cart
+    'cart' => 'السلة',
+    'view_cart' => 'عرض السلة',
+    'add_to_cart' => 'إضافة إلى السلة',
+    'checkout_now' => 'الدفع الآن',
+    'clear_cart' => 'مسح السلة',
+    'update_cart' => 'تحديث السلة',
+    'proceed_to_checkout' => 'المتابعة إلى الدفع',
+    'over_quantity' => 'الكمية التي تريد إضافتها تفوق المخزون',
+    'cart_cleared_successfully' => 'تم مسح السلة بنجاح',
+    'product_removed_from_cart' => 'تمت إزالة المنتج من السلة',
+    'added_to_cart_successfully' => 'تمت إضافته إلى السلة بنجاح',
+    'total' => 'الإجمالي',
+    'attributes' => 'الخاصية',
+    'no_attributes' => 'لا توجد خصائص',
+    'Subtotal' => 'المجموع الفرعي',
     
     # index page
     'our_categories' => 'فئاتنا',

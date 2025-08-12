@@ -1,7 +1,7 @@
 <div>
     @if (!$inWishlist)
         <div class="wishlist">
-            <a wire:click.prevent="addToWishlist({{ $product->id }})" href="">
+            <a wire:click.prevent="addToWishlist({{ $product->id }})" href="" title="{{ __('website.add_to_wishlist') }}">
                 <span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -13,7 +13,7 @@
         </div>
     @else
         <div class="wishlist">
-            <a wire:click.prevent="removeFromWishlist({{ $product->id }})" href="">
+            <a wire:click.prevent="removeFromWishlist({{ $product->id }})" href="" title="{{ __('website.remove_from_wishlist') }}">
                 <span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
